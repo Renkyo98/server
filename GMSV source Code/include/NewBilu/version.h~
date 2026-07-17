@@ -1,0 +1,502 @@
+#ifndef __ALLBLUES_H__
+#define __ALLBLUES_H__
+
+//2018.03.19大幅度整理宏并去除大部分用LUA就能实现的功能和无用的功能
+
+#define SERVER_VERSIONCF							// 作者信息显示
+#define SERVER_VERSION "版本信息：New Version for Linux"
+#ifdef SERVER_VERSIONCF
+	#define SERVER_VERSION1 "版权信息：New Version"
+	#define SERVER_VERSION2 "后端版本：ver3.0 2019"
+	#define SERVER_VERSION3 "本版本仅限 New Version 和工作室使用"
+#endif
+
+
+	
+//#define _DEBUG_ALL												// (可开放) 全部调试
+#define _GMSV_DEBUG													// (可开放) GMSV调试信息
+#define _ABSOLUTE_DEBUG											// (可开放) 绝对调试
+
+#define _SA_VERSION 'L'  										//石器版本号默认是L，老石器修改为Z，对应lua和dll
+#define _DEFAULT_PKEY "www.93sa.com"
+#define _RUNNING_KEY  "www.93sa.com"
+//#define _NB_DEFAULT_KEY											// [2018/03/19]动态密钥
+#define _SASQL															// 加入MYSQL功能
+
+#define MANOR_MAX_NUM	10										// (4.0) 庄园数量
+#define FAMILY_MAX_MEMBER	200								// 家族人数
+
+//服务器版本控制 ----------------------------------------
+#define _VERSION_NEW   										// 新版本
+//#define _VERSION_182    									// 1.82版本(未完成) 支持1.82客户端，登录封包和KEY还未修改
+
+#define  NEWDISPATC
+#define _NEW_FONT														// (可开放) 对应增加颜色橘子后面对应客户端
+#define _STOPLOGININFORMATION								// (可开放) 开启后关闭大部分登录消息
+#define _DUELTIME24HOUR											// (可开放) 族战延迟开战时间24小时
+//#define _ASSESS_SYSDOWNUPNEWS							// (可开放) 输出上传下载消息 关闭后不输出
+
+//新版本8.0的key，客户端需要对应
+#ifdef _VERSION_NEW	
+	#define _CHATROOMPROTOCOL									// (可开放) Syu ADD 聊天室频道 8/27
+#ifdef _CHATROOMPROTOCOL
+	#define _NPC_SAVEPOINT           					// (可开放) 记录点存人物资料
+#endif
+	#define _OBJSEND_C												// (可开放) ANDY _OBJSEND_C
+	#define _ADD_SHOW_ITEMDAMAGE							// (可开放) WON  显示物品耐久度
+	#define _SHOW_ITEM												// (可开放) 秀装备
+	#define _SHOW_ITEM_NAME										// (可开放) 秀装备玩家名
+	#define _CHANGETRADERULE									// (可开放) Syu ADD 交易规则修订
+	#define _TRADE_SHOWHP											// (可开放) Syu ADD 交易显示血量
+	#define _TRADESYSTEM2											// (可开放) Syu ADD 新交易系统
+#ifdef _TRADESYSTEM2
+	#define _TRADE_PK													// (可开放) 交易PK
+#endif
+	#define _VIP_POINT_PK											// (可开放) 积分点PK
+	
+	#define _NPC_MAKEPAIR											// (可开放) ANDY NPC 配对
+	#define _ITEM_PILENUMS										// (可开放) ANDY 道具素材堆叠 需 itemset4
+	#define _ITEM_PILEFORTRADE								// (可开放) ANDY 交易堆叠
+	#define _ITEM_EQUITSPACE									// (可开放) ANDY 新装备栏位
+	#define _EQUIT_ARRANGE										// (可开放) ANDY 挡格 需要 itemset5.txt
+	#define _EQUIT_ADDPILE										// (可开放) ANDY 增加可堆叠数 需要 itemset5.txt
+	#define _EQUIT_NEWGLOVE										// (可开放) ANDY 手套栏位
+	#define _NEWREQUESTPROTOCOL								// (可开放) Syu ADD 新增Protocol要求细项
+	#define _OUTOFBATTLESKILL									// (可开放) Syu ADD 非战斗时技能Protocol
+	#define _NPC_ADDLEVELUP										// (可开放) ANDY NPC增加玩家等级
+	#define _CHAR_NEWLOGOUT										// (可开放) ANDY 登出新机制
+	#define _NPC_EXCHANGEMANTRANS							// (可开放) Change 替exchangeman加入判断转生
+	#define _CHANNEL_MODIFY										// (可开放) 频道功能整合
+	#define _STREET_VENDOR										// (可开放) 摆摊功能
+#ifdef _STREET_VENDOR
+	#define _STREET_VENDOR_TRANS							// (可开放) 摆摊限制转数
+	#define _STREET_VENDOR_EFFECT							// (可开放) 摆摊属性显示
+	#define _CANCEL_STREET_VENDOR							// (可开放) 防止卡摆摊
+	#define _MULTI_STREETVENDOR       				// (可开放) 多功能摆摊
+	#define _STREET_VENDOR_FAX                // (可开放) 摆摊开关及税率
+#ifdef _SASQL
+	#define _ONLINE_SHOP_MYSQL								// (可开放) 在线商城改成MYSQL重回币
+	#define _STREET_VENDOR_MYSQL							// (可开放) MYSQL VipPoint币摆摊
+	//#define _NB_SQL_EnemyBase								// [2018.07.03]将enemybase表移至sql
+	//#define _NB_SQL_Enemy										// [2018.07.03]将enemy表移至sql
+#endif
+#endif
+	#define _WATCH_EVENT											// (可开放) 查询任务功能
+	#define _ADD_DUNGEON											// (可开放) Change 追加地牢
+	#define _ADD_STATUS_2											// (可开放) 新增传送人物状态第二类
+	#define  _ALCHEMIST												// (可开放) Robin 精工功能
+	#define _JOBDAILY													// (可开放) cyg 任务日志功能
+	#define _FONT_SIZE												// (可开放) Robin 字型大小功能
+#ifdef _FONT_SIZE
+	#define _TALK_SIZE_ITEM										// (可开放) 大声公道具
+#endif
+	#define _PETSKILL_FIXITEM									// (可开放) ANDY 修复 && 同道具损坏
+	#define _CHECK_ITEMDAMAGE									// (可开放) 道具损坏修正  7/26
+	#define _TEAM_KICKPARTY										// (可开放) ANDY 队长踢人(非战斗状态)
+	#define _TELLCHANNEL											// (可开放) Syu ADD 密语频道
+	#define _EMENY_CHANCEMAN									// (可开放) ANDY EMENY 选择
+	#define _STANDBYPET												// (可开放) Robin 待机宠封包
+	#define _CHAR_POOLITEM										// (可开放) ANDY 人物道具仓库共用
+	#define _NPC_DEPOTITEM										// (可开放) ANDY 人物道具仓库共用
+	#define _CHAR_POOLPET											// (可开放) Robin 人物宠物仓库共用
+	#define _NPC_DEPOTPET											// (可开放) Robin 人物宠物仓库共用
+	#define _NEW_MANOR_LAW										// (可开放) 新庄园规则
+#ifdef _NEW_MANOR_LAW
+	#define _MOMENTUM_NPC											// (可开放) 气势脚本
+#endif
+	#define _TAKE_ITEMDAMAGE									// (可开放) ANDY 道具损坏  ITEMSET2
+	#define _SKILL_NOCAST											// (可开放) vincent  宠技:沉默 //需要开#define _MAGIC_NOCAST
+	#define _PET_FUSION												// (可开放) ANDY 宠物融合 enemybase1.txt
+#ifdef _PET_FUSION
+	#define _FUSIONBEIT_TRANS									// (可开放) [CF设置]融合宠物转生
+	#define _FUSIONBEIT_FIX										// (可开放) [GM命令]取消融合宠的限制
+	#define _NPC_FUSION												// (可开放) ANDY NPC宠物融合
+#endif
+	#define _ITEM_EDITBASES										// (可开放) ANDY 营养剂
+	#define _PET_EVOLUTION										// (可开放) ANDY 进化表
+	#define _STATUS_WATERWORD									// (可开放) ANDY 水世界状态
+	#define _ITEM_WATERWORDSTATUS							// (可开放) ANDY 水世界状态道具
+	#define _PETSKILL_ACUPUNCTURE							// (可开放) Change 宠技:针刺外皮 (client端的_PETSKILL_ACUPUNCTURE也要开)
+	#define _SHOW_FUSION											// (可开放) Change 融合宠物在CLIENT端只显示转生数,修改为融合宠显示为融合(client端也要开)
+	#define _TREASURE_BOX											// (可开放) ANDY 宝箱
+	#define _SHOOTCHESTNUT										// (可开放) Syu ADD 宠技：丢栗子
+	#define _DP_NPC														// (可开放) DP脚本
+	
+	#define _ANGEL_SUMMON											// (可开放) Robin 精灵召唤
+#ifdef _ANGEL_SUMMON
+	#define _ANGLE_EMAIL											// (可开放) 精召后自动交换名片
+	#define _ANGEL_TIME												// (可开放) [CF设置]自定义精灵召唤时间
+	#define _CANCEL_ANGLE_TRANS								// (可开放) 取消精灵召唤
+#endif
+	#define _PREVENT_TEAMATTACK								// (可开放) ANDY 防止同队互打 12/04 更新
+	#define _SKILLLIMIT												// (可开放) Syu ADD 不得攻击我方限制
+	#define _PROFESSION_ADDSKILL							// (可开放) Change 追加职业技能
+	#define _CHAR_PROFESSION									// (可开放) WON ADD 人物职业栏位
+	#define _PROFESSION_SKILL									// (可开放) WON ADD 人物职业技能
+#ifdef _PROFESSION_SKILL
+	#define _NPC_WELFARE											// (可开放) WON ADD 职业NPC
+	#define _PROSKILL_OPTIMUM									// (可开放) Robin 职业技能处理最佳化
+	#define _MAGIC_RESIST_EQUIT								// (可开放) WON ADD 职业抗性装备
+	#define _NPC_ProfessionTrans							// (可开放) Change 替职业NPC加入判断转生
+	#define _FIX_MAGIC_RESIST									// (可开放) Change 职业魔法抗性
+#endif
+	#define _ALLDOMAN													// (可开放) Syu ADD 排行榜NPC
+#ifdef _ALLDOMAN
+	#define _ALLDOMAN_DEBUG										// (可开放) Change 修正重启server後排行榜消失bug
+#endif
+	#define _REDHAT_V9												// (可开放) Change 在REDHAT9.0的版本下编译时打开
+	#define _PETSKILL_LER											// (可开放) 雷尔技能
+	#define _EQUIT_RESIST											// (可开放) Change 单一装备抗性(可抗单一功能异常状态)有抗火 雷 冰 虚弱 魔障 沉默 落马
+	#define _SUIT_ADDPART4										// (可开放) Change 套装功能第四弹 中毒攻击% 加强法师魔法(机率30%) 抵抗法师的魔法
+	#define _PROSK99													// (可开放) Change 检查职技等级送白狼
+	#define _ITEM_TYPETABLE										// (可开放) Change 追加typetable
+	#define _RIGHTCLICK												// (可开放) Robin 滑鼠右键功能
+	#define _TEACHER_SYSTEM										// (可开放) 导师系统
+	#define _PET_ITEM													// (可开放) 宠物装备
+	#define _ONLINE_SHOP											// (可开放) 8.0在线商城
+	#define _FM_POINT_PK											// (可开放) 庄园家族互抢庄园
+	
+	#define _TAKE_ITEMDAMAGE_FIX							// (可开放) 下身装备损坏
+	#define _TAKE_ITEMDAMAGE_FOR_PET					// (可开放) 宠装装备损坏
+	#define _NEW_RIDEPETS											// (可开放) ANDY 新骑宠
+#ifdef _NEW_RIDEPETS
+	#define _RIDEMODE_20											// (可开放) 2.0骑宠模式
+	#define _GM_RIDE													// (可开放) [GM命令]设置骑宠权限
+	#define _RIDE_CF													// (可开放) 自定义骑宠
+	#define _FM_LEADER_RIDE										// (可开放) 族长专用骑宠
+	#define _ADD_RIDE_CF											// (可开放) 增加自定义骑宠设置
+#endif
+
+	#define _VIP_SHOP													// (可开放) 会员商店
+	#define _NEW_VIP_SHOP											// (可开放) 会员商店(需SAAC配合)
+#ifdef _NEW_VIP_SHOP
+	#define _COST_ITEM												// (可开放) 充值道具
+#endif
+	#define _TRANS														// (可开放) 人物转生命令
+	#define _TALK_ACTION											// (可开放) 说话动作
+	//#define _PROSKILL_ERR_KICK							// (可开放) 非法技能自动T下线
+	#define _ITEM_SETLOVER										// (可开放) 结婚功能
+	#define _GM_METAMO_RIDE										// (可开放) GM人物骑所有宠
+	#define _CHAR_CDKEY												// (可开放) 防止串号问题
+	#define _SAVE_GAME_ID											// (可开放) 记录点显示保存的服务器名
+	#define _AUTO_PK													// (可开放) 自动化PK系统
+#ifdef _AUTO_PK
+	#define _FORMULATE_AUTO_PK								// (可开放) 制定自动化PK系统(需SAAC配合)
+#endif
+	#define _GM_KING													// (可开放) GM大魔王
+	#define _PLAYER_MOVE											// (可开放) 玩家顺移功能
+	#define _TRANS_7_NPC											// (可开放) 人物七转NPC
+	#define _TRANS_7_SHOW											// (可开放) 人物7转显示
+	//#define _DBSAVE_CHAR										// (可开放) 双向存档
+	#define _ITEM_COLOER											// (可开放) 物品颜色调配
+	#define _LOGOUTTIME												// (可开放) 最后离线时间提示
+	#define _SAMETHING_SAVEPOINT							// (可开放) 玩家某些事件自动存档
+	#define _ITEM_PET_LOCKED									// (可开放) 物品宠物锁(需SAAC配合)
+	#define _ONLINE_COST											// (可开放) 在线充值(需SAAC配合)
+	#define _VIPPOINT_OLD_TO_NEW							// (可开放) 积分点旧转新(需SAAC配合)
+	#define _ADD_NEWEVENT_1024								// (可开放) 增加旗标至1024
+	#define _INSLAY_NOT_PILENUMS							// (可开放) 不能精工叠加物品
+	#define _ONLINE_TIME											// (可开放) 在线时间
+	#define _SUPER														// (可开放) 紫云端的垃圾功能支持
+	#define _NPC_CHECK_SCRIPT									// (可开放) 判断脚本包
+
+	#define _SYSTEM_SPEAD											// (可开放) 系统加速
+	#define _FILTER_TALK											// (可开放) 过滤说话
+	#define _COMPOUND_EXP											// (可开放) 合成经验
+	#define _ASSESS_ABILITY										// (可开放) 评定能力
+	#define _PAUCTION_MAN											// (可开放) 拍卖系统
+	#define _PLAYER_OVERLAP_PK								// (可开放) 玩家重叠时PK
+	#define _FIMALY_PK_TIME										// (可开放) 家族开片时间设定
+	#define _FIX_COPY_MM_BUG									// (可开放) 修复复制MM的BUG
+	#define _FIX_PETSKILL_BUG									// (可开放) 修复宠物技能重叠使用
+	//#define _CHARADATA_SAVE_SQL							// (可开放) 将数据写入SQL
+	#define _MISSION_TRAIN										// (可开放) 任务链
+	#define _DEL_DROP_PET											// (可开放) 删除地上宠物
+	#define _PET_EVOLVE												// (可开放) 宠物进化
+	#define _FREE_SAVE												// (可开放) 免条件记录
+	#define _FIX_ADD_EXP											// (可开放) 修复豆子经验叠加
+	#define _RECORD_IP												// (可开放) 记录IP
+	#define _FIX_STW_SPEED_ENEMY							// (可开放) 修改外挂快速遇敌
+	//#define _DEL_NOT_25_NEED_ITEM						// (可开放) 删除非2.5需道具抓宠
+	#define _LOCK_PET_ITEM										// (可开放) 绑定宠物与道具
+	#define _ULTIMATE_ANNOUNCE								// (可开放) 飞人通知
+	#define _SHIP_MATEMO											// (可开放) 船的变身形像
+	#define _FIX_CORE_LOOP										// (可开放) 修改CORE_LOOP
+
+	#define _PET_MM														// (可开放) [道具]获得满石MM
+	#define _FM_ITEM													// (可开放) [道具]声望道具
+	#define _LUCK_ITEM												// (可开放) [道具]运气道具
+	#define _SILENTZERO												// (可开放) [道具]黄莲物品
+	#define _ITEM_GOLD												// (可开放) [道具]金钱大物品
+	#define _MYSTERIOUS_GIFT									// (可开放) [道具]神秘礼物
+	#define _ITEM_METAMO_TIME									// (可开放) [道具]可自定义变身的戒指
+	#define _BATTLE_PK												// (可开放) [道具]强制PK道具，输了回记录点
+	#define _PET_LEVEL_ITEM										// (可开放) [道具]宠物等级突破物品
+	#define _PET_BEATITUDE										// (可开放) [道具]宠物祝福
+	#define _NEW_PET_BEATITUDE								// (可开放) [道具]新一代宠物祝福
+	#define _ITEM_EFMETAMO										// (可开放) [道具]永久变身戒指
+	#define _ITEM_RIDE												// (可开放) [道具]驯骑装备
+	#define _GET_MULTI_ITEM										// (可开放) [道具]一次给多件物品
+	#define _SUPER_MAN_ITEM										// (可开放) [道具]极品人道具
+	#define _ITEM_EXP													// (可开放) [道具]经验道具
+	//#define _PET_ADD_EXP										// (可开放) [道具]宠物经验提升道具
+	#define _MEMORY_ITEM											// (可开放) [道具]记忆戒指
+	#define _ITEM_POOLITEM										// (可开放) [道具]随身道具仓库
+	#define _ITEM_POOLPET											// (可开放) [道具]随身宠物仓库
+	#define _SHOW_PET_ABL											// (可开放) [道具]显示宠物能力
+	#define _NEWEVENT_ITEM										// (可开放) [道具]新增任务道具
+	#define _OLYMPIC_TORCH										// (可开放) [道具]奥林匹克火举
+	
+	#define _CREATE_MM_1_2         					  // (可开放) [GM命令]制作极品玛蕾菲雅
+	#define _SendTo														// (可开放) [GM命令]传送到玩家身边
+	#define _LOCK_IP													// (可开放) [GM命令]锁定IP
+	#define _RELOAD_CF												// (可开放) [GM命令]重读CF
+	#define _MAKE_MAP													// (可开放) [GM命令]地图制作
+	#define _MAKE_PET_CF											// (可开放) [GM命令]自定义宠物成长
+	#define _MAKE_PET_ABILITY									// (可开放) [GM命令]自定义宠物四围
+	#define _GM_SAVE_ALL_CHAR									// (可开放) [GM命令]GM命令存档
+	
+	#define _RE_GM_COMMAND										// (可开放) [Data]自定义GM命令设置
+	#define _NPC_GET_PETABI										// (可开放) [Data]NPC给自定义成长的宠物
+	//#define _NEED_ITEM_ENEMY								// (可开放) [Data]抓宠所需物品自定义
+	#define _NPC_SCRIPT												// (可开放) [Data]NPC脚本包
+#ifdef _NPC_SCRIPT
+	#define _NPC_CHECKTIME										// (可开放) [Data]NPC时间判断
+	#define _FAME_CHECK_NPC										// (可开放) [Data]NPC声望判断
+#ifdef _SASQL
+	#define _SQL_BUY_FUNC											// (可开放) [Data]SQL购买功能
+#endif
+	#define _DEL_FAME													// (可开放) [Data]扣减声望
+	#define _NPC_INT_SET											// (可开放) [Data]NPC整型设置
+#endif
+	#define _MANOR_EQUIP											// (可开放) [Data]庄园专属套装
+	#define _ITEM_UPLEVEL											// (可开放) [Data]装备升级
+	#define _ITEM_PERCENTAGE									// (可开放) [Data]设置物品加成百分比
+	
+	#define _GET_BATTLE_EXP										// (可开放) [CF设置]经验倍数设置
+	#define _USER_EXP_CF											// (可开放) [CF设置]用户自定义经验
+	#define _TRANS_LEVEL_CF										// (可开放) [CF设置]转生超越160级设置
+	#define _UNLAW_WARP_FLOOR									// (可开放) [CF设置]禁止传送地区
+	#define _UNREG_NEMA												// (可开放) [CF设置]禁止人物名称
+	#define _WATCH_FLOOR											// (可开放) [CF设置]自定义可观战地图
+	#define _BATTLE_FLOOR											// (可开放) [CF设置]自定义强制战斗地图
+	#define _SKILLUPPOINT_CF									// (可开放) [CF设置]自定义升级点数
+	#define _RIDELEVEL												// (可开放) [CF设置]自定义骑宠相差等级
+	#define _REVLEVEL													// (可开放) [CF设置]自动还原等级
+	#define _FIX_CHARLOOPS										// (可开放) [CF设置]修正恶魔宝石遇敌时间
+	#define _BATTLE_GOLD											// (可开放) [CF设置]获取经验同时获得金钱
+	#define _PLAYER_NUM												// (可开放) [CF设置]玩家在线人数
+	#define _ENEMY_ACTION											// (可开放) [CF设置]玩家步行遇敌机率
+	#define _PLAYERMAXPOINT										// (可开放) [CF设置]点数上限
+	#define _CHECK_PEPEAT											// (可开放) [CF设置]非法宠物检查(检查是否相同编码的宠物，防复制的)
+	#define _PET_AND_ITEM_UP									// (可开放) [CF设置]可捡别人丢出的宠物或道具
+	#define _FM_JOINLIMIT											// (可开放) [CF设置]退族后再次加入家族的时间限制
+	#define _LOGIN_DISPLAY										// (可开放) [CF设置]玩家上线提示开关
+	#define _AUTO_DEL_PET											// (可开放) [CF设置]自动删除宠物
+	#define _AUTO_DEL_ITEM										// (可开放) [CF设置]自动删除物品
+	#define _POOL_ITEM_BUG										// (可开放) [CF设置]禁止强存的BUG
+	#define _NO_JOIN_FLOOR										// (可开放) [CF设置]禁止传送地区
+	//#define _TRANS_POINT_UP									// (可开放) [CF设置]每转点数上限
+	#define _UNLAW_THIS_LOGOUT								// (可开放) [CF设置]禁止原登的地图
+	#define _NO_STW_ENEMY											// (可开放) [CF设置]禁止外挂快速遇敌
+	#define _PET_TRANS_ABILITY								// (可开放) [CF设置]宠物转生能力定义上限
+	
+	#define _POINT_AMPOINT										// (可开放) [货币]积分点数
+	
+	#define _OPEN_E_PETSKILL									// (可开放) [宠技]开放宠物E技能
+	#define _ONE_PET_SKILL										// (可开放) [宠技]一次性宠技
+	#define _NEW_SKILL												// (可开放) [宠技]新技能开发
+	#define _EXPANSION_VARY_WOLF							// (可开放) [宠技]扩展暗月变身
+#ifdef _NEW_SKILL
+	#define _ITEM_ATTSKILLMAGIC								// (可开放) [宠技]ANDY 道具技能  
+	#define _MASSAGE_PETSKILL									// (可开放) [宠技]马杀鸡技能
+	#define _EXPANSION_ITEM_INSLAY    			  // (可开放) [宠技]扩展镶宝石
+	#define _STRENGTH_PETSKILL								// (可开放) [宠技]元气宠技
+	#define _EXPANSION_POWERBALANCE						// (可开放) [宠技]扩展PETSKILL_PowerBalance
+	#define _RESURRECTION_PETSKILL						// (可开放) [宠技]复活宠技
+	#define _LOSTLOST_PETSKILL								// (可开放) [宠技]两败俱伤
+	#define _GRAPPLING_PETSKILL								// (可开放) [宠技]擒拿手
+	#define _PETSKILL_EXPLODE									// (可开放) [宠技]Change 宠技:爆裂攻击
+	#define _PETOUT_PETSKILL									// (可开放) [宠技]换休息宠技
+	//#define _INVERSION_PETSKILL								// (可开放) [宠技]反转技能
+	#define _FIX_PETSKILL_HECTOR							// (可开放) [宠技]修复该技能无法设置turn
+#endif	
+	
+	#define _THE_WORLD_SEND										// (可开放) [聊天]世界说话频道
+	#define _ALL_SERV_SEND										// (可开放) [聊天]星球频道
+	#define _SUPER_FLOOR_MIC									// (可开放) [聊天]地图麦克风
+	
+	#define _AMPOINT_LOG             					// (可开放) [LOG]积分点记录
+	#define _SQL_VIPPOINT_LOG        					// (可开放) [LOG]重回币记录
+	
+	#define _ALLBLUES_LUA											// (可开放) 使用LUA脚本
+#ifdef _ALLBLUES_LUA
+	#define _ALLBLUES_LUA_1_1									// (可开放) LUA1.1版
+	#define _ALLBLUES_LUA_1_2									// (可开放) LUA1.2版
+	#define _ALLBLUES_LUA_1_3									// (可开放) LUA1.3版
+	#define _ALLBLUES_LUA_1_4									// (可开放) LUA1.4版
+	#define _ALLBLUES_LUA_1_5									// (可开放) LUA1.5版
+	#define _ALLBLUES_LUA_1_6									// (可开放) LUA1.6版
+	#define _ALLBLUES_LUA_1_7									// (可开放) LUA1.7版
+	#define _ALLBLUES_LUA_1_8									// (可开放) LUA1.8版
+	#define _ALLBLUES_LUA_1_9									// (可开放) LUA1.9版
+	#define _PETSKILL_SHOP_LUA								// (可开放) 宠物技能商店LUA
+	#define _OFFLINE_SYSTEM										// (可开放) 离线系统
+	#define _PLAYER_NPC												// (可开放) 虚假玩家
+	#define _DATA_INFO_SHOW										// (可开放) 声字按钮回调
+	#define _LUA_BATTLEOVERCALL          			// [2018.05.26]战后回调
+	#define _LUA_PROFESSIONSKILLCALL          // [2018.06.06]职业技能回调
+	#define _LUA_CHECKPETMAIL          				// [2018.08.25]宠物邮寄LUA回调
+	#define _LUA_CHECKPARTYOUT          			// [2018.08.25]团队脱离LUA回调
+	#define _NB_LUA_MovePetItem								// [2018.09.05]宠物装备LUA回调
+	#define _NB_LUA_BattlePetSkill						// [2018.09.17]战斗宠技LUA回调
+	#define	_NB_LUA_MAGIC_MP_RATE							// [2018.10.02]精灵时废气回调
+#endif
+	/*-----------------------------------------------------------------*/
+#endif
+
+	#define _FLOOR_DIFI_FIELD			// 楼层字段
+	#define _FM_FMPOINTPK_LIST		// 庄园对战列表
+	#define _BATTLE_BOUT_TIME			// 战斗回合时间
+	#define _ACTIVE_GAME			    // 活力值
+	#define _NO_HELP_MAP					// 禁止HELP
+	#define _BATTLE_TIME					// 战斗时间
+	#define _VIP_TRANS						// VIP转生服务
+	//#define _FIX_CHAR_LOOP				// 修正数据循环
+	#define _FIX_SAVE_CHAR				// 修正保存档问题
+	#define _FIX_P_VS_P_PARENT		// 修正PVP加入战斗
+	#define _FMPOINT_PKTIME_SELECT// 自主选择族战时间
+	#define _CHECK_SEVER_IP				// 判断服务器IP
+	#define _DAMMAGE_CALC					// 自定义伤害
+	#define _PLAYER_TITLE					// 玩家称号
+	#define _VIP_PET_TRANS				// 会员转宠
+	//#define _UNIFIDE_MALINASI			// 统一玛丽娜丝鱼村出生
+	//#define _NO1_B2_NONO					// B2学在第一位时自动锁定21忠
+	//#define _FMPOINT_APPEND_ABI		// 庄园家族成员附加能力
+	#define _ITEM_OVER_LAP				// 道具拖放功能
+	#define _NEW_LOAD_NPC					// 读取NPC
+	#define _NO_CLS_EVENT_255			// 不清楚255后的旗标
+	#define _BATTLE_OVER_STAR_TIME// 战斗后重新开始时间间隔
+	#define _MISSION_TIME					// 任务计时
+	#define _MVP_LOCK_JP					// 绑定MVP极品宠
+	//#define _FMPOINTPK_FOR_TWO		// 每天族战最多为两场
+	#define _BURST_LOG						// 分段日志
+	#define _MASK_ENCOUNTER 			// 屏蔽原地封包
+	#define _NEWCLISETMAC		 			// 记录客户端的MAC地址
+	#define _NEWCLISETSERVID 			// 记录客户端服务器ID
+	//#define _FMPOINT_PK_MESSAGE		// 族战全服通告
+	#define _REGISTRATION_TIME		// 签到时间
+	#define _FAME_REG_TIME				// 家族签到时间
+#ifdef _OFFLINE_SYSTEM
+	#define _OFFLINE_TIME					// 离线时间
+#endif
+	#define _ITEM_USE_TIME					// 道具使用时间
+	#define _PET_FUSION_LUA  				// 融合宠LUA
+	//#define _PET_ENEMY_DEVELOP_UP // 全面提升宠物成长
+	#define _FIRST_LOCK_ITEM				// 第一次交易后自动绑定物品
+	#define _CTRL_TRANS_DEVELOP			// 控制成长
+	#define _ABDUCT_NO_PETOUT				// 旅程伙伴禁直同时换宠
+	#define _ATTACK_RAND_SORT				// 攻击顺序随机
+	#define _FM_POINT_APPLY_FAME		// 庄园申请所需声望
+	//#define _NO_GM_MAGIC					// 去除不需要的GM指令
+	#define _FM_LIAOLI							// 无需家族就可以料理，并且功效翻倍
+	#define _ITEM_EXP_LV						// 还原原来的经验丹
+	#define _SKILL_25_FIX						// 2.5客户端技能修复客户端显示
+	#define	_PETUP_GET_EXP					// 宠物升级强制定义131-140经验，131以前经验除以60000
+	#define _OFFLINE_BATTLE_RETEUN	// 战斗掉线重连
+	//#define	_NO_EVENT_FAME					// 做任务(包含料理，合成)不加个人声望
+	#define	_PLAYER_LEVELUP_FAME		// 人物升级时获得声望改成和宠物一样
+	//#define _NOT_FMPK_WAIT					// 族战无休战期
+	#define	_NO_ENEMYID_GROUP				// CF中指定怪物ID不能遇敌
+	#define _NEW_MAP_NO_FAME				// 设置进入指定地图后升级没有声望
+	#define	_TALK_AREA_CF						// CF中定义说话音量最大和最小值
+	//#define	_OFFLINE_RETEUN				// 掉线自动重连
+	#define	_FAMILY_PK_FIX					// 修复家族下书问题
+	#define	_CREATE_TRANS_SAVEPOINT	// 新建人物和转生后强制定义记录点为渔村
+	#define	_LV_1_NO_ESCAPE					// 设定1级宠物不逃跑
+	//#define	_P_THREAD_RUN					// 多线程模式
+	#define	_RIDE_ATT_PET_SKILL			// 修复骑战同宠技能BUG
+	#define	_BATTLE_RAND_DEX				// 乱敏幅度
+
+	
+	#define FAMLYNUM_CF							// (2018/04/06)自定义庄园数目
+	#define _NB_SEND_PETINDEX				// (2018/04/08)K封包发送宠物索引
+	#define _NB_PETINITBILITY				// (2018/04/08)记录宠物初始值
+	#define _NB_STREETVENDORPETDATA	// (2018/04/11)摆摊信息加入宠物Q资料
+	#define _NB_TMWORKVER						// (2018/04/12)设立10个临时整数和字串(临时整数1~10,临时字串1~10)
+	#define _NB_PETREPOINT					// (2018/04/13)记录宠物回炉值
+	#define _NB_PETKILL_COST				// (2018/04/25)技能商店石币及声望价格设定
+	#define _NB_ALLOW_FMPK					// (2018/05/01)自定义族战开关，AllowFMPK=1 (0关闭, 1开启), FMPKNoMsg=该线路不可申请踢馆，请到族战线路申请踢馆！ 
+	
+	#define _PET_FUSION_2						// [2018/04/23]海底融合，融合第二类
+	#define _NB_TLPOINT							// [2018/05/06]新增体力常量
+	#define _NB_ITEM_ADDEXP					// [2018/05/06]新增天数经验卡
+	#define _NB_DRAGON_FUSION				// [2018/05/09]2D人龙进化
+	#define _NB_CF_SHARE_EXP				// [2018/05/09]经验是否共享
+	//#define _FIX_FM_FMPOINT					// [2018/05/15]修复庄园据点显示
+	#define _NB_GM_SERVERLIST				// [2018/05/20]跨服指令
+	#define BOSS_AI									// [2018/05/27]BOSSAI加强
+	#define _NB_SILENT_SWITCH				// [2018/06/13]禁言开关
+	#define _NB_NOBATTLEBUTTON			// [2018/06/15]战斗按钮开关封包
+	
+	#define _PETSKILL_PROVOKEFIGHT	// [2018/06/17]挑畔反击
+	#define _PETSKILL_ADDATTCRAZED	// [2018/06/17]为PETSKILL_AttackCrazed增加状态反射
+	#define _PRO3_ADDSKILL					// [2018/06/17]新增职业四阶技能
+	#define _PETSKILL_RIDE					// [2018/06/17]上马术
+	#define _PRO_ABSOLUTE_DEFENSE		// [2018/06/17]绝对防御
+	#define _PRO_KILLME						  // [2018/06/17]舍身诱敌
+	#define _PETSKILL_ISULTIMATE		// [2018/06/17]PETSKILL_StatusChange加入击飞溅射效果
+
+	#define _NB_SKIN								// [2018/07/08]皮肤系统
+	#define _PETSKILL_PLUS1         // [2018/07/27]增强 Pet Skill 技能属性(攻防敏), 以及PETSKILL_NONE增加异常(睡毒石...)状态
+	
+	#define _NB_FIX_POOLITEM				// [2018/08/08]修复道具仓库用完释放
+	#define _NB_FIX_SPRINTF					// [2018/08/08]修复sprintf因数组越界引起的BUG
+	#define _NB_FIX_SHUTDOWN_SAVE		// [2018/08/08]修复dump机后保持玩家信息的BUG
+	#define _NB_FIX_RIDE_PET_TRADE	// [2018/08/08]修复骑乘中的宠物能交易的BUG
+	#define _NB_FIX_SOCK_WRITE_OP		// [2018/08/08]修复防止write的时候内核缓冲区满的操作
+	#define _NB_FIX_MAGIC_NOINDEX		// [2018/08/08]修复魔法产生战斗index为-1的BUG
+	#define _NB_FIX_MEMORY					// [2018/08/14]改写内存机制
+	#define _FLOOR_FUBEN						// [2018/08/28]副本时间
+	#define _PET_PETZUOBI						// [2018/08/30]宠物作弊值，可直接通过LUA进行宠物属性增加
+	//#define _NB_LV1PETBASE					// [2018/09/09]提高野外1级宠物捕抓的四围极品率
+
+	#define _NB_SAVEWININDEX					// (2018/10/11)记录操作窗口索引
+
+	#define _NB_FAMILYBADGE						// (2018/10/15)家族徽章
+#ifdef _NB_FAMILYBADGE
+	#define FamilyBadgeStart 59000
+	#define FamilyBadgeEnd 59162
+#endif
+	//#define _NB_CHARSTRTITLE					// [2018/11/01]文字称号系统(不可和图像称号共存)
+	#define _NB_CHARDISPTITLE					// [2018/11/05]图像称号系统(不可和文字称号共存)
+	#define _NB_CHARHALO							// [2018/11/03]光环系统
+	
+#ifdef _NB_CHARHALO
+	//#define _NB_BATTLEHALO						// (2018/11/03)战斗中显示光环
+#endif
+
+	#define _NB_EVENTDAYTIME					// (2018/12/21)每日任务时间
+	#define _NB_MAGICNOEXP						// (2018/12/22)是否禁止魔法抗性和熟练升降  MAGICNOEXP=1(1为禁止升降，0为不禁止)
+	#define _NB_CreateTJMap						// (2018/12/28)导出脱机地图格式
+	#define _NB_FIX_ACUPUNCTURE 			// (2019/01/06)修复传死亡旗给错的CLIENT
+	
+	#define MODIFY_WIZARD_SKILL				// (2019/01/06)修改巫师技能(胜思修改)
+	#define MODIFY_WARRIOR_SKILL			// (2019/01/06)修改白狼技能(胜思修改)
+	#define MODIFY_HUNTER_SKILL				// (2019/01/06)修改猎人技能(胜思修改)
+	
+	#define _NB_GETINFO_LSSPROTO			// (2019/01/06)获取机器信息封包
+	
+	
+	#define _NB_FIX_BATTLE_COM_S_BLOOD// (2019/01/12)修正嗜血100%MISS的问题
+	#define _NB_DragonFunsionId				// (2019/01/12)自定义2D人龙转数和编号设定
+	#define _NB_EVENTVER							// (2019/01/13)特殊任务常量
+	#define _NB_SAVEVER								// (2019/01/13)10个整数的存储变量
+	
+	#define _NB_GMCHECKEVENT					// (2019/01/21)GM查看NPC任务条件不满足项
+	#define _NB_NEWDAYEVENT						// (2018/01/29)春节任务时间
+	#define	_NB_CDKEYLOCK							// (2019/02/08)封号机制(sql增加Lock字段，值为0正常，值为1无法登录，值为2无法交易)
+	
+	#define _ITEM_ATTUPDATA						// (2019/02/18)装备强化常量
+#endif
+
