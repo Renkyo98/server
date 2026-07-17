@@ -98,8 +98,8 @@ static void allDataDump( void )
 void shutdownProgram( void )
 {
 #ifndef _NB_FIX_SHUTDOWN_SAVE
-	printf("关闭SAAC连接:%d\n",close( acfd ));
-	printf("关闭绑定端口:%d\n",close( bindedfd ));
+	printf("SAAC 楷搬 辆丰:%d\n",close( acfd ));
+	printf("官牢爹 器飘 辆丰:%d\n",close( bindedfd ));
 #endif
 	close( acfd );
 	close( bindedfd );
@@ -134,57 +134,57 @@ void sigshutdown( int number)
 		char buff[256];
 
 		if( number == 0 ){
-			printf( "\n\n\nGMSV正常关闭\n" );
+			printf( "\n\n\nGMSV 沥惑 辆丰\n" );
 		}else if( number == 2 ){
-			printf( "\n\n\nGMSV被CTRL+C手动中断\n" );
+			printf( "\n\n\nGMSV啊 CTRL+C肺 荐悼 吝窜凳\n" );
 		}else{
-			sprintf( buff, "\n=========以下是服务器出错原因=========\n");
+			sprintf( buff, "\n=========酒贰绰 辑滚 坷幅 盔牢涝聪促=========\n");
 			logerr(buff);
-	    sprintf( buff, "标准信息: %d\n" , number  );
+	    sprintf( buff, "钎霖 沥焊: %d\n" , number  );
 	    logerr(buff);
 #ifdef _GMSV_DEBUG
-			sprintf( buff, "主 函 数: %s\n", DebugMainFunction );
+			sprintf( buff, "皋牢 窃荐: %s\n", DebugMainFunction );
 			logerr(buff);
 #endif
-			sprintf( buff, "在线人数: %d\n", player_online);
+			sprintf( buff, "立加 牢盔: %d\n", player_online);
 			logerr(buff);
-			sprintf( buff, "最高在线: %d\n", player_maxonline);
+			sprintf( buff, "弥绊 立加: %d\n", player_maxonline);
 			logerr(buff);
-			sprintf( buff, "SAAC接收: %s\n", saacretfunc);
+			sprintf( buff, "SAAC 荐脚: %s\n", saacretfunc);
 			logerr(buff);
-			sprintf( buff, "SAAC发送: %s\n", saacsendfunc);
+			sprintf( buff, "SAAC 价脚: %s\n", saacsendfunc);
 			logerr(buff);
-			sprintf( buff, "cli 接收: %d\n", cliretfunc);
+			sprintf( buff, "cli 荐脚: %d\n", cliretfunc);
 			logerr(buff);
-			sprintf( buff, "cli 发送: %d\n", clisendfunc);
+			sprintf( buff, "cli 价脚: %d\n", clisendfunc);
 			logerr(buff);
 #ifdef _ABSOLUTE_DEBUG
-			sprintf( buff, "错误数据: %s\n", errordata);
+			sprintf( buff, "坷幅 单捞磐: %s\n", errordata);
 			logerr(buff);
-			sprintf( buff, "错误账号: %s\n", charId);
+			sprintf( buff, "坷幅 拌沥: %s\n", charId);
 			logerr(buff);
-			sprintf( buff, "最后执行: %d\n", lastfunctime);
+			sprintf( buff, "付瘤阜 角青: %d\n", lastfunctime);
 			logerr(buff);
-			sprintf( buff, "调试行数: %d\n", debugline);
+			sprintf( buff, "叼滚弊 扼牢: %d\n", debugline);
 			logerr(buff);
-			sprintf( buff, "COM 接口: %d\n", comnum);
+			sprintf( buff, "COM 牢磐其捞胶: %d\n", comnum);
 			logerr(buff);
-			sprintf( buff, "编译时间：%s\n", SERVER_VERTIME);
+			sprintf( buff, "坷幅 困摹：%s\n", SERVER_VERTIME);
 			logerr(buff);
 #endif
-			sprintf( buff, "以下是主要错误，必须向我们提交的错误\n");
+			sprintf( buff, "酒贰绰 林夸 坷幅捞哥, 馆靛矫 力焊秦具 窍绰 坷幅涝聪促\n");
 			logerr(buff);
 			dump();
 
-			sprintf( buff, "=========以上是服务器出错原因=========\n");
+			sprintf( buff, "=========困绰 辑滚 坷幅 盔牢涝聪促=========\n");
 			logerr(buff);
 
 		}
 		if( number == 0 || number == 2 ){
-			printf( "在线人数: %d\n", player_online);
-			printf( "最高在线: %d\n", player_maxonline);
+			printf( "立加 牢盔: %d\n", player_online);
+			printf( "弥绊 立加: %d\n", player_maxonline);
 			printf( "%s\n", SERVER_VERSION);
-			printf( "编译时间：%s\n", SERVER_VERTIME);
+			printf( "坷幅 困摹：%s\n", SERVER_VERTIME);
 		}
 		
 #ifdef _GMSV_DEBUG
@@ -194,7 +194,7 @@ void sigshutdown( int number)
 	    	char buf[128];
 	    	time(&new_t);
 	    	if(initTime==0){
-	    		printf( "运行时间: 尚未初始化完\n" );
+	    		printf( "角青 矫埃: 酒流 檬扁拳 固肯丰\n" );
 	    	}else{
 		    	new_t-=initTime;
 			
@@ -204,16 +204,16 @@ void sigshutdown( int number)
 		      ss=(int) new_t;
 		      
 					if (dd>0) {
-		      	snprintf( buf, sizeof( buf ) , "服务器共运行了 %d 日 %d 小时 %d 分 %d 秒。",dd,hh,mm,ss);
+		      	snprintf( buf, sizeof( buf ) , "辑滚 醚 角青 矫埃: %d老 %d矫埃 %d盒 %d檬.",dd,hh,mm,ss);
 		      } else if (hh>0) {
-		      	snprintf( buf, sizeof( buf ) , "服务器共运行了 %d 小时 %d 分 %d 秒。",hh,mm,ss);
+		      	snprintf( buf, sizeof( buf ) , "辑滚 醚 角青 矫埃: %d矫埃 %d盒 %d檬.",hh,mm,ss);
 		      } else {
-		       	snprintf( buf, sizeof( buf ) , "服务器共运行了 %d 分 %d 秒。",mm,ss);
+		       	snprintf( buf, sizeof( buf ) , "辑滚 醚 角青 矫埃: %d盒 %d檬.",mm,ss);
 		      }
 		      if( number == 0 || number == 2 ){
-		      	printf( "运行时间: %s\n", buf );
+		      	printf( "角青 矫埃: %s\n", buf );
 		      }else{
-			      sprintf( buff, "运行时间: %s\n", buf );
+			      sprintf( buff, "角青 矫埃: %s\n", buf );
 			      logerr(buff);
 			    }
 	    	}
@@ -247,7 +247,7 @@ void sigshutdown( int number)
 void signalset( void )
 {
     // CoolFish: Test Signal 2001/10/26
-    print("\n开始获取信号..\n");
+    print("\n矫弊澄 荐脚 矫累..\n");
 
 		print("SIGINT:%d\n",  SIGINT);
 		print("SIGQUIT:%d\n", SIGQUIT);

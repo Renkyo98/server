@@ -774,7 +774,7 @@ void AnnounceToPlayerWN(int fd)
 	long lastleavetime = CHAR_getInt( charaindex , CHAR_LASTLEAVETIME);
 	struct tm *p;
 	p=localtime(&lastleavetime);
-	sprintf( token , "立加己傍! %d斥%d岿%d老 %d:%d:%d\n\n%s",p->tm_year + 1900,
+	sprintf( token , "饭骇诀! %d斥%d岿%d老 %d:%d:%d\n\n%s",p->tm_year + 1900,
 																																		p->tm_mon + 1,
 																																		p->tm_mday,
 																																		p->tm_hour,
@@ -820,7 +820,7 @@ void LoadPetTalk(void)
 		strcpy( pettalktext[i].DATA, "\0");
 	}
 
-	print("\n装载宠物对话文件:%s...", fn);
+	print("\n脐 措拳 颇老 肺靛:%s...", fn);
 {
 	fp = fopen( fn, "r");
 }
@@ -836,7 +836,7 @@ void LoadPetTalk(void)
 		}
 		fclose( fp);
     }else	{
-		print("错误:找不到文件!");
+		print("坷幅: 颇老阑 茫阑 荐 绝嚼聪促!");
 	}
 
 	talkNO=1;
@@ -869,7 +869,7 @@ void LoadPetTalk(void)
 					maxid++;
 					fclose( fp);
 				}else	{
-					print("错误:[%s] 找不到!", fn);
+					print("坷幅: [%s] 阑(甫) 茫阑 荐 绝嚼聪促!", fn);
 					pettalktext[maxid].ID=-1;
 				}
 			}else	{
@@ -880,7 +880,7 @@ void LoadPetTalk(void)
 		if( maxid >= PETTALK_MAXID )
 			break;
 	}
-	print("最大ID=%d...", maxid);
+	print("弥措ID=%d...", maxid);
 	{
 		int haveid=0;
 		for( i=0;i<PETTALK_MAXID;i++)	{
@@ -888,7 +888,7 @@ void LoadPetTalk(void)
 				haveid++;
 			}
 		}
-		print("载入总数=%d", haveid);
+		print("肺靛 醚荐=%d", haveid);
 	}
 
 }
@@ -908,7 +908,7 @@ void LoadPetTalk(void)
   fp = fopen( fn, "r");
 }
     if( fp != NULL ) {
-		print("\n\n 读取 pettalk.mem");
+		print("\n\n pettalk.mem 佬绰 吝");
 		while( fgets( line, sizeof( line), fp)) {
 			if( strlen( pettalktext) != 0 ) {
 				if( pettalktext[strlen( pettalktext) -1] != '|' ) {
@@ -921,7 +921,7 @@ void LoadPetTalk(void)
 		fclose( fp);
 		print("\n %s", pettalktext);
     }else	{
-		print("\n 不能找到 pettalk.mem");
+		print("\n pettalk.mem 茫阑 荐 绝澜");
 	}
 }
 #endif
@@ -939,7 +939,7 @@ void Load_GambleBankItems( void)
 	int num,ID,type;
 	int i=0;
 	sprintf(filename, "./data/gambleitems.txt" );
-	print("\n加载赌博物品文件 %s ...", filename);
+	print("\n档冠 酒捞袍 颇老 %s 肺靛 吝...", filename);
 {
 	fp = fopen( filename, "r");
 }
@@ -953,10 +953,10 @@ void Load_GambleBankItems( void)
 			GB_ITEMS[i].type = type;
 			i++;
 		}
-		print("最大ID: %d ", i);
+		print("弥措ID: %d ", i);
 		fclose( fp);
     }else	{
-		print("错误 找不到文件 %s", filename);
+		print("坷幅: 颇老 %s 阑(甫) 茫阑 荐 绝澜", filename);
 	}
 
 }
@@ -975,7 +975,7 @@ void Load_PetSkillCodes( void)
 	int num,ID;
 	int i=0;
 	sprintf(filename, "./data/skillcode.txt" );
-	print("\n加载宠物技能编码文件:%s...", filename);
+	print("\n脐 胶懦 内靛 颇老 肺靛:%s...", filename);
 {
 	fp = fopen( filename, "r");
 }
@@ -993,9 +993,9 @@ void Load_PetSkillCodes( void)
 		}
 		fclose( fp);
     }else	{
-		print("打不到文件 %s", filename);
+		print("颇老 %s 阑(甫) 茫阑 荐 绝澜", filename);
 	}
-	print("完成\n");
+	print("肯丰\n");
 }
 #endif
 
@@ -1006,7 +1006,7 @@ BOOL LoadGMSet( char* filename )
 	int i = 0, gm_num = 0;
   fp = fopen(filename,"r");
 	if (fp == NULL){
-		print("无法打开文件\n");
+		print("颇老阑 凯 荐 绝嚼聪促\n");
 		return FALSE;
 	}
 	for (i = 0; i < GMMAXNUM; i++){
@@ -2409,7 +2409,7 @@ int getWatchFloor( unsigned int index )
 }
 char* getWatchFloorCF( void )
 {
-	return (config.watchfloor[0]>0)? "是":"否";
+	return (config.watchfloor[0]>0)? "抗":"酒聪坷";
 }
 #endif
 
@@ -2425,7 +2425,7 @@ int getBattleFloor( unsigned int index )
 }
 char* getBattleFloorCF( void )
 {
-	return (config.battlefloor>0)? "是":"否";
+	return (config.battlefloor>0)? "抗":"酒聪坷";
 }
 #endif
 
@@ -2440,7 +2440,7 @@ BOOL LoadMissionList( void )
 	mission_num = 0;
 	fp = fopen("./data/mission.txt", "r");
 	if (fp == NULL){
-		print("任务文件打开错误\n");
+		print("烙公 颇老 凯扁 坷幅\n");
 		return FALSE;
 	}
 	memset( missionlist, 0, sizeof(missionlist));
@@ -2508,7 +2508,7 @@ BOOL LoadMissionCleanList( )
 	memset( missiontable, 0, sizeof(missiontable));
 	fp = fopen("./data/missionclean.txt", "r");
 	if (fp == NULL){
-		print("清除任务文件打开错误\n");
+		print("烙公 沥府 颇老 凯扁 坷幅\n");
 		return FALSE;
 	}
 
@@ -2574,7 +2574,7 @@ BOOL LoadJobdailyfile(void)
 	FILE* fp;
 	fp = fopen("./data/jobdaily.txt", "r");
 	if (fp == NULL){
-		print("日常工作文件打开错误\n");
+		print("老老 累诀 颇老 凯扁 坷幅\n");
 		return FALSE;
 	}
 
@@ -2606,7 +2606,7 @@ BOOL LoadJobdailyfile(void)
 		getStringFromIndexWithDelim(line, "|", 3, token, sizeof(token));
 		if (strcmp(token, "") == 0)	break;
 		if(strlen(token)>64){
-			print("\n任务说明过长:%d\n",strlen(token));
+			print("\n烙公 汲疙捞 呈公 遍聪促:%d\n",strlen(token));
 			return FALSE;
 		}
 		strcpy( dailyfile[listindex].explain, token);
@@ -2639,7 +2639,7 @@ BOOL LoadEXP( char* filename )
 	
 	if (fp == NULL)
 	{
-		print("无法打开文件\n");
+		print("颇老阑 凯 荐 绝嚼聪促\n");
 		return FALSE;
 	}
 
@@ -2715,7 +2715,7 @@ int getMaxLevel( void )
 #ifdef _PLAYERMAXPOINT
 char* getPoint( void )
 {
-		return (config.point>0)? "是":"否";
+		return (config.point>0)? "抗":"酒聪坷";
 }
 int getTransPoint( int index )
 {
@@ -2726,11 +2726,11 @@ int getTransPoint( int index )
 #ifdef _PET_AND_ITEM_UP
 char* getPetup( void )
 {
-		return (config.petup>0)? "是":"否";
+		return (config.petup>0)? "抗":"酒聪坷";
 }
 char* getItemup( void )
 {
-		return (config.itemup>0)? "是":"否";
+		return (config.itemup>0)? "抗":"酒聪坷";
 }
 #endif
 
@@ -2753,7 +2753,7 @@ int getRideTrans( void )
 #ifdef _REVLEVEL
 char* getRevLevel( void )
 {
-		return (config.revlevel>0)?"是":"否";
+		return (config.revlevel>0)?"抗":"酒聪坷";
 }
 #endif
 
@@ -2858,7 +2858,7 @@ int getRideMode( void )
 #ifdef _FM_POINT_PK
 char *getFmPointPK( void )
 {
-		return (config.fmpointpk>0)?"是":"否";
+		return (config.fmpointpk>0)?"抗":"酒聪坷";
 }
 #endif
 #ifdef _ENEMY_ACTION
@@ -3281,7 +3281,7 @@ int getfamlynum(void){
 void initAllowFMPK(void){
 	int i;
 	char buf[64];
-	//print("\n初始化族战开关...");
+	//print("\n啊巩傈 胶困摹 檬扁拳...");
 	for(i=1; i<=10; i++){
 		if(getStringFromIndexWithDelim(config.AllowFMPKMSG,",", i, buf, sizeof(buf))){
 			int j = 0;
@@ -3382,7 +3382,7 @@ int getDragonFunsionRand(void){
 void initDragonFunsionId(void){
 	int i;
 	char buf[64];
-	//print("\n初始化2D人龙编号");
+	//print("\n2D 牢锋 锅龋 檬扁拳");
 	int gelpet[5] = {5020,5021,5024,5022,5023};
 	for(i=1; i<=5; i++){
 		if(getStringFromIndexWithDelim(config.DragonFunsionMsg,",", i, buf, sizeof(buf))){

@@ -170,7 +170,7 @@ BOOL init(int argc , char** argv , char** env )
         debug( sizeof( aho.workchar ),d);
     }
 
-    print( "配置文件: %s\n" , getConfigfilename() );
+    print( "汲沥 颇老: %s\n" , getConfigfilename() );
 		
     GOTORETURNFALSEIFFALSE(readconfigfile( getConfigfilename() ) );
     
@@ -181,116 +181,116 @@ BOOL init(int argc , char** argv , char** env )
        if( iWork == 0 ){
        // 巨件戊□玉平□毛涩烂
        printf( "----------------------------------------\n" );
-       printf( "-------------[编码] 无法设置 %s\n", getConfigfilename() );
+       printf( "-------------[牢内爹] 汲沥 阂啊 %s\n", getConfigfilename() );
        printf( "----------------------------------------\n" );
        exit( 1 );
        }else{
             // 巨件戊□玉平□毛涩烂
-               printf( "编码 = %d\n", iWork );
+               printf( "牢内爹 = %d\n", iWork );
        }
     }
     // AcWBuff毛涩烂
     {   int iWork = setAcWBSize();
         if( iWork == 0 ){
            printf( "----------------------------------------\n" );
-           printf( "-------------[AC缓冲] 无法设置 %s\n", getConfigfilename() );
+           printf( "-------------[AC滚欺] 汲沥 阂啊 %s\n", getConfigfilename() );
            printf( "----------------------------------------\n" );
            exit( 1 );
            }else{
-                   printf( "AC缓冲 = %d\n", iWork );
+                   printf( "AC滚欺 = %d\n", iWork );
            }
     }
     //ttom end
 
     if( getDebuglevel() >= 1 ){
 //		print("ServerType: %d\n", getServerType() );
-				print("调试等级: %d\n", getDebuglevel() );
-				print("运行等级: %d\n", getrunlevel() );
-				print("接收缓冲: %d\n", getrecvbuffer()*1024);
-				print("发送缓冲: %d\n", getsendbuffer()*1024);
-				print("接收缓冲下限: %d\n", getrecvlowatbuffer());
-        print("内存单元大小: %d\n", getMemoryunit() );
-        print("内存单元数量: %d\n", getMemoryunitnum() );
+				print("叼滚弊 饭骇: %d\n", getDebuglevel() );
+				print("角青 饭骇: %d\n", getrunlevel() );
+				print("荐脚 滚欺: %d\n", getrecvbuffer()*1024);
+				print("价脚 滚欺: %d\n", getsendbuffer()*1024);
+				print("荐脚 滚欺 窍茄: %d\n", getrecvlowatbuffer());
+        print("皋葛府 窜困 农扁: %d\n", getMemoryunit() );
+        print("皋葛府 窜困 俺荐: %d\n", getMemoryunitnum() );
 
-        print("账号服务器地址: %s\n", getAccountservername() );
-        print("账号服务器端口: %d\n", getAccountserverport() );
-        print("登陆服务器名称: %s\n", getGameservername());
-        print("登陆服务器密码: %s\n", getAccountserverpasswd());
+        print("拌沥 辑滚 林家: %s\n", getAccountservername() );
+        print("拌沥 辑滚 器飘: %d\n", getAccountserverport() );
+        print("肺弊牢 辑滚 捞抚: %s\n", getGameservername());
+        print("肺弊牢 辑滚 厚剐锅龋: %s\n", getAccountserverpasswd());
 
-        print("等待连接端口: %d\n", getPortnumber() );
+        print("措扁 楷搬 器飘: %d\n", getPortnumber() );
 
-        print("服务端序列号: %d\n", getServernumber() );
+        print("辑滚 老访锅龋: %d\n", getServernumber() );
 
-        print("重复地址使用: %d\n", getReuseaddr() );
+        print("吝汗 林家 荤侩: %d\n", getReuseaddr() );
 
 
-        print("最大在线人数: %d\n", getFdnum() );
-        print("最大在线宠数: %d\n", getPetcharnum() );
-        print("最大其他数目: %d\n", getOtherscharnum() );
-        print("最大对象数目: %d\n", getObjnum() );
-        print("最大物品数目: %d\n", getItemnum() );
-        print("最大战斗数目: %d\n", getBattlenum() );
-        print("顶层文件目录: %s\n", getTopdir());
-        print("地图文件目录: %s\n", getMapdir());
-        print("地图标识文件: %s\n", getMaptilefile());
-        print("物品配置文件: %s\n", getItemfile());
-        print("不可战斗文件: %s\n", getInvfile());
-        print("显示位置文件: %s\n", getAppearfile());
-        print("遇敌配置文件: %s\n", getEffectfile());
-        print("头衔名称文件: %s\n", getTitleNamefile());
-        print("头衔配置文件: %s\n", getTitleConfigfile());
-        print("遇敌坐标文件: %s\n", getEncountfile());
-        print("遇敌组群文件: %s\n", getGroupfile());
-        print("宠物基本文件: %s\n", getEnemyBasefile());
-        print("创建宠物文件: %s\n", getEnemyfile());
-        print("精灵魔法文件: %s\n", getMagicfile());
+        print("弥措 立加 牢盔: %d\n", getFdnum() );
+        print("弥措 立加 脐荐: %d\n", getPetcharnum() );
+        print("弥措 扁鸥 俺荐: %d\n", getOtherscharnum() );
+        print("弥措 坷宏璃飘 俺荐: %d\n", getObjnum() );
+        print("弥措 酒捞袍 俺荐: %d\n", getItemnum() );
+        print("弥措 傈捧 俺荐: %d\n", getBattlenum() );
+        print("弥惑困 颇老 叼泛配府: %s\n", getTopdir());
+        print("甘 颇老 叼泛配府: %s\n", getMapdir());
+        print("甘 侥喊 颇老: %s\n", getMaptilefile());
+        print("酒捞袍 汲沥 颇老: %s\n", getItemfile());
+        print("傈捧 阂啊 颇老: %s\n", getInvfile());
+        print("钎矫 困摹 颇老: %s\n", getAppearfile());
+        print("炼快 汲沥 颇老: %s\n", getEffectfile());
+        print("莫龋 捞抚 颇老: %s\n", getTitleNamefile());
+        print("莫龋 汲沥 颇老: %s\n", getTitleConfigfile());
+        print("炼快 谅钎 颇老: %s\n", getEncountfile());
+        print("炼快 弊缝 颇老: %s\n", getGroupfile());
+        print("脐 扁夯 颇老: %s\n", getEnemyBasefile());
+        print("脐 积己 颇老: %s\n", getEnemyfile());
+        print("沥飞 付过 颇老: %s\n", getMagicfile());
 
 #ifdef _ATTACK_MAGIC
-        print("攻击魔法文件: %s\n", getAttMagicfileName() );
+        print("傍拜 付过 颇老: %s\n", getAttMagicfileName() );
 #endif
 
-        print("宠物技能文件: %s\n", getPetskillfile());
+        print("脐 胶懦 颇老: %s\n", getPetskillfile());
 
 #ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
-        print("职业技能文件: %s\n", getProfession());
+        print("流诀 胶懦 颇老: %s\n", getProfession());
 #endif
 
-        print("物品成份文件: %s\n", getItematomfile());
-        print("猜迷问题文件: %s\n", getQuizfile());
+        print("酒捞袍 己盒 颇老: %s\n", getItematomfile());
+        print("柠令 巩力 颇老: %s\n", getQuizfile());
 #ifdef _GMRELOAD
-				print("G M 配置文件: %s\n", getGMSetfile());
+				print("GM 汲沥 颇老: %s\n", getGMSetfile());
 #endif
-        print("日志记录文件: %s\n",  getLsgenlogfilename() );
-        print("还原资料目录: %s\n", getStoredir());
-        print("NPC 配置目录: %s\n", getNpcdir());
-        print("日志记载文件: %s\n",  getLogdir());
-        print("日志配置文件: %s\n", getLogconffile() );
-        print("GM的指命密码: %s\n", getChatMagicPasswd() );
-        print("使用GM的权限: %d\n", getChatMagicCDKeyCheck() );
+        print("肺弊 扁废 颇老: %s\n",  getLsgenlogfilename() );
+        print("汗备 磊丰 叼泛配府: %s\n", getStoredir());
+        print("NPC 汲沥 叼泛配府: %s\n", getNpcdir());
+        print("肺弊 扁犁 颇老: %s\n",  getLogdir());
+        print("肺弊 汲沥 颇老: %s\n", getLogconffile() );
+        print("GM 疙飞 厚剐锅龋: %s\n", getChatMagicPasswd() );
+        print("GM 鼻茄 荤侩: %d\n", getChatMagicCDKeyCheck() );
 
-        print("NPC 模板数目: %d\n", getNpctemplatenum() );
-        print("NPC 最大数目: %d\n", getNpccreatenum() );
+        print("NPC 袍敲复 俺荐: %d\n", getNpctemplatenum() );
+        print("NPC 弥措 俺荐: %d\n", getNpccreatenum() );
 
-        print("走路时间间隔: %d\n", getWalksendinterval());
-        print("清除所有间隔: %d\n", getCAsendinterval_ms());
-        print("清除目标间隔: %d\n", getCDsendinterval_ms());
-        print("执行一次时间: %d\n", getOnelooptime_ms());
-        print("宠物清除时间: %d\n", getPetdeletetime());
-        print("道具清除时间: %d\n", getItemdeletetime());
+        print("捞悼 矫埃 埃拜: %d\n", getWalksendinterval());
+        print("傈眉 沥府 埃拜: %d\n", getCAsendinterval_ms());
+        print("措惑 沥府 埃拜: %d\n", getCDsendinterval_ms());
+        print("1雀 角青 矫埃: %d\n", getOnelooptime_ms());
+        print("脐 沥府 矫埃: %d\n", getPetdeletetime());
+        print("酒捞袍 沥府 矫埃: %d\n", getItemdeletetime());
 #ifdef _DEL_DROP_GOLD
-				print("石器清除时间: %d\n", getGolddeletetime());
+				print("籍扁 沥府 矫埃: %d\n", getGolddeletetime());
 #endif
-        print("数据保存间隔: %d\n", getCharSavesendinterval());
+        print("单捞磐 历厘 埃拜: %d\n", getCharSavesendinterval());
 
-        print("名片最大数目: %d\n", getAddressbookoffmsgnum());
-        print("读取频率协议: %d\n" ,getProtocolreadfrequency());
+        print("疙窃 弥措 俺荐: %d\n", getAddressbookoffmsgnum());
+        print("佬扁 后档 汲沥: %d\n" ,getProtocolreadfrequency());
 
-        print("连接错误上限: %d\n", getAllowerrornum());
+        print("楷搬 坷幅 惑茄: %d\n", getAllowerrornum());
 #ifdef _GET_BATTLE_EXP
-				print("战斗经验倍数: %d倍\n", getBattleexp() );
+				print("傈捧 版氰摹 硅啦: %d硅\n", getBattleexp() );
 #endif
 #ifdef _UNREG_NEMA
-		print("禁止人物名称: 名字1:%s 名字2:%s 名字3:%s 名字4:%s 名字5:%s\n",getUnregname(0),
+		print("陛瘤 某腐磐 捞抚: 捞抚1:%s 捞抚2:%s 捞抚3:%s 捞抚4:%s 捞抚5:%s\n",getUnregname(0),
 																																	getUnregname(1),
 																																	getUnregname(2),
 																																	getUnregname(3),
@@ -298,9 +298,9 @@ BOOL init(int argc , char** argv , char** env )
 #endif
 
 #ifdef _WATCH_FLOOR
-		print("是否全图观战: %s\n",getWatchFloorCF());
-		if(strcmp(getWatchFloorCF(),"是"))
-			print("允许观战地图: 地图1:%d 地图2:%d 地图3:%d 地图4:%d 地图5:%d\n",getWatchFloor(1),
+		print("傈眉 甘 包傈 咯何: %s\n",getWatchFloorCF());
+		if(strcmp(getWatchFloorCF(),"抗"))
+			print("包傈 倾侩 甘: 甘1:%d 甘2:%d 甘3:%d 甘4:%d 甘5:%d\n",getWatchFloor(1),
 																																		getWatchFloor(2),
 																																		getWatchFloor(3),
 																																		getWatchFloor(4),
@@ -308,9 +308,9 @@ BOOL init(int argc , char** argv , char** env )
 #endif
 
 #ifdef _BATTLE_FLOOR
-		print("是否强制战斗: %s\n",getBattleFloorCF());
-		if(strcmp(getBattleFloorCF(),"是"))
-			print("强制战斗地图: 地图1:%d 地图2:%d 地图3:%d 地图4:%d 地图5:%d\n",getBattleFloor(1),
+		print("碍力 傈捧 咯何: %s\n",getBattleFloorCF());
+		if(strcmp(getBattleFloorCF(),"抗"))
+			print("碍力 傈捧 甘: 甘1:%d 甘2:%d 甘3:%d 甘4:%d 甘5:%d\n",getBattleFloor(1),
 																																		getBattleFloor(2),
 																																		getBattleFloor(3),
 																																		getBattleFloor(4),
@@ -318,14 +318,14 @@ BOOL init(int argc , char** argv , char** env )
 #endif
 
 #ifdef _TRANS_LEVEL_CF
-		print("人物等级转数: %d级\n",getChartrans());
-		print("宠物等级转数: %d级\n",getPettrans());
+		print("某腐磐 傈积 饭骇: %d饭骇\n",getChartrans());
+		print("脐 傈积 饭骇: %d饭骇\n",getPettrans());
 #endif
 
 #ifdef _PLAYERMAXPOINT
-		print("禁止点数上限: %s\n",getPoint());
-		if(strcmp(getPoint(),"是"))
-			print("每转点数上限: 0转:%d 1转:%d 2转:%d 3转:%d 4转:%d 5转:%d 6转:%d\n",getTransPoint(0),
+		print("器牢飘 惑茄 陛瘤: %s\n",getPoint());
+		if(strcmp(getPoint(),"抗"))
+			print("傈积喊 器牢飘 惑茄: 0傈:%d 1傈:%d 2傈:%d 3傈:%d 4傈:%d 5傈:%d 6傈:%d\n",getTransPoint(0),
 																																								getTransPoint(1),
 																																								getTransPoint(2),
 																																								getTransPoint(3),
@@ -335,44 +335,44 @@ BOOL init(int argc , char** argv , char** env )
 #endif
 
 #ifdef _PET_AND_ITEM_UP
-		print("宠物能否捡获: %s\n",getPetup());
-		print("道具能否捡获: %s\n",getItemup());
+		print("脐 裙垫 啊瓷 咯何: %s\n",getPetup());
+		print("酒捞袍 裙垫 啊瓷 咯何: %s\n",getItemup());
 #endif
 #ifdef _SKILLUPPOINT_CF
-		print("每级升级点数: %d\n",getSkup());
+		print("饭骇寸 惑铰 器牢飘: %d\n",getSkup());
 #endif
 
 #ifdef _RIDELEVEL
-		print("骑宠等级相差: %d级\n",getRideLevel());
+		print("呕巴 饭骇 瞒捞: %d饭骇\n",getRideLevel());
 #endif
 #ifdef _REVLEVEL
-		print("还原上限等级: %s级\n",getRevLevel());	
+		print("汗备 惑茄 饭骇: %s饭骇\n",getRevLevel());	
 #endif
 #ifdef _TRANS_LEVEL_CF
-		print("一般等级上限: %d级\n",getYBLevel());	
-		print("最高等级上限: %d级\n",getMaxLevel());	
+		print("老馆 饭骇 惑茄: %d饭骇\n",getYBLevel());	
+		print("弥绊 饭骇 惑茄: %d饭骇\n",getMaxLevel());	
 #endif
 #ifdef _FIX_CHARLOOPS
-	print("恶魔时间倍数: %d倍\n",getCharloops());	
+	print("厩付 矫埃 硅啦: %d硅\n",getCharloops());	
 #endif
 #ifdef _PLAYER_MOVE
 	if(getPMove()==-1)
-		print("顺移消耗点数: 关闭使用\n");	
+		print("鉴埃捞悼 家葛 器牢飘: 荤侩 救 窃\n");	
 	else
-		print("顺移消耗点数: %d点\n",getPMove());	
+		print("鉴埃捞悼 家葛 器牢飘: %d痢\n",getPMove());	
 #endif
 #ifdef _BATTLE_GOLD
-		print("战斗获得金钱: %d\n",getBattleGold());	
+		print("傈捧 裙垫 陛咀: %d\n",getBattleGold());	
 #endif
 #ifdef _ANGEL_TIME
-		print("精灵召唤时间: (%d人/在线人数)分\n",getAngelPlayerTime());	
-		print("精灵召唤人数: %d人\n",getAngelPlayerMun());	
+		print("沥飞 家券 矫埃: (%d疙/立加 牢盔)盒\n",getAngelPlayerTime());	
+		print("沥飞 家券 牢盔: %d疙\n",getAngelPlayerMun());	
 #endif
 #ifdef _RIDEMODE_20
-		print("2.0 骑宠模式: %d\n",getRideMode());	
+		print("2.0 呕巴 葛靛: %d\n",getRideMode());	
 #endif
 #ifdef _FM_POINT_PK
-		print("庄园互抢模式: %s\n",getFmPointPK());	
+		print("厘盔 里呕 葛靛: %s\n",getFmPointPK());	
 #endif
     }
   {	
@@ -380,7 +380,7 @@ BOOL init(int argc , char** argv , char** env )
 		GameServerListName = getGameserverListID();
 		if( GameServerListName == NULL || strlen( GameServerListName) <= 0 )
 			return FALSE;
-		print("\n游戏服务器星球ID: %s\n",  GameServerListName );
+		print("\n霸烙 辑滚 青己ID: %s\n",  GameServerListName );
 	}
 
 	{	//andy_add 2003/05/05 check GameServer Name
@@ -388,245 +388,245 @@ BOOL init(int argc , char** argv , char** env )
 		GameServerName = getGameserverID();
 		if( GameServerName == NULL || strlen( GameServerName) <= 0 )
 			return FALSE;
-		print("\n游戏服务器ID: %s\n",  GameServerName );
+		print("\n霸烙 辑滚ID: %s\n",  GameServerName );
 	}
 
-  print("开始初始化\n" );
+  print("檬扁拳 矫累\n" );
     
 //#define DEBUG1( arg... ) if( getDebuglevel()>1 ){##arg}
-    print( "建立内存空间..." );
+    print( "皋葛府 傍埃 积己..." );
     GOTORETURNFALSEIFFALSE(configmem( getMemoryunit(),getMemoryunitnum() ) );
     GOTORETURNFALSEIFFALSE(memInit());
-		print( "完成\n" );
+		print( "肯丰\n" );
 				
-		print( "始终化连接空间..." );
+		print( "楷搬 傍埃 檬扁拳..." );
     if( !initConnect(getFdnum()) )
         goto MEMEND;
-    print( "完成\n" );
+    print( "肯丰\n" );
     while( 1 ){
-        print( "尝试绑定本地端口 %d... " , getPortnumber());
+        print( "肺拿 器飘 %d 官牢爹 矫档... " , getPortnumber());
         bindedfd = bindlocalhost( getPortnumber() );
         if( bindedfd == -1 )
             sleep( 10 );
         else
             break;
     }
-	print( "完成\n" );
+	print( "肯丰\n" );
 
-	print( "建立对象..." );
+	print( "坷宏璃飘 积己..." );
     if( !initObjectArray( getObjnum()) )
         goto CLOSEBIND;
-	print( "完成\n" );
+	print( "肯丰\n" );
 
-	print( "建立人物..." );
+	print( "某腐磐 积己..." );
 #ifdef _OFFLINE_SYSTEM
     if(!CHAR_initCharArray( getPlayercharnum(), getPetcharnum(),getOtherscharnum()) )
 #else
     if(!CHAR_initCharArray( getFdnum(), getPetcharnum(),getOtherscharnum()) )
 #endif
         goto CLOSEBIND;
-	print( "完成\n" );
+	print( "肯丰\n" );
 	
 #ifdef _SASQL
-	print( "初始化MYSQL数据库..." );
+	print( "MySQL 单捞磐海捞胶 檬扁拳..." );
  	if(sasql_init()==FALSE){
  		goto CLOSEBIND;
   }
 	sasql_online(NULL,NULL,NULL,NULL,NULL,NULL,3);
 #endif
 
-	print( "建立物品...");
+	print( "酒捞袍 积己...");
     if(!ITEM_readItemConfFile( getItemfile()) )
         goto CLOSEBIND;
     if(!ITEM_initExistItemsArray( getItemnum() ) )
         goto CLOSEBIND;
-	print( "完成\n" );
+	print( "肯丰\n" );
 
-	print( "建立战斗..." );
+	print( "傈捧 积己..." );
     if(!BATTLE_initBattleArray( getBattlenum() ) )
         goto CLOSEBIND;
-	print( "完成\n" );
+	print( "肯丰\n" );
 
-	print( "建立功能模块..." );
+	print( "扁瓷 葛碘 积己..." );
     if( !initFunctionTable() )
         goto CLOSEBIND;
-	print( "完成\n" );
+	print( "肯丰\n" );
 
-	print( "初始化邮件..." );
+	print( "皋老 檬扁拳..." );
     if( !PETMAIL_initOffmsgBuffer( getAddressbookoffmsgnum() ))
         goto CLOSEBIND;
-	print( "完成\n" );
+	print( "肯丰\n" );
 
-	print( "读取不可战斗文件..." );
+	print( "傈捧 阂啊 颇老 佬绰 吝..." );
     if( !CHAR_initInvinciblePlace( getInvfile() ) )
         goto CLOSEBIND;
-	print( "完成\n" );
+	print( "肯丰\n" );
 
-	print( "读取显示位置文件..." );
+	print( "钎矫 困摹 颇老 佬绰 吝..." );
     if( !CHAR_initAppearPosition( getAppearfile() ) )
         goto CLOSEBIND;
-	print( "完成\n" );
+	print( "肯丰\n" );
 
-	print( "读取头衔名称文件..." );
+	print( "莫龋 捞抚 颇老 佬绰 吝..." );
     if( !TITLE_initTitleName( getTitleNamefile() ) )
         goto CLOSEBIND;
-	print( "完成\n" );
+	print( "肯丰\n" );
 
-	print( "读取头衔配置文件..." );
+	print( "莫龋 汲沥 颇老 佬绰 吝..." );
     if( !TITLE_initTitleConfig( getTitleConfigfile() ) )
         goto CLOSEBIND;
-	print( "完成\n" );
+	print( "肯丰\n" );
 
-	print( "读取遇敌坐标文件..." );
+	print( "炼快 谅钎 颇老 佬绰 吝..." );
     if( !ENCOUNT_initEncount( getEncountfile() ) )
         goto CLOSEBIND;
-	print( "完成\n" );
+	print( "肯丰\n" );
 
-	print( "读取宠物基本文件..." );
+	print( "脐 扁夯 颇老 佬绰 吝..." );
     if( !ENEMYTEMP_initEnemy( getEnemyBasefile() ) )
         goto CLOSEBIND;
-	print( "完成\n" );
+	print( "肯丰\n" );
 
-	print( "读取创建宠物文件..." );
+	print( "脐 积己 颇老 佬绰 吝..." );
     if( !ENEMY_initEnemy( getEnemyfile() ) )
         goto CLOSEBIND;
-	print( "完成\n" );
+	print( "肯丰\n" );
 
-	print( "读取遇敌组群文件..." );
+	print( "炼快 弊缝 颇老 佬绰 吝..." );
     if( !GROUP_initGroup( getGroupfile() ) )
         goto CLOSEBIND;
-	print( "完成\n" );
-	print( "读取魔法文件..." );
+	print( "肯丰\n" );
+	print( "付过 颇老 佬绰 吝..." );
     if( !MAGIC_initMagic( getMagicfile() ) )
         goto CLOSEBIND;
-	print( "完成\n" );
+	print( "肯丰\n" );
 
 		#ifdef _ATTACK_MAGIC
 
-	print( "读取魔法攻击文件..." );
+	print( "傍拜 付过 颇老 佬绰 吝..." );
 
     if( !ATTMAGIC_initMagic( getAttMagicfileName() ) )
 //		if( !ATTMAGIC_initMagic( getMagicfile() ) )
         goto CLOSEBIND;
 
-	print( "魔法攻击文件 -->%s..." , getAttMagicfileName());
-	print( "完成\n" );
+	print( "傍拜 付过 颇老 -->%s..." , getAttMagicfileName());
+	print( "肯丰\n" );
 
     #endif
  
-	print( "读取宠物技能文件..." );
+	print( "脐 胶懦 颇老 佬绰 吝..." );
     if( !PETSKILL_initPetskill( getPetskillfile() ) )
         goto CLOSEBIND;
-	print( "完成\n" );
+	print( "肯丰\n" );
 
 #ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
-	print( "读取职业技能文件..." );
+	print( "流诀 胶懦 颇老 佬绰 吝..." );
 	if( !PROFESSION_initSkill( getProfession() ) ){
 		goto CLOSEBIND;
 	}
-	print( "完成\n" );
+	print( "肯丰\n" );
 #endif
 
     /* 失奶  丞及笺    毛  戈 */
-	print( "读取物品成份文件..." );
+	print( "酒捞袍 己盒 颇老 佬绰 吝..." );
     if( !ITEM_initItemAtom( getItematomfile()) )
         goto CLOSEBIND;
-	print("完成\n" );
+	print("肯丰\n" );
 
-	print( "初始化料理合成物品..." );
+	print( "夸府 炼钦 酒捞袍 檬扁拳..." );
     if( !ITEM_initItemIngCache() )
         goto CLOSEBIND;
-	print("完成\n" );
+	print("肯丰\n" );
     
-	print( "初始料理合成随机设定..." );
+	print( "夸府 炼钦 罚待 汲沥 檬扁拳..." );
     if( !ITEM_initRandTable() )
         goto CLOSEBIND;
-	print("完成\n" );
+	print("肯丰\n" );
   
-	print( "读取遇敌配置文件..." );
+	print( "炼快 汲沥 颇老 佬绰 吝..." );
     if( !CHAR_initEffectSetting( getEffectfile() ) )
         goto CLOSEBIND;
-	print( "完成\n" );
-	print( "读取猜迷问题文件..." );
+	print( "肯丰\n" );
+	print( "柠令 巩力 颇老 佬绰 吝..." );
     if( !QUIZ_initQuiz( getQuizfile() ) )
         goto CLOSEBIND;
-	print( "完成\n" );
+	print( "肯丰\n" );
 #ifdef _GMRELOAD
-	print( "读取GM配置文件..." );
+	print( "GM 汲沥 颇老 佬绰 吝..." );
 	if ( !LoadGMSet( getGMSetfile() ) )
 		goto CLOSEBIND;
-	print( "完成\n" );
+	print( "肯丰\n" );
 #endif
 
 #ifdef _USER_EXP_CF
-	print( "读取经验配置文件..." );
+	print( "版氰摹 汲沥 颇老 佬绰 吝..." );
 	if ( !LoadEXP( getEXPfile() ) )
 		goto CLOSEBIND;
-	print("最高等级: %d...",getMaxLevel());
-	print("一般等级: %d...",getYBLevel());
-	print( "完成\n" );
+	print("弥绊 饭骇: %d...",getMaxLevel());
+	print("老馆 饭骇: %d...",getYBLevel());
+	print( "肯丰\n" );
 #endif
 
 #ifdef _ANGEL_SUMMON
-	print("读取精灵召唤任务列表文件...");
+	print("沥飞 家券 烙公 格废 颇老 佬绰 吝...");
 	if( !LoadMissionList( ) )
 		goto CLOSEBIND;
-	print("完成\n");
+	print("肯丰\n");
 #endif
 
 #ifdef _JOBDAILY
-	print("读取任务日志文件...");
+	print("烙公 肺弊 颇老 佬绰 吝...");
 	if(!LoadJobdailyfile())
-		print("...失败\n");
+		print("...角菩\n");
 	else
-		print("完成\n");
+		print("肯丰\n");
 #endif
 #ifdef _RIDE_CF
-	print( "读取自定义骑宠文件..." );
+	print( "目胶乓 呕巴 颇老 佬绰 吝..." );
 	if(!CHAR_Ride_CF_init())
-		print("...失败\n");
-	print("完成\n");
+		print("...角菩\n");
+	print("肯丰\n");
 #endif
 #ifdef _FM_LEADER_RIDE
-	print( "读取庄园族长专用骑宠文件..." );
+	print( "厘盔 练厘 傈侩 呕巴 颇老 佬绰 吝..." );
 	if(!CHAR_FmLeaderRide_init())
-		print("...失败\n");
-	print("完成\n");
+		print("...角菩\n");
+	print("肯丰\n");
 #endif
 #ifdef _RE_GM_COMMAND
-	print( "自定义GM命令重命名文件..." );
+	print( "目胶乓 GM 疙飞 捞抚函版 颇老..." );
 	if(!re_gm_command())
-		print("...失败\n");
-	print("完成\n");
+		print("...角菩\n");
+	print("肯丰\n");
 #endif
-	print( "建立地图..." );
+	print( "甘 积己..." );
     if( !MAP_initReadMap( getMaptilefile() , getMapdir() ))
         goto CLOSEBIND;
-	print( "完成\n" );
-	print( "读取NPC文件..." );
+	print( "肯丰\n" );
+	print( "NPC 颇老 佬绰 吝..." );
     if( !NPC_readNPCSettingFiles( getNpcdir(), getNpctemplatenum(),
                                   getNpccreatenum() ) )
         goto CLOSEBIND;
-	print( "完成\n" );
+	print( "肯丰\n" );
 #ifdef _ONLINE_SHOP
-	print( "读取在线商城配置文件..." );
+	print( "柯扼牢 惑痢 汲沥 颇老 佬绰 吝..." );
 	if(!OnlineShop_init())
-		print("...失败\n");
-	print("完成\n");
+		print("...角菩\n");
+	print("肯丰\n");
 #endif
 
 #ifdef _FILTER_TALK
-	print( "读取说话过滤文件..." );
+	print( "措拳 鞘磐 颇老 佬绰 吝..." );
 	if(!ReadFilterTalk())
-		print("...失败\n");
-	print("完成\n");
+		print("...角菩\n");
+	print("肯丰\n");
 #endif
 
-	print( "初始化 NPC 服务器... " );
+	print( "NPC 辑滚 檬扁拳... " );
     if( lssproto_InitServer( lsrpcClientWriteFunc, LSGENWORKINGBUFFER ) < 0 )
         goto CLOSEBIND;
-	print( "完成\n" );
-	print( "尝试连接账号服务器... " );
+	print( "肯丰\n" );
+	print( "拌沥 辑滚 楷搬 矫档... " );
   acfd = connectHost( getAccountservername(), getAccountserverport());
   if(acfd == -1)
      goto CLOSEBIND;
@@ -644,23 +644,23 @@ BOOL init(int argc , char** argv , char** env )
 	}
 */
 
-	print( "完成\n" );
+	print( "肯丰\n" );
   initConnectOne( acfd, NULL , 0 );
   if( !CONNECT_acfdInitRB( acfd)) goto CLOSEAC;
   if( !CONNECT_acfdInitWB( acfd)) goto CLOSEAC;
   CONNECT_setCtype( acfd, AC );
 	
-	print( "初始化 账号 客户端 ... " );
+	print( "拌沥 努扼捞攫飘 檬扁拳... " );
   if( saacproto_InitClient( lsrpcClientWriteFunc,LSGENWORKINGBUFFER, acfd) < 0 )
         goto CLOSEAC;
-	print( "完成\n" );
+	print( "肯丰\n" );
 
-	print( "向账号服务器发送登陆请求... " );
+	print( "拌沥 辑滚肺 肺弊牢 夸没 傈价... " );
     /*  夫弘奶件邰菲毛请允  */
    	{
 			saacproto_ACServerLogin_send(acfd, getGameservername(), getAccountserverpasswd());
     }
-	print( "完成\n" );
+	print( "肯丰\n" );
 
   if( isExistFile( getLsgenlogfilename() ) ){
      lssproto_SetServerLogFiles( getLsgenlogfilename(),
@@ -672,9 +672,9 @@ BOOL init(int argc , char** argv , char** env )
 	print( "Init Bot\n" );
 	memset( &Bot, 0, sizeof(LeaderBot) );
 	print( "Done Bot\n" );
-	print( "初始化已完成\n" );
+	print( "檬扁拳 肯丰\n" );
 
-	print( "开始记寻新的日志 ... " );
+	print( "货 肺弊 扁废 矫累... " );
     {
         char    logconffile[512];
         snprintf( logconffile, sizeof( logconffile), "%s/%s" ,
@@ -682,12 +682,12 @@ BOOL init(int argc , char** argv , char** env )
         if( !initLog( logconffile ) )
             goto CLOSEAC;
     }
-  print( "完成\n" );
+  print( "肯丰\n" );
 #ifdef  _PET_ITEM
 	restoreObjects( getStoredir() );
 #endif
 #ifdef _ITEM_QUITPARTY
-	print( "读取队伍解散物品消失文件..." );
+	print( "颇萍 秦魂 酒捞袍 家戈 颇老 佬绰 吝..." );
   f = fopen( getitemquitparty(), "r" );
 	if( f != NULL ){
 		while( fgets( line, sizeof( line ), f ) ){
@@ -697,14 +697,14 @@ BOOL init(int argc , char** argv , char** env )
 			itemquitparty_num++;
 		}
 		if( fseek( f, 0, SEEK_SET ) == -1 ){
-			print( "物品录找错误\n" );
+			print( "酒捞袍 炼雀 坷幅\n" );
 			fclose(f);
 			goto CLOSEAC;
 		}
 		//配记忆体
 		Disappear_Item = allocateMemory( sizeof(struct tagDisappearItem) * itemquitparty_num );
 		if( Disappear_Item == NULL ){
-			print( "无法分配内存 %d\n", sizeof(struct tagDisappearItem) * itemquitparty_num );
+			print( "皋葛府 且寸 阂啊 %d\n", sizeof(struct tagDisappearItem) * itemquitparty_num );
 			fclose( f );
 			goto CLOSEAC;
 		}
@@ -715,7 +715,7 @@ BOOL init(int argc , char** argv , char** env )
 			if( line[0] == '\n' )continue; 
 			chomp( line );
 			sprintf( Disappear_Item[i].string,"%s",line );
-			print("\n道具编号:%s", Disappear_Item[i].string );
+			print("\n酒捞袍 锅龋:%s", Disappear_Item[i].string );
 			i++;
 		}
 		fclose(f);

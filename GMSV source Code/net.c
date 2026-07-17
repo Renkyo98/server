@@ -2563,7 +2563,7 @@ SINGLETHREAD BOOL netloop_faster(void)
 						//MaxItemNums = getItemnum();
 						memset(buff1, 0, sizeof(buff1));
 						CHAR_getCharOnArrayPercentage(1, &max, &min, &petcnt);
-						sprintf(buff1, "\nî¤?èÌÊ«=%d ??èÌÊ«=%d ?Úª=%d Úªù¡=%d ?Ëì:%d ?Ôà:%d %s",
+						sprintf(buff1, "\n¿Â¶óÀÎ ÀÎ¿ø=%d LuaÀÎ¿ø=%d Æê¼ö=%d ¾ÆÀÌÅÛ»ç¿ë=%d ¿ìÆíÇÔ:%d ÀüÅõ¼ö:%d %s",
 							player_online, luaplayernum, petcnt, total_item_use,
 							PETMAIL_getPetMailTotalnums(),
 							Battle_getTotalBattleNum(), szBuff1);
