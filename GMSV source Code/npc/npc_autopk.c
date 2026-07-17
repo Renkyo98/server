@@ -437,7 +437,7 @@ BOOL AutoPk_GetHistoryStr( char *token, int page )
 	}History;
 	History history[5];
 	
-	char hstime[5],line[255],buf[255];
+	char hstime[5],line[1024],buf[1024];
 	int i;
 	for(i=0;i<page;i++){
 		if(fgets(line, sizeof(line), fp) == NULL)break;
@@ -491,7 +491,7 @@ void AutoPk_SetHistoryStr( void )
 {
 	FILE* fp;
 	char token[1024*16];
-	char line[64];
+	char line[1024];
 	char time[4];
   fp=fopen("./data/autopk/autopkhistory.txt","r");
 	if(fgets(line, sizeof(line), fp) == NULL)
@@ -767,7 +767,7 @@ BOOL AutoPk_GetAwardStr( void )
 		return FALSE;
 	}
 	for(i=0;i<5;i++){
-		char	line[64],buf[32];
+		char	line[1024],buf[32];
 		if (fgets(line, sizeof(line), fp) == NULL)break;
 		chop(line);
 		getStringFromIndexWithDelim(line,"|", 1, buf, sizeof(buf));

@@ -4456,7 +4456,7 @@ int CHAR_FmLeaderRide_init()
 #else
 	for(i=0;i<FMPOINTNUM;i++){
 #endif
-		char line[64], buf[16];
+		char line[1024], buf[16];
 		if (fgets(line, sizeof(line), fp) == NULL)	break;
 		chop(line);
 		getStringFromIndexWithDelim(line,"|", 2, buf, sizeof(buf));

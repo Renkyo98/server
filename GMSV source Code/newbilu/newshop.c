@@ -25,7 +25,7 @@ BOOL OnlineShop_init()
 	}
 	memset( &onlineshop, 0, sizeof( onlineshop ) );
 	memset( &max, 0, sizeof( max ) );
-	char line[64],buf[64];
+	char line[1024],buf[64];
 	while( fgets( line , sizeof( line ), fp ) ){
 		if( line[0] == '#' )continue;
     if( line[0] == '\n' )continue;

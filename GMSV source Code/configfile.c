@@ -1014,7 +1014,7 @@ BOOL LoadGMSet( char* filename )
 		gminfo[i].level = 0;
 	}
 	while(1){
-		char	line[64], cdkey[64], level[64];
+		char	line[1024], cdkey[64], level[64];
 		if (fgets(line, sizeof(line), fp) == NULL)	break;
 		chop(line);
 		if( line[0] == '#' )
@@ -2122,7 +2122,7 @@ BOOL luareadconfigfile( char* data )
 BOOL readconfigfile( char* filename )
 {
     FILE* f=NULL;
-    char linebuf[256];                  /* Óòµæ  ĞÄ  ¸êÌïÓÀ°×Ñë */
+    char linebuf[1024];                  /* Óòµæ  ĞÄ  ¸êÌïÓÀ°×Ñë */
     int linenum=0;                      /* µæĞÑÃ«ĞÑÒüÔÂ */
     char    realopenfilename[256];      /*    ¶Ë±åopen ÔÊÔÂ°×ÑëÄÌ»ï  */
 
@@ -2230,7 +2230,7 @@ BOOL readconfigfile( char* filename )
 BOOL readDesKey( char* filename )
 {
     FILE* f=NULL;
-    char linebuf[256];                  /* Óòµæ  ĞÄ  ¸êÌïÓÀ°×Ñë */
+    char linebuf[1024];                  /* Óòµæ  ĞÄ  ¸êÌïÓÀ°×Ñë */
     int linenum=0;                      /* µæĞÑÃ«ĞÑÒüÔÂ */
 
 
@@ -2281,7 +2281,7 @@ BOOL readDesKey( char* filename )
 BOOL readDesRand( char* filename )
 {
     FILE* f=NULL;
-    char linebuf[256];                  /* Óòµæ  ĞÄ  ¸êÌïÓÀ°×Ñë */
+    char linebuf[1024];                  /* Óòµæ  ĞÄ  ¸êÌïÓÀ°×Ñë */
     int linenum=0;                      /* µæĞÑÃ«ĞÑÒüÔÂ */
 
 
@@ -2644,7 +2644,7 @@ BOOL LoadEXP( char* filename )
 	}
 
 	while(1){
-		char	line[64], exp[64];
+		char	line[1024], exp[64];
 		if (fgets(line, sizeof(line), fp) == NULL)	break;
 		chop(line);
 

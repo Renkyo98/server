@@ -1110,7 +1110,7 @@ static char* ITEM_checkString( char* string )
 BOOL ITEM_readItemConfFile( char* filename )
 {
 	FILE*	f;
-	char	line[512];
+	char	line[4096];
 	char	token[64];
 	int		linenum=0;
 	int		itemnum=0;//道具有效数

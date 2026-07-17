@@ -4040,7 +4040,7 @@ int need_item_eneny_init()
 		return FALSE;
 	}
 	while(1){
-		char line[128], buf[16];
+		char line[1024], buf[16];
 		if (fgets(line, sizeof(line), fp) == NULL)	break;
 		chop(line);
 		if(line[0]=='#')continue;
