@@ -127,7 +127,7 @@ void charLoadCallback( int ti , int auth , char *c0, char* c1 ,
 			saacproto_ACCharLoad_send( ti , FAILED , "locked" , mesgid );
 #endif
 			DeleteMemLock(getHash(id) & 0xff, id, &process); // 如果AP无锁则AC解锁
-			log("\n (%s) AC同一星系重覆登入，踢人!! ", id );
+			log("\n (%s) AC 悼老 辑滚 吝汗 肺弊牢, 碍力 硼厘!! ", id );
 			saacproto_ACKick_recv( ti, id, 1, -1);	//踢人
 			
 			checkGSUCheck(id);
@@ -136,7 +136,7 @@ void charLoadCallback( int ti , int auth , char *c0, char* c1 ,
 		
     charindex = getCharIndexByName( id , charname );
 #ifdef _NewSave
-    //log("\n档案装载序号:%d 账号:%s 名字:%s\n", charindex, id, charname);
+    //log("\n某腐磐 肺靛 鉴锅:%d 拌沥:%s 捞抚:%s\n", charindex, id, charname);
 #endif
 		
     if( charindex < 0 ){
@@ -257,13 +257,13 @@ int charSave( int ti ,  char *id ,
 		if( (ret = lockUser(  getGSName(ti), id , "0" , 0 , result , sizeof( result ) ,
 			retdata , sizeof( retdata ) , "0" , "0")) < 0 ){
 #endif
-			log( "解锁:%s 失败!!\n", id);
+			log( "泪陛秦力:%s 角菩!!\n", id);
 		}
 	}
 	// Nuke *1 add escape
 	if( makeSaveCharString( savebuf , sizeof( savebuf ) ,
 		charname, opt , charinfo )<0){
-		log("\n AC存档:太长  ");
+		log("\n AC 历厘:呈公 辫  ");
 		saacproto_ACCharSave_send( ti , FAILED , "too long" , mesgid );
 		// Spock fixed 2000/11/1
 		return ret;
@@ -286,7 +286,7 @@ int charSave( int ti ,  char *id ,
 		}
 	}
 	
-	log( "账号:[%s] 人物:[%s]\n", id, charname );
+	log( "拌沥:[%s] 某腐磐:[%s]\n", id, charname );
 	if( saveCharOne( id , charindex , savebuf ) < 0 ){
 		log("\n ACCharSave:disk I/O error or a bug  ");
 		saacproto_ACCharSave_send( ti , FAILED , "disk I/O error or a bug", mesgid );
@@ -304,19 +304,19 @@ void  charListCallback( int ti , int auth , char *c0 , char *c1 ,
 	char *id = c0;
 	int mesgid = i0;
 	
-	//log(" 档案列表回溯:%s:%d \n", id, auth);
+	//log(" 某腐磐 格废 费归:%s:%d \n", id, auth);
 	
 	if( auth != 0 ){
 		char data[100];
 		snprintf( data, sizeof( data ) , "%d" , auth );
-		saacproto_ACCharList_send( ti , FAILED , "你的账号暂时无法登陆！" , mesgid );
+		saacproto_ACCharList_send( ti , FAILED , "秦寸 拌沥篮 老矫利栏肺 肺弊牢且 荐 绝嚼聪促！" , mesgid );
 		total_ng_charlist++;
 		return;
 	}
 	// 取消下列 unlock 动作
 	if(charlistflg == 0){
     if( isLocked( id ) ){
-			saacproto_ACCharList_send( ti , FAILED , "《 登陆游戏失败，请尝试重新登陆 》" , mesgid );
+			saacproto_ACCharList_send( ti , FAILED , "《 霸烙 肺弊牢 角菩, 促矫 肺弊牢秦 林技夸 》" , mesgid );
 			saacproto_ACKick_recv( ti, id, 1, -1);
 			checkGSUCheck( id );
 			total_ng_charlist++;
@@ -340,7 +340,7 @@ void  charListCallback( int ti , int auth , char *c0 , char *c1 ,
 						fclose( fp_old);
 						rename( fn_old, fn_new); // 搬移
 						//filecopy( fn_old, fn_new); // 复制
-						log(" 移档_%s ", fn_new);
+						log(" 某腐磐捞悼_%s ", fn_new);
 					}
 				}
 				else {
@@ -358,7 +358,7 @@ void  charListCallback( int ti , int auth , char *c0 , char *c1 ,
 					fclose( fp_old);
 					rename( fn_old, fn_new); // 搬移
 					//filecopy( fn_old, fn_new); // 复制
-					log(" 移档_%s ", fn_new);
+					log(" 某腐磐捞悼_%s ", fn_new);
 				}
 			}
 			else {
@@ -376,7 +376,7 @@ void  charListCallback( int ti , int auth , char *c0 , char *c1 ,
 					fclose( fp_old);
 					rename( fn_old, fn_new); // 搬移
 					//filecopy( fn_old, fn_new); // 复制
-					log(" 移档_%s ", fn_new);
+					log(" 某腐磐捞悼_%s ", fn_new);
 				}
 			}
 			else {
@@ -416,7 +416,7 @@ void charDeleteCallback( int ti , int auth ,
 			int process=atoi(c3);
 			saacproto_ACCharDelete_send( ti , FAILED , "locked" , mesgid );
 			DeleteMemLock(getHash(id) & 0xff, id, &process); // 如果AP无锁则AC解锁
-			log("\n (%s) AC同一星系重覆登入，踢人!! ", id );
+			log("\n (%s) AC 悼老 辑滚 吝汗 肺弊牢, 碍力 硼厘!! ", id );
 			saacproto_ACKick_recv( ti, id, 1, -1);	//踢人
 			
 			checkGSUCheck(id);
@@ -448,13 +448,13 @@ void charDeleteCallback( int ti , int auth ,
 				if (ChangeFMLeader(index, fmname, fmindex) >= 0)
 				{
 					if (ACDelFM(index, fmname, fmindex) >= 0)
-						log("删除家族成员:%d 家族名:%s 家族索引:%d 人物:%s, 账号:%s, 家族人物索引:%d\n",
+						log("啊巩盔 昏力:%d 啊巩疙:%s 啊巩牢郸胶:%d 某腐磐:%s, 拌沥:%s, 啊巩某腐磐牢郸胶:%d\n",
 						index, fmname, fmindex, charname, id, fmcharindex);
 				}
 				log("ChangeFMLeader_3 index:%d fmname:%s fmindex:%d\n", index, fmname, fmindex);
 #else
 				if (ACDelFM(index, fmname, fmindex) >= 0)
-					log("删除家族成员:%d 家族名:%s 家族索引:%d 人物:%s, 账号:%s, 家族人物索引:%d\n",
+					log("啊巩盔 昏力:%d 啊巩疙:%s 啊巩牢郸胶:%d 某腐磐:%s, 拌沥:%s, 啊巩某腐磐牢郸胶:%d\n",
 					index, fmname, fmindex, charname, id, fmcharindex);
 #endif
 			}
@@ -462,11 +462,11 @@ void charDeleteCallback( int ti , int auth ,
 			{
 #ifdef _FMVER21
 				if (ACMemberLeaveFM(index, fmname, fmindex, charname, 0, 0, fmcharindex) >= 0)
-					log("ACMemberLeaveFM index:%d 家族名:%s 家族索引:%d 人物:%s, 账号:%s, 家族人物索引:%d\n",
+					log("ACMemberLeaveFM 牢郸胶:%d 啊巩疙:%s 啊巩牢郸胶:%d 某腐磐:%s, 拌沥:%s, 啊巩某腐磐牢郸胶:%d\n",
 					index, fmname, fmindex, charname, id, fmcharindex);
 #else
 				if (ACMemberLeaveFM(index, fmname, fmindex, charname, 0, fmcharindex) >= 0)
-					log("ACMemberLeaveFM index:%d 家族名:%s 家族索引:%d 人物:%s, 账号:%s, 家族人物索引:%d\n",
+					log("ACMemberLeaveFM 牢郸胶:%d 啊巩疙:%s 啊巩牢郸胶:%d 某腐磐:%s, 拌沥:%s, 啊巩某腐磐牢郸胶:%d\n",
 					index, fmname, fmindex, charname, id, fmcharindex);
 #endif
 			}
@@ -483,7 +483,7 @@ void charDeleteCallback( int ti , int auth ,
 		now->tm_hour , now->tm_min , now->tm_sec ,
 		id , charname , charindex );
 	// Spock end
-	USERLOG( id , "账号删除: 成功\n" );
+	USERLOG( id , "拌沥 昏力: 己傍\n" );
 	saacproto_ACCharDelete_send( ti ,  SUCCESSFUL , "ok" , mesgid);
 }
 
@@ -760,7 +760,7 @@ int saveCharOne( char *id , int num , char *input )
 	fprintf( fp , "%s" , input );
 	fclose(fp);
 
-	log( "写入 %s 档案文件:%s\n",id , fn );
+	log( "%s 某腐磐 颇老 静扁:%s\n",id , fn );
 	chmod(fn,0777);
 	return 0;
 	
@@ -900,7 +900,7 @@ int lockUser(  char *gmsvname , char *id , char *passwd , int lock ,
 		if (isLocked(id)) {
 			snprintf( result , resultlen, FAILED );
 			snprintf( retdata , retdatalen, "already locked" );
-			log( "写入内存信息: 用户:%x/%s 已经同意锁定 !!\n", getHash(id), id);
+			log( "皋葛府 沥焊 静扁: 荤侩磊:%x/%s 泪陛 悼狼凳 !!\n", getHash(id), id);
 			return -1;
 		} else {
 #ifdef _LOCK_ADD_NAME
@@ -914,7 +914,7 @@ int lockUser(  char *gmsvname , char *id , char *passwd , int lock ,
 		}
 	} else {
 		if( !isLocked( id) ) {
-			log( "删除内存信息: 用户:%x/%s 没有锁定!!\n", getHash(id), id);
+			log( "皋葛府 沥焊 昏力: 荤侩磊:%x/%s 泪陛 救 凳!!\n", getHash(id), id);
 		}
 		if( DeleteMemLock( getHash(id) & 0xff, id, &ret) ) {
 			snprintf( result , resultlen, SUCCESSFUL );
@@ -922,9 +922,9 @@ int lockUser(  char *gmsvname , char *id , char *passwd , int lock ,
 			return ret;
 		} else {
 			snprintf( result , resultlen, FAILED );
-			snprintf( retdata , retdatalen, "不能移除锁定" );
+			snprintf( retdata , retdatalen, "泪陛 秦力 阂啊" );
 			
-			log( "不能解锁 %x:%s !\n", getHash(id), id);
+			log( "%x:%s 泪陛秦力 阂啊!\n", getHash(id), id);
 			return ret;
 		}
 	}
@@ -977,7 +977,7 @@ int InsertCharPoolItem( char *id , char *input, int sizes)
 	if( fp == NULL ) {
 		fp= fopen( fn , "w" );
 		if( fp == NULL ) {
-			log( "保存 %s 错误.\n", fn);
+			log( "%s 历厘 坷幅.\n", fn);
 			return -1;
 		}
 	}
@@ -985,7 +985,7 @@ int InsertCharPoolItem( char *id , char *input, int sizes)
 	fprintf( fp , "%s" , input );
 	fclose(fp);
 	
-	log( "添加 %s 物品仓库文件:%s\n", id , fn );
+	log( "%s 酒捞袍 芒绊 颇老 眠啊:%s\n", id , fn );
 	return sizes;
 }
 
@@ -1000,14 +1000,14 @@ int saveCharPoolItem( char *id , char *input, int sizes)
 	
 	fp= fopen( fn , "w" );
 	if( fp == NULL ) {
-		log( "保存 %s 错误.\n", fn);
+		log( "%s 历厘 坷幅.\n", fn);
 		return -1;
 	}
 	
 	fprintf( fp , "%s" , input );
 	fclose(fp);
 	
-	log( "写入 %s 道具档案文件:%s\n", id , fn );
+	log( "%s 酒捞袍 某腐磐颇老 静扁:%s\n", id , fn );
 	return sizes;
 }
 
@@ -1049,7 +1049,7 @@ int checkCharPoolItem( char *id)
 	fp = fopen( fn , "r" );
 	if( fp == NULL ) {
 		if( saveCharPoolItem( id , "", 0) < 0 ){
-			log("\n 无法建立档案:%s 物品仓库文件!!", id);
+			log("\n 颇老 积己 阂啊:%s 酒捞袍 芒绊 颇老!!", id);
 			return -1;
 		}
 	}else{
@@ -1092,7 +1092,7 @@ int InsertCharPoolPet( char *id , char *input, int sizes)
 	if( fp == NULL ) {
 		fp= fopen( fn , "w" );
 		if( fp == NULL ) {
-			log( "保存 %s 错误.\n", fn);
+			log( "%s 历厘 坷幅.\n", fn);
 			return -1;
 		}
 	}
@@ -1100,7 +1100,7 @@ int InsertCharPoolPet( char *id , char *input, int sizes)
 	fprintf( fp , "%s" , input );
 	fclose(fp);
 	
-	log( "添加 %s 宠物仓库文件:%s\n", id , fn );
+	log( "%s 脐 芒绊 颇老 眠啊:%s\n", id , fn );
 	return sizes;
 }
 
@@ -1115,14 +1115,14 @@ int saveCharPoolPet( char *id , char *input, int sizes)
 	
 	fp= fopen( fn , "w" );
 	if( fp == NULL ) {
-		log( "保存 %s 错误.\n", fn);
+		log( "%s 历厘 坷幅.\n", fn);
 		return -1;
 	}
 	
 	fprintf( fp , "%s" , input );
 	fclose(fp);
 	
-	log( "写入 %s 宠物档案文件:%s\n", id , fn );
+	log( "%s 脐 某腐磐颇老 静扁:%s\n", id , fn );
 	return sizes;
 }
 
@@ -1165,7 +1165,7 @@ int checkCharPoolPet( char *id)
 	fp = fopen( fn , "r" );
 	if( fp == NULL ) {
 		if( saveCharPoolPet( id , "", 0) < 0 ){
-			log("\n 无法建立档案:%s 宠物仓库文件!!", id);
+			log("\n 颇老 积己 阂啊:%s 脐 芒绊 颇老!!", id);
 			return -1;
 		}
 	}else{

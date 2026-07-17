@@ -51,45 +51,45 @@ static int readSqlConfig( char *path )
 
         if( strcmp( command , "sql_IP" ) == 0 ){
             snprintf( config.sql_IP , sizeof( config.sql_IP) , param );
-            printf("\n数据库地址：  %s",config.sql_IP);
+            printf("\n单捞磐海捞胶 林家：  %s",config.sql_IP);
         } else if( strcmp( command , "sql_Port" ) == 0 ){
         		config.sql_Port = atoi( param );
             snprintf( config.sql_Port1 , sizeof( config.sql_Port1) , param );
-				  	printf("\n数据库端口：  %d",config.sql_Port);
+				  	printf("\n单捞磐海捞胶 器飘：  %d",config.sql_Port);
         } else if( strcmp( command , "sql_ID" ) == 0 ){
             snprintf( config.sql_ID , sizeof( config.sql_ID) , param );
-						printf("\n数据库用户：  %s",config.sql_ID);
+						printf("\n单捞磐海捞胶 荤侩磊：  %s",config.sql_ID);
         } else if( strcmp( command , "sql_PS" ) == 0 ){
             snprintf( config.sql_PS , sizeof( config.sql_PS) , param );
-						printf("\n数据库密码：  %s",config.sql_PS);
+						printf("\n单捞磐海捞胶 厚剐锅龋：  %s",config.sql_PS);
         } else if( strcmp( command , "sql_DataBase" ) == 0 ){
             snprintf( config.sql_DataBase , sizeof( config.sql_DataBase) , param );
-						printf("\n登陆数据库名：%s",config.sql_DataBase);
+						printf("\n肺弊牢 单捞磐海捞胶疙：%s",config.sql_DataBase);
         } else if( strcmp( command , "sql_Table" ) == 0 ){
             snprintf( config.sql_Table , sizeof( config.sql_Table) , param );
-				  	printf("\n用户信息表名：  %s",config.sql_Table);
+				  	printf("\n荤侩磊 沥焊 抛捞喉疙：  %s",config.sql_Table);
 				} else if( strcmp( command , "sql_LOCK" ) == 0 ){
             snprintf( config.sql_LOCK , sizeof( config.sql_LOCK) , param );
-				  	printf("\n用户锁定表名：  %s",config.sql_LOCK);
+				  	printf("\n荤侩磊 泪陛 抛捞喉疙：  %s",config.sql_LOCK);
 				} else if( strcmp( command , "sql_NAME" ) == 0 ){
             snprintf( config.sql_NAME , sizeof( config.sql_NAME) , param );
-				  	printf("\n账号字段名称：  %s",config.sql_NAME);
+				  	printf("\n拌沥 鞘靛疙：  %s",config.sql_NAME);
 				} else if( strcmp( command , "sql_PASS" ) == 0 ){
             snprintf( config.sql_PASS , sizeof( config.sql_PASS) , param );
-				  	printf("\n密码字段名称：  %s",config.sql_PASS);
+				  	printf("\n厚剐锅龋 鞘靛疙：  %s",config.sql_PASS);
 				} else if( strcmp( command , "openbackground" ) == 0 ){
         		config.openbackground = atoi( param );
         		if(config.openbackground == 1){
-        			printf("\n后台功能：    YES");
+        			printf("\n归坷乔胶 扁瓷：    YES");
         		}else{
-        			printf("\n后台功能：    NO");
+        			printf("\n归坷乔胶 扁瓷：    NO");
         		}
 				} else if( strcmp( command , "AutoReg" ) == 0 ){
         		config.AutoReg = atoi( param );
         		if(config.AutoReg){
-        			printf("\n开放自动注册：YES");
+        			printf("\n磊悼啊涝 俺规：YES");
         		}else{
-        			printf("\n开放自动注册：NO");
+        			printf("\n磊悼啊涝 俺规：NO");
         		}
     		}
     }
@@ -99,7 +99,7 @@ static int readSqlConfig( char *path )
 
 BOOL sasql_init( void ){
 		if( (mysql_init(&mysql) == NULL) & readSqlConfig("acserv.cf")){
-			  printf("\n数据库初始化失败！");
+			  printf("\n单捞磐海捞胶 檬扁拳 角菩！");
 			  exit(1);
 		    return FALSE;
 		}
@@ -114,12 +114,12 @@ BOOL sasql_init( void ){
 	          NULL,
 	          0 ) )
 		{
-			printf("\n数据库连接失败！\n");
+			printf("\n单捞磐海捞胶 楷搬 角菩！\n");
 			return FALSE;
 		}
 
 		mysql_query(&mysql,"set names 'gbk'");
-  	printf("\n数据库连接成功！\n");
+  	printf("\n单捞磐海捞胶 楷搬 己傍！\n");
   	return TRUE;
 }
 
@@ -148,7 +148,7 @@ BOOL sasql_ckeckStrint( char *str )
 int sasql_query(char *nm, char *pas){
 	char sqlstr[1024];
 	if(sasql_ckeckStrint(nm) == FALSE){
-		printf("异常字符的用户名%s\n",nm);
+		printf("厚沥惑 巩磊啊 器窃等 荤侩磊疙%s\n",nm);
 	  return 3;
 	}
 	//sprintf(sqlstr,"select `%s`, `salt` from %s where %s=BINARY'%s'",config.sql_PASS, config.sql_Table,config.sql_NAME,nm);
@@ -169,21 +169,21 @@ int sasql_query(char *nm, char *pas){
 				if(strcmp(MD5String(pas),token) == 0){
 	  			return 1;
 			  }else{
-			  	printf("用户%s密码错误！\n",nm);
+			  	printf("荤侩磊%s 厚剐锅龋 坷幅！\n",nm);
 			  	return 2;
 			  }
 			}else if(strlen(pas)>16 && strlen(mysql_row[0]) <= 16){
 				if(strcmp(MD5String(token),pas) == 0){
 	  			return 1;
 			  }else{
-			  	printf("用户%s密码错误！\n",nm);
+			  	printf("荤侩磊%s 厚剐锅龋 坷幅！\n",nm);
 			  	return 2;
 			  }
 			}else{
 				if(strcmp(pas,token) == 0){
 	  			return 1;
 			  }else{
-			  	printf("用户%s密码错误！\n",nm);
+			  	printf("荤侩磊%s 厚剐锅龋 坷幅！\n",nm);
 			  	return 2;
 			  }
 			}
@@ -191,20 +191,20 @@ int sasql_query(char *nm, char *pas){
 	  	if(strcmp(pas,token) == 0){
 	  		return 1;
 		  }else{
-		  	printf("用户%s密码错误！\n",nm);
+		  	printf("荤侩磊%s 厚剐锅龋 坷幅！\n",nm);
 		  	return 2;
 		  }
 #endif
 	  }else{
-	  	printf("用户%s未注册！\n",nm);
+	  	printf("荤侩磊%s 固殿废！\n",nm);
 	  	return 3;
 	  }
 	}else{
-		printf("\n数据库查找失败！\n");
-		printf("重新连接数据库...");
+		printf("\n单捞磐海捞胶 炼雀 角菩！\n");
+		printf("单捞磐海捞胶 犁楷搬 吝...");
 		sasql_close();
 		sasql_init();
-		printf("完成\n");
+		printf("肯丰\n");
 		return 0;
 	}
 }
@@ -216,7 +216,7 @@ BOOL sasql_online( char *ID, char *NM, char *IP, char *MAC1,char *MAC2,char *MAC
 	if(config.openbackground == 1){
 		if(ID!=NULL){
 			if(sasql_ckeckStrint(ID) == FALSE){
-				printf("异常字符的用户名%s\n",ID);
+				printf("厚沥惑 巩磊啊 器窃等 荤侩磊疙%s\n",ID);
 			  return TRUE;
 			}
 		}
@@ -233,7 +233,7 @@ BOOL sasql_online( char *ID, char *NM, char *IP, char *MAC1,char *MAC2,char *MAC
 		if(!sasql_mysql_query(sqlstr)){
 			return TRUE;
 		}
-		printf("\n更新数据库失败%s\n", sqlstr);
+		printf("\n单捞磐海捞胶 盎脚 角菩%s\n", sqlstr);
 	}
 	return TRUE;
 }
@@ -246,11 +246,11 @@ BOOL sasql_register(char *id, char *ps)
 	if(config.AutoReg!=1)return FALSE;
 		
 	if(sasql_ckeckStrint(id) == FALSE){
-		printf("异常字符的用户名%s\n",id);
+		printf("厚沥惑 巩磊啊 器窃等 荤侩磊疙%s\n",id);
 		 return FALSE;
 	}	
 	if(sasql_ckeckStrint(ps) == FALSE){
-		printf("异常字符的游戏密码%s\n",ps);
+		printf("厚沥惑 巩磊啊 器窃等 霸烙 厚剐锅龋%s\n",ps);
 		 return FALSE;
 	}
 		
@@ -262,10 +262,10 @@ BOOL sasql_register(char *id, char *ps)
 #endif
 
 	if(!sasql_mysql_query(sqlstr)){
-		printf("\n新用户注册成功！\n");
+		printf("\n脚痹 荤侩磊 殿废 己傍！\n");
 		return TRUE;
 	}
-	printf("\n新用户注册失败！\n");
+	printf("\n脚痹 荤侩磊 殿废 角菩！\n");
 	return FALSE;
 }
 #endif
@@ -274,7 +274,7 @@ BOOL sasql_register(char *id, char *ps)
 BOOL sasql_chehk_lock( char *idip )
 {
 	if(sasql_ckeckStrint(idip) == FALSE){
-		printf("异常字符%s\n",idip);
+		printf("厚沥惑 巩磊%s\n",idip);
 		 return FALSE;
 	}	
 	char sqlstr[256];
@@ -295,13 +295,13 @@ BOOL sasql_chehk_lock( char *idip )
 BOOL sasql_add_lock( char *idip )
 {
 	if(sasql_ckeckStrint(idip) == FALSE){
-		printf("异常字符%s\n",idip);
+		printf("厚沥惑 巩磊%s\n",idip);
 		 return FALSE;
 	}	
 	char sqlstr[256];
 	sprintf(sqlstr,"INSERT INTO `%s` (Name) VALUES (BINARY'%s')", config.sql_LOCK, idip);
 	if(!sasql_mysql_query(sqlstr)){
-			printf("\n添加锁定%s成功！\n",idip);
+			printf("\n泪陛 眠啊%s 己傍！\n",idip);
 			return TRUE;
 	}
 	return FALSE;
@@ -310,13 +310,13 @@ BOOL sasql_add_lock( char *idip )
 BOOL sasql_del_lock( char *idip )
 {
 	if(sasql_ckeckStrint(idip) == FALSE){
-		printf("异常字符%s\n",idip);
+		printf("厚沥惑 巩磊%s\n",idip);
 		return FALSE;
 	}	
 	char sqlstr[256];
 	sprintf(sqlstr,"delete from `%s` where Name=BINARY'%s'", config.sql_LOCK, idip);
 	if(!sasql_mysql_query(sqlstr)){
-		printf("\n解除锁定%s成功！\n",idip);
+		printf("\n泪陛 秦力%s 己傍！\n",idip);
 		return TRUE;
 	}
 	return FALSE;
@@ -326,12 +326,12 @@ BOOL sasql_del_lock( char *idip )
 char *sasql_ItemPetLocked( char *id, char *safepasswd )
 {
 	if(sasql_ckeckStrint(id) == FALSE){
-		printf("异常字符%s\n",id);
-		return "无法解锁，请与本服管理员联系！";
+		printf("厚沥惑 巩磊%s\n",id);
+		return "泪陛 秦力 阂啊, 辑滚 包府磊俊霸 巩狼窍技夸！";
 	}	
 	if(sasql_ckeckStrint(safepasswd) == FALSE){
-		printf("异常字符%s\n",safepasswd);
-		return "无法解锁，请与本服管理员联系！";
+		printf("厚沥惑 巩磊%s\n",safepasswd);
+		return "泪陛 秦力 阂啊, 辑滚 包府磊俊霸 巩狼窍技夸！";
 	}	
 	char sqlstr[256];
 	sprintf(sqlstr,"select SafePasswd from `%s` where %s=BINARY'%s'", config.sql_Table, config.sql_NAME, id);
@@ -346,27 +346,27 @@ char *sasql_ItemPetLocked( char *id, char *safepasswd )
 	  	mysql_row=mysql_fetch_row(mysql_result);
 	  	if( mysql_row[0] != NULL && strlen(mysql_row[0])>0){
 		  	if(strcmp(safepasswd, mysql_row[0])==0){
-		  		return "安全锁已经成功解锁！";
+		  		return "焊救 泪陛捞 己傍利栏肺 秦力登菌嚼聪促！";
 		  	}else{
-		  		return "密码错误，安全锁无法解开！";
+		  		return "厚剐锅龋 坷幅, 焊救 泪陛阑 秦力且 荐 绝嚼聪促！";
 		  	}
 		  }else{
-		  	return "您还未设置安全锁解锁密码，为了确保安全，请输入一次六位以上密码做为安全锁密码并劳劳记住！";
+		  	return "焊救 泪陛 秦力 厚剐锅龋啊 汲沥登绢 乐瘤 臼嚼聪促. 救傈阑 困秦 6磊府 捞惑狼 厚剐锅龋甫 涝仿窍绊 馆靛矫 扁撅秦滴技夸！";
 		  }
 		}
 	}
-	return "无法解锁，请与本服管理员联系！";
+	return "泪陛 秦力 阂啊, 辑滚 包府磊俊霸 巩狼窍技夸！";
 }
 
 char *sasql_ItemPetLocked_Passwd( char *id, char *safepasswd )
 {
 	if(sasql_ckeckStrint(id) == FALSE){
-		printf("异常字符%s\n",id);
-		return "安全密码修改失败，请与本服管理员联系！";
+		printf("厚沥惑 巩磊%s\n",id);
+		return "焊救 厚剐锅龋 函版 角菩, 辑滚 包府磊俊霸 巩狼窍技夸！";
 	}
 	if(sasql_ckeckStrint(safepasswd) == FALSE){
-		printf("异常字符%s\n",safepasswd);
-		return "安全密码修改失败，请与本服管理员联系！";
+		printf("厚沥惑 巩磊%s\n",safepasswd);
+		return "焊救 厚剐锅龋 函版 角菩, 辑滚 包府磊俊霸 巩狼窍技夸！";
 	}
 	char sqlstr[256];
 	sprintf(sqlstr,"select SafePasswd from %s where %s=BINARY'%s'", config.sql_Table,config.sql_NAME, id);
@@ -379,37 +379,37 @@ char *sasql_ItemPetLocked_Passwd( char *id, char *safepasswd )
 	  if(num_row>0){
 	  	mysql_row=mysql_fetch_row(mysql_result);
 	  	if( mysql_row[0] != NULL && strlen(mysql_row[0])>0){
-		  	return "安全密码已存在,无法再进行修改！";
+		  	return "焊救 厚剐锅龋啊 捞固 粮犁窍咯 促矫 函版且 荐 绝嚼聪促！";
 			}else{
 				char sqlstr[256];
 				sprintf(sqlstr,"update %s set SafePasswd=BINARY'%s' where %s=BINARY'%s'", config.sql_Table, safepasswd, config.sql_NAME, id);	
 				
 				if(!sasql_mysql_query(sqlstr)){
-					return "安全密码修改成功，请妥善保管你的安全密码！";
+					return "焊救 厚剐锅龋 函版 己傍, 焊救 厚剐锅龋甫 肋 焊包窍技夸！";
 				}
-				return "安全密码修改失败，请与本服管理员联系！";
+				return "焊救 厚剐锅龋 函版 角菩, 辑滚 包府磊俊霸 巩狼窍技夸！";
 		  }
 	  }else{
-	  	return "账号不存在安全密码已存在！";
+	  	return "拌沥俊 捞固 焊救 厚剐锅龋啊 粮犁钦聪促！";
 	  }
 	}else{
-		printf("\n数据库查找失败！\n");
-		printf("重新连接数据库...");
+		printf("\n单捞磐海捞胶 炼雀 角菩！\n");
+		printf("单捞磐海捞胶 犁楷搬 吝...");
 		sasql_close();
 		sasql_init();
-		printf("完成\n");
-		return "安全密码修改失败，请与本服管理员联系！";
+		printf("肯丰\n");
+		return "焊救 厚剐锅龋 函版 角菩, 辑滚 包府磊俊霸 巩狼窍技夸！";
 	}
 }
 
 int sasql_ItemPetLocked_Char( char *id, char *safepasswd )
 {
 	if(sasql_ckeckStrint(id) == FALSE){
-		printf("异常字符%s\n",id);
+		printf("厚沥惑 巩磊%s\n",id);
 		return 0;
 	}	
 	if(sasql_ckeckStrint(safepasswd) == FALSE){
-		printf("异常字符%s\n",safepasswd);
+		printf("厚沥惑 巩磊%s\n",safepasswd);
 		return 0;
 	}	
 	char sqlstr[256];
@@ -426,22 +426,22 @@ int sasql_ItemPetLocked_Char( char *id, char *safepasswd )
 		  	if(strcmp(safepasswd,mysql_row[0]) == 0){
 		  		return 1;
 			  }else{
-			  	printf("用户%s安全密码错误！\n",id);
+			  	printf("荤侩磊%s 焊救 厚剐锅龋 坷幅！\n",id);
 			  	return -1;
 			  }
 			}else{
 		  	return 0;
 		  }
 	  }else{
-	  	printf("用户%s未注册！\n",id);
+	  	printf("荤侩磊%s 固殿废！\n",id);
 	  	return -1;
 	  }
 	}else{
-		printf("\n数据库查找失败！\n");
-		printf("重新连接数据库...");
+		printf("\n单捞磐海捞胶 炼雀 角菩！\n");
+		printf("单捞磐海捞胶 犁楷搬 吝...");
 		sasql_close();
 		sasql_init();
-		printf("完成\n");
+		printf("肯丰\n");
 		return -1;
 	}
 }
@@ -468,7 +468,7 @@ int sasql_onlinenum( char *MAC )
 BOOL sasql_add_FormulateAutoPk( char *ID, int point )
 {
 	if(sasql_ckeckStrint(ID) == FALSE){
-		printf("异常字符%s\n",ID);
+		printf("厚沥惑 巩磊%s\n",ID);
 		return -1;
 	}
 	
@@ -503,7 +503,7 @@ void sasql_OldpsToMd5ps()
 	if(!sasql_mysql_query(sqlstr)){
 		mysql_free_result(mysql_result);
 		mysql_result=mysql_store_result(&mysql);
-		printf("      转换账号             原密码               转换MD5码\n");
+		printf("      函券 拌沥             盔夯 厚剐锅龋               函券等 MD5内靛\n");
 		while((mysql_row = mysql_fetch_row(mysql_result))){
 			char * name = mysql_row[0];
 			char * ps = mysql_row[1];                     
@@ -599,7 +599,7 @@ void sasql_CleanCdkey(int date)
 	
 	sprintf(sqlstr, "DELETE FROM `%s` WHERE TO_DAYS( NOW( ) ) - TO_DAYS( LoginTime ) > %d" , config.sql_Table, date);
 	mysql_query(&mysql,sqlstr);
-	printf("完成\n");
+	printf("肯丰\n");
 	return;
 }
 
@@ -646,7 +646,7 @@ void sasql_CleanLockCdkey()
 	
 	sprintf(sqlstr, "DELETE FROM `%s` WHERE `%s` LIKE '%!%'", config.sql_Table, config.sql_PASS);
 	mysql_query(&mysql,sqlstr);
-	printf("完成\n");
+	printf("肯丰\n");
 	return;
 }
 
@@ -654,7 +654,7 @@ void sasql_CleanLockCdkey()
 char* sasql_Mac_Char( char *id,int flg )
 {
 	if(sasql_ckeckStrint(id) == FALSE){
-		printf("异常字符%s\n",id);
+		printf("厚沥惑 巩磊%s\n",id);
 		return "error";
 	}	
 	char sqlstr[256];
@@ -679,11 +679,11 @@ char* sasql_Mac_Char( char *id,int flg )
 	  	return "error";
 	  }
 	}else{
-		printf("\n数据库查找失败！\n");
-		printf("重新连接数据库...");
+		printf("\n单捞磐海捞胶 炼雀 角菩！\n");
+		printf("单捞磐海捞胶 犁楷搬 吝...");
 		sasql_close();
 		sasql_init();
-		printf("完成\n");
+		printf("肯丰\n");
 		return "error";
 	}
 }

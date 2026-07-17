@@ -22,7 +22,7 @@ void Lock_Init(void)
 		memset( userlock[i]->name, 0, sizeof( userlock[i]->name) );
 #endif
 	}
-	log("存贮器初始化\n");
+	log("皋葛府 檬扁拳\n");
 }
 
 LockNode *Creat_newNodes( void)
@@ -52,9 +52,9 @@ int InsertMemLock(int entry, char *cdkey, char *passwd, char *server, int proces
 	int j;
 	LockNode *ln = userlock[entry];
 #ifdef _LOCK_ADD_NAME
-		log("进入游戏:目录:char/0x%x 账号:%s 名称:%s 服务器:%s\n", entry, cdkey, name, server);
+		log("霸烙 柳涝:叼泛配府:char/0x%x 拌沥:%s 捞抚:%s 辑滚:%s\n", entry, cdkey, name, server);
 #else
-		log("进入游戏:目录:%x 账号:%s 服务器:%s\n", entry, cdkey, server);
+		log("霸烙 柳涝:叼泛配府:%x 拌沥:%s 辑滚:%s\n", entry, cdkey, server);
 #endif
   
 	while( (ln!=NULL) && (ln->use!=0)) ln=ln->next;
@@ -90,7 +90,7 @@ int DeleteMemLock(int entry, char *cdkey, int *process)
 {
 	LockNode *ln = userlock[entry];
 
-	log("删除内存信息 位置=%x 账号=%s ..", entry, cdkey);
+	log("皋葛府 沥焊 昏力 困摹=%x 拌沥=%s ..", entry, cdkey);
 
 	while (ln!=NULL) {
 		if( ln->use != 0) {
@@ -106,10 +106,10 @@ int DeleteMemLock(int entry, char *cdkey, int *process)
 		memset( ln->name, 0, sizeof( ln->name) );
 #endif
 		*process = ln->process;
-		log("删除成功\n");
+		log("昏力 己傍\n");
 		return 1;
 	}
-	log("删除失败!!\n");
+	log("昏力 角菩!!\n");
 	return 0;
 }
 
@@ -136,8 +136,8 @@ int isMemLocked(int entry, char *cdkey)
 	while (ln!=NULL) {
 		if (ln->use != 0) {
 			if (strcmp(ln->cdkey, cdkey)==0) {
-				if( !strcmp(ln->server, "星系移民"))
-					log(" 星系移民中 ");
+				if( !strcmp(ln->server, "辑滚 捞林"))
+					log(" 辑滚 捞林 吝 ");
 				break;
 			}
 		}
@@ -153,13 +153,13 @@ int GetMemLockState(int entry, char *cdkey, char *result)
 	while (ln!=NULL) {
 		if (ln->use != 0) {
 			if (strcmp(ln->cdkey, cdkey)==0) {
-				sprintf(result, "%s 是在 %s 被锁的.",cdkey, ln->server);
+				sprintf(result, "%s 篮(绰) %s 俊辑 泪变 惑怕涝聪促.",cdkey, ln->server);
 				return 1;
 			}
 		}
 		ln=ln->next;
 	}
-	sprintf(result, "%s 没有被锁.", cdkey);
+	sprintf(result, "%s 篮(绰) 泪扁瘤 臼疽嚼聪促.", cdkey);
 	return 0;
 }
 

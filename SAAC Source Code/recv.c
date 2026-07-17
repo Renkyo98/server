@@ -77,7 +77,7 @@ void saacproto_ACCharLoad_recv( int ti,char* id,char* pas,char* charname ,
 
 		charLoadCallback(ti,0,id,pas,charname,buf,"",lock,mesgid);
     // Spock 2000/10/31
-    //log( "读取档案: 附加作业 %s %s, 进程=%d\n", id,pas,process );
+    //log( "某腐磐 佬扁: 何啊 累诀 %s %s, 橇肺技胶=%d\n", id,pas,process );
     // Spock end
 }
 
@@ -119,7 +119,7 @@ void saacproto_ACCharSave_recv( int ti, char* id,
     if( unlock) {
 			dummyCallback(ti,0,id,"dummy",charname,process,"",mesgid,0);
     }
-   // log("玩家已保存保存\n");
+   // log("敲饭捞绢 历厘 肯丰\n");
 }
 
 void saacproto_ACCharList_recv( int ti,char* id,char* pas ,char* ip,char* mac1 ,char* mac2 ,char* mac3, int mesgid,int charlistflg)
@@ -134,16 +134,16 @@ void saacproto_ACCharList_recv( int ti,char* id,char* pas ,char* ip,char* mac1 ,
     if (process > MAX_PROCESS) process=1;
     snprintf(buf, sizeof(buf), "%d", process);
     if( !is_game_server_login( ti ) ){
-        saacproto_ACCharList_send( ti , FAILED , "无法登陆游戏！" , mesgid );
+        saacproto_ACCharList_send( ti , FAILED , "霸烙 肺弊牢 阂啊！" , mesgid );
         return;
     }
 
 	if (strlen(id)==0 || strlen(pas)==0){
-	  saacproto_ACCharList_send( ti , FAILED , "账号密码不能为空！" , mesgid );
+	  saacproto_ACCharList_send( ti , FAILED , "拌沥/厚剐锅龋绰 厚况笛 荐 绝嚼聪促！" , mesgid );
 	  return;
 	}
 		charListCallback(ti,0,id,pas,"",buf,"0",mesgid,0,charlistflg);
-    log( "档案列表: %s\n", id );
+    log( "某腐磐 格废: %s\n", id );
 }
 
 void saacproto_ACCharDelete_recv( int ti,char* id,char* pas,char* charname , char *option , int mesgid)
@@ -160,7 +160,7 @@ void saacproto_ACCharDelete_recv( int ti,char* id,char* pas,char* charname , cha
 	
   // Nuke
   charDeleteCallback(ti,0,id,pas,charname,"0","",mesgid,0);
-  log( "档案删除: 附加作业 %s %s\n",id , pas );
+  log( "某腐磐 昏力: 何啊 累诀 %s %s\n",id , pas );
 }
 
 void saacproto_ACLock_recv( int ti ,char* id,int lock,int mesgid )
@@ -198,9 +198,9 @@ void saacproto_ACLock_recv( int ti ,char* id,int lock,int mesgid )
 		if ( lockUser( getGSName( ti ) , id , "0" , lock , result,sizeof(result),
 										retdata ,sizeof( retdata ) , "0" , "0") < 0 ) {
 #endif
-			log( "锁定用户: %s 失败\n" , id );
+			log( "荤侩磊 泪陛: %s 角菩\n" , id );
 		} else {
-			log( "锁定用户: %s 成功\n" , id );
+			log( "荤侩磊 泪陛: %s 己傍\n" , id );
 		}
   }
     // Spock end
@@ -210,16 +210,16 @@ void saacproto_ACLock_recv( int ti ,char* id,int lock,int mesgid )
 void saacproto_ACUCheck_recv( int ti , char *id , int status )
 {
     if( !is_game_server_login(ti) ){
-        log( "服务器发现账号:%s status:%d\n",
+        log( "辑滚俊辑 拌沥 惯斑:%s 惑怕:%d\n",
              id, status );
         return;
     }
 
 	if( status == 0 ){
-       log( "用户 %s 在 %s 并未锁定！\n", id , getGSName( ti ) );
+       log( "荤侩磊 %s 篮(绰) %s 俊辑 泪陛登瘤 臼澜！\n", id , getGSName( ti ) );
        saacproto_ACKick_recv( ti, id, 6, -1);
     } else {
-        log( "用户 %s 在 %s 已锁定！\n", id , getGSName( ti ) );
+        log( "荤侩磊 %s 篮(绰) %s 俊辑 捞固 泪陛凳！\n", id , getGSName( ti ) );
 #ifdef _WAEI_KICK
 				saacproto_ACKick_recv( ti, id, 1, -1);
 #endif
@@ -540,7 +540,7 @@ void saacproto_ACAddFM_recv( int fd, char *fmname, char *fmleadername,
 	char *fmrule, int fmsprite, int fmleadergrano, int charfdid)
 #endif
 {
-	//log("调试信息：%d\n",fmbadge);
+	//log("叼滚弊 沥焊：%d\n",fmbadge);
 #ifdef _FAMILY
 	int r = 0, index = 0;
 #ifdef _PERSONAL_FAME
@@ -1211,9 +1211,9 @@ void saacproto_ACKick_recv( int ti ,char* id, int lock,int mesgid )
 #endif
 
 			if( strcmp( result , SUCCESSFUL ) == 0 ){
-				log( "解锁账号 %s 成功！\n" , id );
+				log( "拌沥 %s 泪陛 秦力 己傍！\n" , id );
 			} else {
-				log( "解锁账号 %s 失败！\n" , id );
+				log( "拌沥 %s 泪陛 秦力 角菩！\n" , id );
 				return;
 			}
 
@@ -1548,14 +1548,14 @@ int UNlockM_UnlockPlayer( void)
 		if( !UNlockM[i].use ) continue;
 		if( UNlockM[i].time >= time(NULL) ) continue;
 		if( isLocked( UNlockM[i].PlayerId ) ){
-			log( "等待解锁玩家: %s 还需锁定!!\n", UNlockM[i].PlayerId);
+			log( "泪陛 秦力 措扁 敲饭捞绢: %s 酒流 泪陛 鞘夸!!\n", UNlockM[i].PlayerId);
 		}else{
-			log( "等待解锁玩家: %s 已经解锁!!\n", UNlockM[i].PlayerId);
+			log( "泪陛 秦力 措扁 敲饭捞绢: %s 捞固 秦力凳!!\n", UNlockM[i].PlayerId);
 		}
 		reset_UNlockMPlayer( i);
 		nums++;
 	}
-	//log( "等待解锁玩家: 总计 %d 个用户解锁 !!\n", nums);
+	//log( "泪陛 秦力 措扁: 醚 %d 疙 荤侩磊 秦力 肯丰 !!\n", nums);
 	return nums;
 }
 
@@ -1608,7 +1608,7 @@ void saacproto_ACMissionTable_recv( int fd, int num, int type, char *data, char*
 	else if( type == 2 ) { // add data
 		int empty =-1;
 
-		log("\n增加精灵召唤任务:%s \n", data);
+		log("\n沥飞 家券 烙公 眠啊:%s \n", data);
 		for( i =0; i <MAXMISSIONTABLE; i++) {
 			if( missiontable[i].angelinfo[0] == '\0' ) {
 				empty = i;
@@ -1667,7 +1667,7 @@ void saacproto_ACMissionTable_recv( int fd, int num, int type, char *data, char*
 		char angelinfo[64];
 		int limittime=0;
 
-		log("\n增加精灵召唤任务:%s:%d \n", data, num);
+		log("\n沥飞 家券 烙公 眠啊:%s:%d \n", data, num);
 
 		if( num == MISSION_DOING ) {
 			easyGetTokenFromBuf( data, "|", 1, buf, sizeof( buf));
@@ -1757,16 +1757,16 @@ void saacproto_LockLogin_recv( int fd, char* id, char* ip, int flag )
 		case 0:
 			if(strlen(id)>0){
 				if(sasql_del_lock(id)){
-					log("成功解除锁定账号:%s\n",id);
+					log("拌沥 泪陛 秦力 己傍:%s\n",id);
 				}else{
-					log("失败！解除锁定账号:%s\n",id);
+					log("拌沥 泪陛 秦力 角菩！:%s\n",id);
 				}
 			}
 			if(strlen(ip)>0){
 				if(sasql_del_lock(ip)){
-					log("成功解除锁定IP:%s\n",ip);
+					log("IP 泪陛 秦力 己傍:%s\n",ip);
 				}else{
-					log("失败！解除锁定IP:%s\n",ip);
+					log("IP 泪陛 秦力 角菩！:%s\n",ip);
 				}
 			}
 			break;
@@ -1774,23 +1774,23 @@ void saacproto_LockLogin_recv( int fd, char* id, char* ip, int flag )
 			if(strlen(id)>0){
 				if(!sasql_chehk_lock(id)){
 					if(sasql_add_lock(id)){
-						log("成功锁定账号:%s\n",id);
+						log("拌沥 泪陛 己傍:%s\n",id);
 					}else{
-						log("失败！锁定账号:%s\n",id);
+						log("拌沥 泪陛 角菩！:%s\n",id);
 					}
 				}else{
-					log("账号%s已被锁定过！\n",id);
+					log("拌沥%s篮(绰) 捞固 泪陛登绢 乐澜！\n",id);
 				}
 			}
 			if(strlen(ip)>0){
 				if(!sasql_chehk_lock(ip)){
 					if(sasql_add_lock(ip)){
-						log("成功锁定IP:%s\n",ip);
+						log("IP 泪陛 己傍:%s\n",ip);
 					}else{
-						log("失败！锁定IP:%s\n",ip);
+						log("IP 泪陛 角菩！:%s\n",ip);
 					}
 				}else{
-					log("IP%s已被锁定过！\n",id);
+					log("IP%s篮(绰) 捞固 泪陛登绢 乐澜！\n",id);
 				}
 			}
 			break;
@@ -1804,9 +1804,9 @@ void saacproto_LockLogin_recv( int fd, char* id, char* ip, int flag )
 void saacproto_ItemPetLocked_recv( int fd, int clifd, char *id, char *safepasswd )
 {
 	char *data = sasql_ItemPetLocked( id, safepasswd );
-	if(strcmp(data, "安全锁已经成功解锁！")==0){
+	if(strcmp(data, "焊救 泪陛捞 己傍利栏肺 秦力登菌嚼聪促！")==0){
 		saacproto_ItemPetLocked_send(fd, clifd, 1, data);
-	}else if(strcmp(data, "您还未设置安全锁解锁密码，为了确保安全，请输入一次六位以上密码做为安全锁密码并劳劳记住！")==0){
+	}else if(strcmp(data, "焊救 泪陛 秦力 厚剐锅龋啊 汲沥登绢 乐瘤 臼嚼聪促. 救傈阑 困秦 6磊府 捞惑狼 厚剐锅龋甫 涝仿窍绊 馆靛矫 扁撅秦滴技夸！")==0){
 		saacproto_ItemPetLocked_send(fd, clifd, 0, data);
 	}else{
 		saacproto_ItemPetLocked_send(fd, clifd, -1, data);
@@ -1826,9 +1826,9 @@ void saacproto_FormulateAutoPk_recv( int fd, int clifd, char *id, int point )
 	int pkpoint = sasql_add_FormulateAutoPk( id, point );
 	char data[256];
 	if(pkpoint == -1){
-		sprintf(data, "您的乱舞积分%d无法转换进SQL里，请与管理员联系！", point);
+		sprintf(data, "抄公 器牢飘 %d 阑(甫) SQL肺 傈券且 荐 绝嚼聪促. 包府磊俊霸 巩狼窍技夸！", point);
 	}else{
-		sprintf(data, "已将您的乱舞积分%d已转换至SQL里，你当前乱舞积分共%d", point, pkpoint);
+		sprintf(data, "抄公 器牢飘 %d 阑(甫) SQL肺 傈券沁嚼聪促. 泅犁 抄公 器牢飘绰 醚 %d 涝聪促", point, pkpoint);
 	}
 	saacproto_FormulateAutoPk_send(fd, clifd, data);
 }

@@ -86,11 +86,11 @@ static char* MEMBER_CHARDATA[memberdatamaxchar] =
 // 成员种类 char 资料
 static char* MEMBERKIND_INTDATA[FMMEMBER_KINDNUM] = 
 {
-	"无",
-	"一般成员",
-	"申请中",
-	"族长",
-	"长老",
+	"绝澜",
+	"老馆 雀盔",
+	"脚没 吝",
+	"练厘",
+	"厘肺",
 };
 
 // 家族之间留言板
@@ -107,7 +107,7 @@ struct FMPOINT
    int		fl;							// 庄园进入图层
    int		x;							// 庄园进入Ｘ座标
    int		y;							// 庄园进入Ｙ座标
-   int		fmfl;						// 庄园族长图层
+   int		fmfl;						// 庄园练厘图层
    int 		village;					// 庄园邻近之村庄
    int		hadfmindex;					// 占领庄园之家族 index
    char		hadfmname[CHARNAME_MAX];	// 占领庄园之家族 name
@@ -123,16 +123,16 @@ typedef struct
    int 		charflag;		/* 
    					   FMMEMBER_NONE   清空资料
    					   FMMEMBER_MEMBER 家族成员
-   					   FMMEMBER_APPLY  申请中
-   					   FMMEMBER_LEADER 族长
-   					   FMMEMBER_ELDER  长老
+   					   FMMEMBER_APPLY  脚没 吝
+   					   FMMEMBER_LEADER 练厘
+   					   FMMEMBER_ELDER  厘肺
                                         */
    int		onlineflag;		// 0:offline; gmsv index
    int		charfdid;		// 成员在 gmsv 的 fd
    int		predeltime;		// 预计删除成员时间
    int 		popular;		// 成员的声望
 #ifdef _FMVER21
-   int		eventflag;		// 是否拥有族长资格
+   int		eventflag;		// 是否拥有练厘资格
 #endif
 #ifdef _NEW_MANOR_LAW
 	 int		momentum;			// 成员气势
@@ -146,10 +146,10 @@ struct	FAMILY
 {
    int 		fmindex;			// 0家族 index
    char		fmname[CHARNAME_MAX];		// 1家族名称
-   char		fmleadername[CHARNAME_MAX];	// 2族长名称
+   char		fmleadername[CHARNAME_MAX];	// 2练厘名称
 
-   char		fmleaderid[USERID_MAX];		// 3族长帐号
-   int		fmleadergrano;			// 4族长照片
+   char		fmleaderid[USERID_MAX];		// 3练厘帐号
+   int		fmleadergrano;			// 4练厘照片
    char		petname[CHARNAME_MAX];		// 5守护兽名称
    char		petattr[256];			// 6守护兽资料
 
@@ -367,7 +367,7 @@ int fmpkcompar(const void *indexa, const void *indexb)
 }
 
 // getFMsortedlist
-// arg: buf=returned list (format: "index 名次 家族名 族长名 popular|...")
+// arg: buf=returned list (format: "index 鉴困 啊巩疙 练厘疙 popular|...")
 //      bufsize=sizeof(buf)
 //      bp=begin point (bp=-1 -> begin at 0)
 //      ep=end point   (ep=-1 -> end at MAX_FAMILY-1)
@@ -970,7 +970,7 @@ int readFMPoint(char *dir)
    d = opendir(dirname);
    if (d == NULL)
    {
-   	log("无法打开文件 %s\n", dirname);
+   	log("颇老 %s 凯扁 阂啊\n", dirname);
    	return -1;
    }
    while(1)
@@ -994,7 +994,7 @@ int readFMPoint(char *dir)
    	   fp = fopen(filename, "r");
    	   if (fp == NULL)
    	   {
-   	      log("无法打开文件 %s %s\n", filename, strerror(errno));
+   	      log("颇老 %s %s 凯扁 阂啊\n", filename, strerror(errno));
    	      continue;
    	   }
    	   while(1)
@@ -1040,11 +1040,11 @@ int writeFMPoint(char *dir)
    if (db_fmpointupdate == 0)
       return 0;
    else
-   		log("已将更新资料db_fmpoint写入文件.\n");
+   		log("盎脚等 磊丰 db_fmpoint甫 颇老俊 扁废沁嚼聪促.\n");
    fp = fopen(filename, "w");
    if (fp == NULL)
    {
-			log("无法打开文件: %s %s\n", filename, strerror(errno));
+			log("颇老 凯扁 阂啊: %s %s\n", filename, strerror(errno));
 			return -1;
    }
    for(i = 0; i < MAX_FMPOINT; i++)
@@ -1077,7 +1077,7 @@ int readFMSMemo(char *dir)
    d = opendir(dirname);
    if (d == NULL)
    {
-   	log("无法打开文件 %s\n", dirname);
+   	log("颇老 %s 凯扁 阂啊\n", dirname);
    	return -1;
    }
    while(1)
@@ -1095,13 +1095,13 @@ int readFMSMemo(char *dir)
    	   }
    	   if (!(s.st_mode & S_IFREG))
    	   {
-   	      log("%s 不是正常文件\n", filename);
+   	      log("%s 篮(绰) 沥惑 颇老捞 酒凑聪促\n", filename);
    	      continue;
    	   }
    	   fp = fopen(filename, "r");
    	   if (fp == NULL)
    	   {
-   	      log("无法打开文件 %s %s\n", filename, strerror(errno));
+   	      log("颇老 %s %s 凯扁 阂啊\n", filename, strerror(errno));
    	      continue;
    	   }
    	   {
@@ -1136,11 +1136,11 @@ int writeFMSMemo(char *dir)
    if (db_fmsmemoupdate == 0)
       return 0;
    else
-   		log("已将更新资料db_fmsmemo写入文件.\n");
+   		log("盎脚等 磊丰 db_fmsmemo甫 颇老俊 扁废沁嚼聪促.\n");
    fp = fopen(filename, "w");
    if (fp == NULL)
    {
-	log("无法打开文件: %s %s\n", filename, strerror(errno));
+	log("颇老 凯扁 阂啊: %s %s\n", filename, strerror(errno));
 	return -1;
    }
    fprintf(fp, "%d|%d", fmsmemo.num, fmsmemo.fmsnowwritenum);
@@ -1310,11 +1310,11 @@ void delovertimeFMMem(int time)
             db_familyupdate[i] = 1;
 
 
-						// 通知族长有玩家已被删除
+						// 通知练厘有玩家已被删除
 						if (family[i].fmmemberindex[0].onlineflag > 0)
 						{
 							char buf[256];
-							sprintf(buf, "(%s)因太久未上线而离开您的家族了！目前家族人数：%4d人",
+							sprintf(buf, "(%s)丛捞 厘扁埃 固立加栏肺 啊巩俊辑 呕硼沁嚼聪促! 泅犁 啊巩 牢盔：%4d疙",
 								family[i].fmmemberindex[j].charname, family[i].fmjoinnum);
 							saacproto_ACFMAnnounce_send(family[i].fmmemberindex[0].onlineflag,
 								SUCCESSFUL, family[i].fmname, family[i].fmindex, i, 3, buf,
@@ -1360,7 +1360,7 @@ int ACAddFM(int fd, int *workindex, char *fmname, char *fmleadername,
 	}
 	fmindex = getblankfmindex();
 	if (fmindex == -1){
-   	return -1; // 家族数量已满，无空的 fmindex
+   	return -1; // 家族数量已满，绝澜空的 fmindex
 	}
 	for (i = 0; i <= fmindexmaxnum; i++){
    	if(strcmp(family[i].fmname, fmname) == 0)
@@ -1443,7 +1443,7 @@ int ACJoinFM(int fd, int index, char *fmname, int fmindex,
 	if (family[index].fmnum >= MAX_MEMBERNUM || family[index].fmjoinnum >= MAX_MEMBERNUM)
    	return	-3;
 	
-	// 防止族长加入自己的家族  code:shan
+	// 防止练厘加入自己的家族  code:shan
 	if ((strcmp(family[index].fmmemberindex[0].charname, charname) == 0)
 		&& (strcmp(family[index].fmmemberindex[0].charid, charid) == 0))
 		return -1;
@@ -1496,10 +1496,10 @@ int ACJoinFM(int fd, int index, char *fmname, int fmindex,
 				family[index].fmsetupflag, 1, i,
 				family[index].fmmemberindex[i].charfdid);
 #endif
-			// 通知族长有玩家愿意加入
+			// 通知练厘有玩家愿意加入
 			if (family[index].fmmemberindex[0].onlineflag > 0){
 				char buf[256];
-				sprintf(buf, "(%s lv:%d)正要求加入您的家族喔！目前家族人数：%4d人",
+				sprintf(buf, "(%s lv:%d)丛捞 啊巩 啊涝阑 夸没沁嚼聪促! 泅犁 啊巩 牢盔：%4d疙",
 					charname, charlv, family[index].fmjoinnum);
 				saacproto_ACFMAnnounce_send(family[index].fmmemberindex[0].onlineflag,
 					SUCCESSFUL, fmname, fmindex, index, 3, buf,
@@ -1529,11 +1529,11 @@ int ACLeaveFM(int index, char *fmname, int fmindex,
 			ACMemberLeaveFM(index, fmname, fmindex, charname, 0, i);
 #endif
 			db_familyupdate[index] = 1;
-			// 通知族长有玩家已离开家族
+			// 通知练厘有玩家已离开家族
 			if (family[index].fmmemberindex[0].onlineflag > 0)
 			{
 				char buf[256];
-				sprintf(buf, "(%s)已经离开您的家族了！目前家族人数：%4d人",
+				sprintf(buf, "(%s)丛捞 啊巩阑 呕硼沁嚼聪促! 泅犁 啊巩 牢盔：%4d疙",
 					charname, family[index].fmjoinnum);
 				saacproto_ACFMAnnounce_send(family[index].fmmemberindex[0].onlineflag,
 					SUCCESSFUL, fmname, fmindex, index, 3, buf,
@@ -1547,10 +1547,10 @@ int ACLeaveFM(int index, char *fmname, int fmindex,
 // 修正家族资料
 // kindflag 1:是否继续招募家族成员 2:家族ＰＫ声望 3:家族守护兽 4:家族主旨
 //	    5:解散家族时间 6:家族基金 7:家族冒险声望 8:家族饲育声望
-//	    9:家族合成、加工声望 10:家族料理声望 11:族长禅让
+//	    9:家族合成、加工声望 10:家族料理声望 11:练厘禅让
 int ACFixFMData(int index, char* fmname, int fmindex, int kindflag, int charindex, char* data1, char* data2)
 {
-	//log("调试输出 ACFixFMData：kingflag=%d data1=%s data2=%s\n",kindflag,data1,data2);
+	//log("叼滚弊 免仿 ACFixFMData：kingflag=%d data1=%s data2=%s\n",kindflag,data1,data2);
 	int recvdata = 0;
 	if (CheckFM(&index, fmname, fmindex) < 0)	return -1;
 	printf("kindflag:%d\n", kindflag);
@@ -1685,7 +1685,7 @@ int ACFixFMData(int index, char* fmname, int fmindex, int kindflag, int charinde
 		strcpy(family[index].petname, "");
 		strcpy(family[index].petattr, "");
 
-		// 更新族长资料
+		// 更新练厘资料
 		if (family[index].fmmemberindex[0].onlineflag > 0)
 		{
 #ifdef _PERSONAL_FAME	// Arminius: 家族个人声望
@@ -1817,7 +1817,7 @@ int ACFixFMData(int index, char* fmname, int fmindex, int kindflag, int charinde
 			family[index].fmmemberindex[charindex].popular =
 			family[index].fmmemberindex[charindex].popular + recvdata;
 #endif
-		// 更新族长资料
+		// 更新练厘资料
 		if (family[index].fmmemberindex[0].onlineflag > 0)
 		{
 			int	floor = ACgetFMFloor(fmindex);
@@ -2216,7 +2216,7 @@ int ACFMDetail(int index, char *fmname, int fmindex, char *data)
    return	0;
 }
 
-// 族长审核成员加入家族
+// 练厘审核成员加入家族
 #ifdef _FMVER21
 int ACMemberJoinFM(int index, char *fmname, int fmindex,
 	char *charname, int charindex, int result, int meindex)
@@ -2230,7 +2230,7 @@ int ACMemberJoinFM(int index, char *fmname, int fmindex,
 	if (CheckFM(&index, fmname, fmindex) < 0)	return -1;
 	floor = ACgetFMFloor(fmindex);
 	
-#ifdef _FIX_LEADER_ERR			// WON ADD 修正族长问题
+#ifdef _FIX_LEADER_ERR			// WON ADD 修正练厘问题
 	if (charindex == 0 )	return -1;	
 #endif
 	
@@ -2285,13 +2285,13 @@ int ACMemberJoinFM(int index, char *fmname, int fmindex,
    	   	// 通知玩家
 #ifdef _FMVER21
 				if (family[index].fmmemberindex[charindex].charflag != FMMEMBER_APPLY)
-					sprintf(buf, "%s族长已经将你的家族职等改为%s！",
+					sprintf(buf, "%s 练厘丛捞 寸脚狼 啊巩 流困甫 %s(栏)肺 函版沁嚼聪促！",
 					family[index].fmname, MEMBERKIND_INTDATA[result]);
 				else
-					sprintf(buf, "恭喜你！%s已经审核完毕您的加入申请！",
+					sprintf(buf, "绵窍钦聪促! %s丛捞 啊涝 脚没阑 铰牢沁嚼聪促！",
 					family[index].fmmemberindex[meindex].charname);
 #else
-   	   	sprintf(buf, "恭喜你！%s族长已经审核完毕您的加入申请！", family[index].fmname);
+   	   	sprintf(buf, "绵窍钦聪促! %s 练厘丛捞 啊涝 脚没阑 铰牢沁嚼聪促！", family[index].fmname);
 #endif
    	   	saacproto_ACFMAnnounce_send(family[index].fmmemberindex[charindex].onlineflag,
 					SUCCESSFUL, fmname, fmindex, index, 3, buf,
@@ -2367,7 +2367,7 @@ int ACMemberJoinFM(int index, char *fmname, int fmindex,
 					family[index].fmmemberindex[charindex].charfdid);
 #endif
 			}
-			// 更新族长状态
+			// 更新练厘状态
 			if (family[index].fmmemberindex[charindex].onlineflag > 0)
 			{
 #ifdef _PERSONAL_FAME	// Arminius: 家族个人声望
@@ -2408,7 +2408,7 @@ int ACMemberJoinFM(int index, char *fmname, int fmindex,
    return -1;
 }
 
-// 族长审核成员离开家族
+// 练厘审核成员离开家族
 #ifdef _FMVER21
 int ACMemberLeaveFM(int index, char *fmname, int fmindex,
 	char *charname, int flag, int charindex, int meindex)
@@ -2423,7 +2423,7 @@ int ACMemberLeaveFM(int index, char *fmname, int fmindex,
 	if (meindex < 0 || meindex > MAX_MEMBERNUM)	return	-1;
 #endif
 	
-#ifdef _FIX_LEADER_ERR			// WON ADD 修正族长问题
+#ifdef _FIX_LEADER_ERR			// WON ADD 修正练厘问题
 	if (charindex == 0 )	return -1;	
 #endif
 	
@@ -2456,9 +2456,9 @@ int ACMemberLeaveFM(int index, char *fmname, int fmindex,
 			if (flag == 1)
 			{
 #ifdef _FMVER21
-				sprintf(buf, "%s已经将你踢出家族了！", family[index].fmmemberindex[meindex].charname);
+				sprintf(buf, "%s丛捞 寸脚阑 啊巩俊辑 眠规沁嚼聪促！", family[index].fmmemberindex[meindex].charname);
 #else
-				sprintf(buf, "%s族长已经将你踢出家族了！", family[index].fmname);
+				sprintf(buf, "%s 练厘丛捞 寸脚阑 啊巩俊辑 眠规沁嚼聪促！", family[index].fmname);
 #endif
 				saacproto_ACFMAnnounce_send(family[index].fmmemberindex[charindex].onlineflag,
 					SUCCESSFUL, fmname, fmindex, index, 3, buf,
@@ -2548,7 +2548,7 @@ int ACMemberLeaveFM(int index, char *fmname, int fmindex,
 			}
 			if (family[index].fmmemberindex[charindex].onlineflag > 0 ){
 				char token[256];
-				sprintf( token, "在七天之内要赶快召集１０名成员，否则家族会被解散喔！剩馀%d天。",
+				sprintf( token, "7老 捞郴俊 辑笛矾 雀盔 10疙阑 葛栏瘤 臼栏搁 啊巩捞 秦眉邓聪促! 巢篮 扁埃 %d老.",
 					(int)((family[index].predel_time - t1)/(60*60*24)) );
 				saacproto_ACFMAnnounce_send(
        			family[index].fmmemberindex[0].onlineflag,
@@ -2562,7 +2562,7 @@ int ACMemberLeaveFM(int index, char *fmname, int fmindex,
   return -1;
 }
 
-// 族长分配职务
+// 练厘分配职务
 int ACFMAssignOcp(int index, char *fmname, int fmindex,
 	char *charname, int charindex, int result)
 {
@@ -2573,7 +2573,7 @@ int ACFMAssignOcp(int index, char *fmname, int fmindex,
    floor = ACgetFMFloor(fmindex);
    if (result < 0)	return	-1;
  
-#ifdef _FIX_LEADER_ERR			// WON ADD 修正族长问题
+#ifdef _FIX_LEADER_ERR			// WON ADD 修正练厘问题
    if (charindex == 0 )	return -1;	
 #endif  
  
@@ -2587,7 +2587,7 @@ int ACFMAssignOcp(int index, char *fmname, int fmindex,
    }
    if (count >= FMELDERNUM)
    {
-   	sprintf(buf, "\n只能指派%d位家族成员成为%s喔！",
+   	sprintf(buf, "\n啊巩盔 弥措 %d疙鳖瘤父 %s(栏)肺 烙疙且 荐 乐嚼聪促！",
    		FMELDERNUM, MEMBERKIND_INTDATA[result]);
    	saacproto_ACFMAnnounce_send(family[index].fmmemberindex[0].onlineflag,
    		SUCCESSFUL, fmname, fmindex, index, 4, buf,
@@ -2620,7 +2620,7 @@ int ACFMAssignOcp(int index, char *fmname, int fmindex,
    					family[index].fmmemberindex[charindex].charfdid);
 #endif
    	   	// 通知玩家
-   	   	sprintf(buf, "%s族长已经将你的家族职等改为%s！", family[index].fmname,
+   	   	sprintf(buf, "%s 练厘丛捞 寸脚狼 啊巩 流困甫 %s(栏)肺 函版沁嚼聪促！", family[index].fmname,
    	   		MEMBERKIND_INTDATA[result]);
    	   	saacproto_ACFMAnnounce_send(family[index].fmmemberindex[charindex].onlineflag,
    	   		SUCCESSFUL, fmname, fmindex, index, 3, buf,
@@ -2628,8 +2628,8 @@ int ACFMAssignOcp(int index, char *fmname, int fmindex,
 	}
         if (family[index].fmmemberindex[0].onlineflag > 0)
         {
-   	   	// 通知族长
-   	   	sprintf(buf, "\n你已经将%s的职等改为%s了！", charname,
+   	   	// 通知练厘
+   	   	sprintf(buf, "\n%s 狼 流困甫 %s(栏)肺 函版沁嚼聪促！", charname,
    	   		MEMBERKIND_INTDATA[result]);
    	   	saacproto_ACFMAnnounce_send(family[index].fmmemberindex[0].onlineflag,
    	   		SUCCESSFUL, fmname, fmindex, index, 4, buf,
@@ -3116,7 +3116,7 @@ int ACFixFMPoint(int winindex, char *winfmname, int winfmindex, int loseindex,
 	return	0;
 }
 
-// 族长广播
+// 练厘广播
 int ACFMAnnounce(char *fmname, int fmindex, int index, char *data, int color)
 {
    if (CheckFM(&index, fmname, fmindex) < 0)	return -1;
@@ -3202,7 +3202,7 @@ void setMemberFileDataToArg(int index, int memberindex, char *data)
 void setFamilyFileDataToArg(int index, char *data)
 {
 	
-	 //log("调试输出 setFamilyFileDataToArg：index=%d data=%s\n",index,data);
+	 //log("叼滚弊 免仿 setFamilyFileDataToArg：index=%d data=%s\n",index,data);
    int i = 0, j = 0;
    char value[1024];
    char *ptr;
@@ -3740,7 +3740,7 @@ int ChangeFMLeader(int index, char *fmname, int fmindex)
    if (family[index].fmmemberindex[tmpindex].onlineflag > 0)
    {
       char tmpbuf[256];
-      sprintf(tmpbuf, "您已经退出家族了～\n族长职位已让给%s，辛苦你了！",
+      sprintf(tmpbuf, "啊巩阑 呕硼沁嚼聪促~\n练厘 流困绰 %s丛俊霸 逞败脸嚼聪促. 荐绊窍继嚼聪促！",
       	 family[index].fmmemberindex[0].charname);
       saacproto_ACFMAnnounce_send(
       	 family[index].fmmemberindex[tmpindex].onlineflag,
@@ -3788,7 +3788,7 @@ void FMPK_LoadList()
 		if( fscanf( fp, "%s", buf) == EOF ) break;
 		buf[strlen(buf)+1] = 0;
 		memcpy( FMPK_List[i].Data, buf, strlen(buf)+1);
-		log("庄园PK列表[%d]:%d,%s\n", i, FMPK_List[i].pkflg, FMPK_List[i].Data);
+		log("厘盔 PK 格废[%d]:%d,%s\n", i, FMPK_List[i].pkflg, FMPK_List[i].Data);
 	}
 	fclose( fp);
 }

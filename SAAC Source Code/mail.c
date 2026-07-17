@@ -52,8 +52,8 @@ getNextMessageID(void)
     if( fp == NULL ){
         fp = fopen( filename ,"w" );
         if( fp == NULL ){
-            log( "不能创建 %s ... 使用同样的邮件ID,"
-                 " saac 发送变得缓慢!(id:9999)\n", filename );
+            log( "%s 积己 阂啊 ... 悼老茄 皋老ID 荤侩,"
+                 " saac 惯价捞 蠢妨咙!(id:9999)\n", filename );
             return 9999;
         }
         fprintf( fp, "10000\n" );
@@ -66,13 +66,13 @@ getNextMessageID(void)
 
     fp = fopen( filename, "w" );
     if( fp == NULL ){
-        log( "不能写入新的ID到 %s ... 使用同样的数字!\n", filename );
+        log( "%s 俊 货 ID 扁废 阂啊 ... 悼老茄 箭磊 荤侩!\n", filename );
         return i;
     }
     fprintf( fp, "%u", i+1 );
     fclose(fp);
 
-    log( "新邮件ID:%u\n", i);
+    log( "脚痹 皋老ID:%u\n", i);
     return i;
 }
 
@@ -90,7 +90,7 @@ static int reallocMailBuf( void )
     newbuf = ( struct mail * )calloc( 1, new_mailbufsize *
                                       sizeof( struct mail ));
     if( newbuf == NULL ){
-        log( "回复邮件缓冲: 内件不足!! 新邮件大小:%d\n",
+        log( "翠厘 皋老 滚欺: 侩樊 何练!! 货 皋老 农扁:%d\n",
              new_mailbufsize );
         return -1;
     }
@@ -101,8 +101,8 @@ static int reallocMailBuf( void )
     mailbufsize = new_mailbufsize;
     mailbuf = newbuf;
 
-    log( "重新分配邮件缓冲: "
-         "新邮件缓冲:%d 旧地址:%x 新地址:%x\n",
+    log( "皋老 滚欺 犁且寸: "
+         "货 皋老 滚欺:%d 备林家:%x 脚林家:%x\n",
          new_mailbufsize, (unsigned int)previous,(unsigned int)newbuf );
     return 0;
 }
@@ -131,9 +131,9 @@ static int allocMail( int use_msgid, unsigned int msgid  )
             return mailbuf_finder;
         }
     }
-    log( "分配邮件: 邮件缓冲失败.正在进行分配...\n" );
+    log( "皋老 且寸: 皋老 滚欺 角菩. 且寸 柳青 吝...\n" );
     if( reallocMailBuf() < 0 ){
-        log( "分配邮件: 分配失败\n" );
+        log( "皋老 且寸: 且寸 角菩\n" );
     } else {
         return allocMail(use_msgid, msgid );
     }
@@ -157,7 +157,7 @@ void receiveMail( char *id_from,
     snprintf( id_charname, sizeof( id_charname), "%s_%s", id_to, charname_to );
     h = hashpjw( id_charname ) & 0xff ;
     if( (mbindex = allocMail(use_msgid, msgid )) < 0 ){
-        log( "回复邮件: 获取新的邮件缓冲失败.\n" );
+        log( "翠厘 皋老: 货 皋老 滚欺 裙垫 角菩.\n" );
         return;
     }
     mailbuf[mbindex].id_charname_hash = h;
@@ -180,7 +180,7 @@ void receiveMail( char *id_from,
         makeDirFilename( savefile , sizeof(savefile), maildir, h, childname );
         fp = fopen( savefile, "w" );
         if( fp == NULL ){
-            log( "回复邮件 : 不能保存邮件文件: %s %s\n",
+            log( "翠厘 皋老 : 皋老 颇老 历厘 阂啊: %s %s\n",
                  savefile, strerror( errno ));
             return;
         }
@@ -246,8 +246,8 @@ void receiveMailAck( char *id, char *charname, int a , int mesgid )
                     log( "failed to unlink %s: %s\n",
                          savefile, strerror(errno ));
                 } else {
-                    log( "回复邮件: 删除邮件 "
-                         "%u 从 %s(%s) to %s(%s)\n",
+                    log( "翠厘 皋老: 皋老 昏力 "
+                         "%u %s(%s) 俊辑 %s(%s) 肺\n",
                          mailbuf[i].message_id,
                          mailbuf[i].id_from,
                          mailbuf[i].charname_from,
@@ -257,7 +257,7 @@ void receiveMailAck( char *id, char *charname, int a , int mesgid )
                 memset( &mailbuf[i], 0 , sizeof( mailbuf[0] ));
                 return;
             } else {
-                log( "回复邮件: 无用信息或ID或名称或声明严重错误" );
+                log( "翠厘 皋老: 公瓤 沥焊 肚绰 ID 肚绰 捞抚 肚绰 急攫俊 缴阿茄 坷幅" );
                 log( "use[%d] h[%d][%d] id[%s][%s] nm[%s][%s] st[%d]\n",
                      mailbuf[i].use, mailbuf[i].id_charname_hash, h,
                      mailbuf[i].id_to, id,
@@ -266,7 +266,7 @@ void receiveMailAck( char *id, char *charname, int a , int mesgid )
             }
         }
     }
-    log( "回复邮件: 邮件 %u 不能从 %s(%s) 找到\n",
+    log( "翠厘 皋老: 皋老 %u 阑(甫) %s(%s) 俊辑 茫阑 荐 绝澜\n",
          mesgid, id,charname );
 }
 
@@ -283,14 +283,14 @@ void flushMail( int fd,
     snprintf( id_charname, sizeof( id_charname ) , "%s_%s", id, charname );
     h = hashpjw( id_charname );
     // Nuke +1
-    log("邮件缓冲大小:%d (%s)\n",mailbufsize,chartime());
+    log("皋老 滚欺 农扁:%d (%s)\n",mailbufsize,chartime());
     // Nuke *1
     for(i=0;(i<mailbufsize)&&(i<MAX_FLUSH_MAIL);i++){
         if( mailbuf[i].id_charname_hash == h &&
             mailbuf[i].use &&
             strcmp( mailbuf[i].id_to , id ) == 0 &&
             strcmp( mailbuf[i].charname_to, charname ) == 0 ){
-            log( "消息ID:%u\n", mailbuf[i].message_id );
+            log( "皋矫瘤ID:%u\n", mailbuf[i].message_id );
             flush_index[flush_i++] = i;
             c++;
         }
@@ -323,11 +323,11 @@ void flushMail( int fd,
                                 mailbuf[flush_index[i]].option,
                                 mailbuf[flush_index[i]].message_id );
         mailbuf[flush_index[i]].state = MS_WAIT_ACK;
-        log( "分类邮件ID:%u\n",
+        log( "盒幅 皋老ID:%u\n",
                 mailbuf[flush_index[i]].message_id );
     }
     // Nuke *1
-    log( "邮件: 发送 %d 封邮件到 %s(%s)(%s)\n", c, id, charname ,chartime());
+    log( "皋老: %d 烹阑 %s(%s)(%s) 肺 惯价\n", c, id, charname ,chartime());
 }
 
 // Nuke start: To expire undelivered mail
@@ -345,11 +345,11 @@ expireMail()
     int flush_index[MAX_FLUSH_MAIL];
     int flush_i=0;
     // Nuke +1
-    log("邮件缓冲大小:%d (%s)\n",mailbufsize,chartime());
+    log("皋老 滚欺 农扁:%d (%s)\n",mailbufsize,chartime());
     // Nuke *1
     for(i=0;(i<mailbufsize)&&(i<MAX_FLUSH_MAIL);i++){
         if(mailbuf[i].use && (now - mailbuf[i].recv_time >= MAIL_EXPIRE_TIME)) {
-            log( "消息ID:%u 已过期\n", mailbuf[i].message_id );
+            log( "皋矫瘤ID:%u 父丰凳\n", mailbuf[i].message_id );
             flush_index[flush_i++] = i;
             c++;
         }
@@ -373,8 +373,8 @@ expireMail()
                 log( "failed to unlink %s: %s\n",
                 savefile, strerror(errno ));
             } else {
-                log( "过期邮件: 删除游戏 "
-                	"%u 从 %s(%s) 到 %s(%s)\n",
+                log( "父丰 皋老: 霸烙 昏力 "
+                	"%u %s(%s) 俊辑 %s(%s) 肺\n",
                         mailbuf[flush_index[i]].message_id,
                         mailbuf[flush_index[i]].id_from,
                         mailbuf[flush_index[i]].charname_from,
@@ -385,7 +385,7 @@ expireMail()
 	}
     }
     // Nuke *1
-    log( "过期邮件: 过期 %d 消息 (%s)\n", c ,chartime());
+    log( "父丰 皋老: %d 俺 皋矫瘤 父丰 (%s)\n", c ,chartime());
 }
 
 int readMail( char *dir )
@@ -399,7 +399,7 @@ int readMail( char *dir )
         d = opendir(dirname);
         if(d == NULL ){
 			mkdir( dirname, 0755);
-			log("创建 %s\n", dirname);
+			log("%s 积己\n", dirname);
             continue;
         }
         while(1){
@@ -418,7 +418,7 @@ int readMail( char *dir )
                 if( !(s.st_mode & S_IFREG)) continue;
                 fp = fopen( filename, "r" );
                 if( fp == NULL ){
-                    log( "不能打开文件 %s %s\n",filename,strerror(errno));
+                    log( "颇老 %s %s 凯扁 阂啊\n",filename,strerror(errno));
                     continue;
                 }
                 {
@@ -471,8 +471,8 @@ int readMail( char *dir )
                     if( toid[0] == 0 || fromid[0] == 0 ||
                         tochar[0] == 0 || fromchar[0] == 0 ||
                         text[0] == 0 ){
-                        log( "有问题邮件! %s 接收ID[%c] 接收名字[%c]"
-                             " 发送ID[%c] 发送名字[%c] 文本[%c]\n",
+                        log( "巩力 乐绰 皋老! %s 荐脚ID[%c] 荐脚磊疙[%c]"
+                             " 惯脚ID[%c] 惯脚磊疙[%c] 夯巩[%c]\n",
                              filename,
                              toid[0], tochar[0], fromid[0], fromchar[0],
                              text[0] );
@@ -492,6 +492,6 @@ int readMail( char *dir )
         }
         closedir(d);
     }
-    log( "读取邮件: 在'%s'目录里读取到 %d 封邮件 \n", dir, read_count );
+    log( "皋老 佬扁: '%s' 叼泛配府俊辑 %d 烹狼 皋老 犬牢 \n", dir, read_count );
     return 0;
 }
