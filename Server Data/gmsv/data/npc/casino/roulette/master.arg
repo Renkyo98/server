@@ -1,0 +1,26 @@
+{
+GAMBLE_TYPE:master_npc
+gamble_code:10001
+game_time:15000
+standby_time:1000
+GtoG:1|2
+AI:0
+con:TRUE
+gamble_msg01:환영합니다!
+gamble_msg02:            룰렛 규칙
+gamble_msg03:          포인트 사용처
+gamble_msg04:         나의 룰렛 포인트
+gamble_msg05:             나가기
+
+page_num11:\n이 게임은 24시간 운영됩니다.\n한 게임당 1~2분 소요됩니다.
+page_num12:\n번호를 맞추면 [25] 포인트 획득.\n번호 "00"은 [50] 포인트 획득.
+page_num13:\n1~3 라인을 맞추면 [3] 포인트 획득.
+page_num14:\n색깔, 홀수, 짝수, 1~10, 11~20 을 맞추면 [2] 포인트 획득.
+
+page_num21:\n룰렛 포인트로 상품을 구매할 수 있습니다.
+
+page_endmsg:\n설명이 필요하면 저에게 오십쇼.
+standby_msg:곧 시작 합니다.
+start_msg:게임을 시작 합니다.
+end_msg:게임이 종료 되었습니다. 베팅을 시작하셔도 됩니다.
+}

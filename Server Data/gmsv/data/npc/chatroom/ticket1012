@@ -1,0 +1,19 @@
+NomalMainMsg:뻑短밟줄。렁찡혼좔莖杆돨튿。
+
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>0
+AcceptMsg:\n\n채팅 티켓 상인\n채팅 티켓 은 무료입니다
+ThanksMsg:채팅티켓을 줄게 가서 열심히 놀아
+ItemFullMsg:아이템이 꽉 찼습니다。
+GetItem:2521
+DelItem:2522,2523,2524,2597,2598,2599,2600,2601,2602
+EventEnd
+
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:ITEM=2521
+NomalMsg: 綠쒔、唐튿죄錫。
+EventEnd
+

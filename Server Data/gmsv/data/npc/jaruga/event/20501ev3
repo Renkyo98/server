@@ -1,0 +1,61 @@
+
+########################################
+#唱公槽 官风：茄狼档尝#
+########################################
+
+NomalMainMsg:唱公槽俊 格见牢 档尝甫 酪绢滚府绊 富疽绢 ...
+EventNo:-1
+TYPE:MESSAGE
+EVENT:ENDEV=18
+NomalWindowMsg:啊！斧头的事情真是太谢谢你了。\n我现在用那把斧头每天辛勤地工作着呢！\n我会注意不要再让它折断了！
+EventEnd
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:ITEM=2467
+NomalWindowMsg:要好好的努力喔。
+EventEnd
+
+EventNo:18
+TYPE:ACCEPT
+EVENT:NOWEV=18&ITEM=2465
+AcceptMsg:哦！这不是哈恩做的石斧吗？\n这是为了我\n而取来的吗？
+ThanksMsg:是吗！真是太感谢了！\n为了答谢你\n就介绍个好工作给你吧！\n你带着这个去加加\n找一个叫赛尚的木材商人吧。\n啊！这把断掉的斧头顺便送你。
+GetItem:2467,2484
+DelItem:2465*1
+EndSetFlg:18
+ItemFullMsg:那个…你的道具袋满了喔…\n这样就不能给你介绍信了！\n等你把道具袋清出个空位之后再来找我吧！
+EventEnd
+
+EventNo:-1
+TYPE:ACCEPT
+EVENT:ITEM=2465
+AcceptMsg:哦！这不是哈恩做的石斧吗？\n我在砍材的时候把斧头给折断了\n真伤脑筋！\n怎样？你要不要把它送给我呢？
+ThanksMsg:是吗！真是太感谢了！\n为了答谢你\n就介绍个好工作给你吧！\n你带着这个去加加\n找一个叫赛尚的木材商人吧。\n啊！这把断掉的斧头顺便送你。
+GetItem:2467,2484
+DelItem:2465*1
+EndSetFlg:18
+ItemFullMsg:喂喂！道具袋满了喔！\n这样我就不能送你礼物了！\n等你把道具袋清出个空位之后再来找我吧！
+EventEnd
+
+EventNo:18
+TYPE:MESSAGE
+EVENT:NOWEV=18&ITEM!=2466
+NomalWindowMsg:委托书不见了吗？\n真拿你没办法…\n那我再写一张你等一下。\n是阿鲁姆山的哈恩对吧。
+GetItem:2466
+ItemFullMsg:喂喂！\n你的道具袋\n装不下委托书嘛！\n丢掉一些东西之后再来！
+EventEnd
+
+EventNo:18
+TYPE:REQUEST
+EVENT:LV>14
+RequestMsg:唱沟槽狼 格见捞扼绊 且 荐 乐绰 档尝甫\n何矾哆府绊 富疽绢.\n官悔瘤 臼栏搁 该败 初篮 档尝甫\n茫酒客 林瘤 臼阑贰? 弊犯霸 秦霖促搁\n亮篮 酒福官捞飘甫 家俺秦 临膊.
+ThanksMsg:绢? 罐酒林摆唱?\n唱茄抛 疵 档尝甫 父甸绢 林绰\n茄捞扼绰 措厘厘捞啊 酒抚魂俊 乐栏聪鳖\n弧府 崔妨啊 何殴窍霸.\n捞扒 累诀狼汾辑具.\n茄篮 扒噶刘捞 缴秦辑 档尝甫 罐阑 锭鳖瘤\n狼汾辑甫 酪绢滚府搁 救登 .
+StopMsg:澜澜.. 给秦林摆唱?
+EndStopMsg:窍绰荐绝瘤 ....\n档尝甫 绢痘霸 茄淬..
+NoStopMsg:弊贰! 绊付况 \n 茄捞扼绰 措厘厘捞茄怕 啊毫
+GetItem:2466
+ItemFullMsg:酒捞袍 芒捞 菜茫嚼聪促.
+EventEnd
+
+

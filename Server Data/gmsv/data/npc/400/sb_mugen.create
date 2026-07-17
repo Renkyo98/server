@@ -1,0 +1,12 @@
+NPCCREATE
+
+{
+floorid=20109
+borncenter=50,29,1,1
+movecenter=20,20,100,100
+createnum=1
+time=60000
+dir=8
+graphicname=100343
+name=πÈ»£
+enemy=sb_muge1|file:400/sb_muge1.arg

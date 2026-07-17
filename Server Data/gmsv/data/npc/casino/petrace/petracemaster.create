@@ -1,0 +1,12 @@
+NPCCREATE
+
+{
+floorid=7005
+borncenter=25,33,1,1
+movecenter=25,33,1,1
+createnum=1
+dir=0
+graphicname=100140
+name=경주 캐스터
+enemy=petracemaster|
+}

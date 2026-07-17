@@ -1,0 +1,13 @@
+entype:2
+askbattlemsg1:
+askbattlemsg2:      나를 쓰러뜨려야만!
+askbattlemsg3:      이곳을 지나갈수있다
+start msg:
+dieact:1
+warpfl:32011
+warpx:56
+warpy:36
+end msg:
+enemyno:1399,1401,1402,1400,1403
+deniedmsg:
+onebattle:0

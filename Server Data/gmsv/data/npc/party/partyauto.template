@@ -1,0 +1,10 @@
+NPCTEMPLATE
+
+{
+templatename=partyauto
+makeatnobody=1
+name=partyauto
+makeatnosee=1
+graphicname=16130
+functionset=PartyAuto
+}

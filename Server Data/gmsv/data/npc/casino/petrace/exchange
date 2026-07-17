@@ -1,0 +1,123 @@
+NomalMainMsg:게임 포인트 상품 페트를 반납하시면 보상해드립니다.
+
+# 어린 설표
+
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>0&PET<101-2900*1
+AcceptMsg:\n어린설표 1마리를 반납 하시겠습니까?
+ThanksMsg:\n어린설표 변신 [6시간 경험치+100%]\n(을)\n(을)를 받으시겠습니까?\nESC를 누르시면 취소됩니다.
+KeyWord:어린설표 1마리
+GetItem:20100
+ItemFullMsg:아이템창이 가득 찼습니다.
+DelPet:LV>0&PET<101-2900*1
+EventEnd
+
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>0&PET<101-2900*2
+AcceptMsg:\n어린설표 2마리를 반납 하시겠습니까?
+ThanksMsg:\n어린설표 변신 [12시간 경험치+100%]\n(을)를 받으시겠습니까?\nESC를 누르시면 취소됩니다.
+KeyWord:어린설표 2마리
+GetItem:20101
+ItemFullMsg:아이템창이 가득 찼습니다.
+DelPet:LV>0&PET<101-2900*2
+EventEnd
+
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>0&PET<101-2900*3
+AcceptMsg:\n어린설표 3마리를 반납 하시겠습니까?
+ThanksMsg:\n어린설표 변신 [18시간 경험치+100%]\n(을)를 받으시겠습니까?\nESC를 누르시면 취소됩니다.
+KeyWord:어린설표 3마리
+GetItem:20102
+ItemFullMsg:아이템창이 가득 찼습니다.
+DelPet:LV>0&PET<101-2900*3
+EventEnd
+
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>0&PET<101-2900*4
+AcceptMsg:\n어린설표 4마리를 반납 하시겠습니까?
+ThanksMsg:\n어린설표 변신 [24시간 경험치+100%]\n(을)를 받으시겠습니까?\nESC를 누르시면 취소됩니다.
+KeyWord:어린설표 4마리
+GetItem:20103
+ItemFullMsg:아이템창이 가득 찼습니다.
+DelPet:LV>0&PET<101-2900*4
+EventEnd
+
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>0&PET<101-2900*5
+AcceptMsg:\n어린설표 5마리를 반납 하시겠습니까?
+ThanksMsg:\n어린설표 변신 [30시간 경험치+100%]\n(을)를 받으시겠습니까?\nESC를 누르시면 취소됩니다.
+KeyWord:어린설표 5마리
+GetItem:20104
+ItemFullMsg:아이템창이 가득 찼습니다.
+DelPet:LV>0&PET<101-2900*5
+EventEnd
+
+# 설표
+
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>0&PET<101-2901*1
+AcceptMsg:\n설표 1마리를 반납 하시겠습니까?
+ThanksMsg:\n설표 변신 [6시간 경험치+100%]\n(을)를 받으시겠습니까?\nESC를 누르시면 취소됩니다.
+KeyWord:설표 1마리
+GetItem:20105
+ItemFullMsg:아이템창이 가득 찼습니다.
+DelPet:LV>0&PET<101-2901*1
+EventEnd
+
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>0&PET<101-2901*2
+AcceptMsg:\n설표 2마리를 반납 하시겠습니까?
+ThanksMsg:\n설표 변신 [12시간 경험치+100%]\n(을)를 받으시겠습니까?\nESC를 누르시면 취소됩니다.
+KeyWord:설표 2마리
+GetItem:20106
+ItemFullMsg:아이템창이 가득 찼습니다.
+DelPet:LV>0&PET<101-2901*2
+EventEnd
+
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>0&PET<101-2901*3
+AcceptMsg:\n설표 3마리를 반납 하시겠습니까?
+ThanksMsg:\n설표 변신 [18시간 경험치+100%]\n(을)를 받으시겠습니까?\nESC를 누르시면 취소됩니다.
+KeyWord:설표 3마리
+GetItem:20107
+ItemFullMsg:아이템창이 가득 찼습니다.
+DelPet:LV>0&PET<101-2901*3
+EventEnd
+
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>0&PET<101-2901*4
+AcceptMsg:\n설표 4마리를 반납 하시겠습니까?
+ThanksMsg:\n설표 변신 [24시간 경험치+100%]\n(을)를 받으시겠습니까?\nESC를 누르시면 취소됩니다.
+KeyWord:설표 4마리
+GetItem:20108
+ItemFullMsg:아이템창이 가득 찼습니다.
+DelPet:LV>0&PET<101-2901*4
+EventEnd
+
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>0&PET<101-2901*5
+AcceptMsg:\n설표 5마리를 반납 하시겠습니까?
+ThanksMsg:\n설표 변신 [30시간 경험치+100%]\n(을)를 받으시겠습니까?\nESC를 누르시면 취소됩니다.
+KeyWord:설표 5마리
+GetItem:20109
+ItemFullMsg:아이템창이 가득 찼습니다.
+DelPet:LV>0&PET<101-2901*5
+EventEnd
+
+EventEnd
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:\n게임 포인트 상품 페트를 반납하시면 보상해드립니다. 반납할 페트 이름과 마리수를 정확히 말씀하시면 변신 경구를 드립니다.\n무제한으로 반납 가능합니다.\nLv50이하 최대 5마리까지 받습니다.\n예시)어린설표 1마리
+NomalWindowMsg1:\n【보상 목록】\n어린설표：어린설표 변신 [경험치+100%]\n설표：설표 변신 [경험치+100%]\n※ 마리당 6시간 추가
+EventEnd

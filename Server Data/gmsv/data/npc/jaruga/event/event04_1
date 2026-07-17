@@ -1,0 +1,38 @@
+NomalMainMsg:杰唐돨覩迦훙흼狼삿돤훰옵떼극伎狼邱쒔법乖侶寧밑율
+
+EventNo:4
+TYPE:ACCEPT
+EVENT:ITEM=2417*15
+AcceptMsg:\n『판정가의 사자』에게 인정을 받았군.\n음 ... 의식의 구슬 하나..둘...\n... 열다섯 역시 ... 다가져왔군.\n너를 성인으로 인식해주겠다.
+ThanksMsg:\n\n너는 이제 성인이다.\n밖갔을 돌아 다니면서 세상을 구경하고.\n너의 의지대로 펫과 함께 모험을 하거라.\n이아템을 가져가면 도움이 될것이다.\n넌이제 성인이다..
+ItemFullMsg:가라！이젠 힘을 더모아라!
+GetItem:2418,21794,21795
+Additem:2418
+GetExps:4000
+GetExp:4000
+AddExp:4000
+AddExps:4000
+Additem:21794
+Additem:21795
+DelItem:2417*15
+EndSetFlg:4
+EventEnd
+
+
+EventNo:4
+TYPE:REQUEST
+EVENT:LV>29
+RequestMsg:\n\n나는 성인식 동굴을 맡고있다.\n너도 성인식을 하러 왔겠지 ?\n그러면 반대방향으로 가보면 판정가가 있을거다.
+ThanksMsg:\n음.. 수행할것이라고 ?\n좋다 ... 반대편에『판정가의 사자』를 만나서\n의식의 구슬을 받고 인정을 받고 오너라.\n그러면 성인식을 완수 해주겠다.
+StopMsg:\n\n\n역시 ... 부족한것인가 ?
+EndStopMsg:\n\n어쩔수없군 ... 다음에 도전하여라.
+NoStopMsg:\n\n\n계속해서 수행하여라 ... !
+EventEnd
+
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:ENDEV=4
+NomalMsg:너는 이미 성인식을 수행 하였다..
+EventEnd
+

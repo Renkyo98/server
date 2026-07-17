@@ -1,0 +1,123 @@
+CPUUSE 1
+##############################
+#SAAC基本参数设置
+# 帐户服务器端口
+port 9700
+
+# 帐户服务器密码
+pass kicket
+
+# rotale_internal
+rotale_internal 1000
+
+# LOG文件目录
+logdir log
+
+# LOCK文件目录
+lockdir lock
+
+# CHAR文件目录
+chardir char
+
+# CHAR_SLEEP文件目录
+sleepchardir char_sleep
+
+# WKLOG文件目录
+wklogdir data/wklog
+
+# MAIL文件目录
+maildir mail
+
+# family文件目录
+familydir data/family
+
+# fmpoint文件目录
+fmpointdir data/fmpointdir
+
+# fmsmemo文件目录
+fmsmemodir data/fmsmemodir
+
+# dbdir文件目录
+dbdir	data
+
+# SA名称
+SANAME 怀念石器
+
+# LSADDRESS
+LSADDRESS localhost
+
+# LS端口
+LSPORT 2222
+
+# TEST名称
+TESTNAME 石器
+
+# OACBIND
+OACBIND
+
+# 星系名称
+saacname 石器
+
+##############################
+# 更新人物点数间隔xx秒
+Total_Charlist 3600
+# 更新进期邮件间隔xx秒
+Expired_mail 600
+# 删除家族成员间隔xx秒
+Del_Family_or_Member 3600
+# 更新家族信息间隔xx秒
+Write_Family 600
+
+##############################
+#MYSQL基本配置
+#ifdef _SASQL
+#sql服务器IP
+sql_IP          192.168.249.129
+#sql服务器端口
+sql_Port        3306
+#sql服务器账号
+sql_ID          root
+#sql服务器密码
+sql_PS          11112222
+#sql数据库名
+sql_DataBase    sa
+#sql人物信息表名
+sql_Table       CSA_Login
+#sql用户名字段
+sql_NAME        Name
+#sql密码字段名
+sql_PASS        PassWord
+#sql锁定账号表名
+sql_LOCK        lock
+
+########后台功能############
+#是台开始后台功能
+openbackground  1
+#openbackground值为1则开始以下功能
+sql_RegIP       IP
+sql_RegTime     RegTime
+sql_LoginTime   LoginTime
+sql_Path        Path
+sql_OnlineName  OnlineName
+############################
+
+#是否限制同一IP登陆次数(0为不限制)
+SameIpMun        0
+
+
+#是否使用MD5(0为否，1为是)
+USEMD5           0
+
+#每隔几天自动备份一次数据
+AUTOBACKUPDAY    1   
+
+#几点进行自动备份
+AUTOBACKUPHOUR   6  
+
+#是否自动注册
+AutoReg          1
+
+#六合彩间格时间(天)
+LOTTERYSYSTEM    0
+
+#endif

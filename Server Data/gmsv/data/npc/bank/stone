@@ -1,0 +1,21 @@
+buy_rate:1.0
+sell_rate:1.0
+buy_msg:사다,삼,산다,buy
+sell_msg:팔다,판다,팜,sell
+other_msg:1(번역실패)
+hint_msg:2(번역실패)
+sellonly_msg:3(번역실패)
+main_msg:무엇을 하시겠습니까?
+buy_main:무엇을 구매 하시겠습니까?
+sell_main:무엇을 판매 하시겠습니까?
+what_msg:개수를 선택해 주세요.
+stone_msg:소지 금액 한계에 도달 하였습니다.
+level_msg:레벨이 부족하여 사용할 수 없습니다.   그래도 구입하시겠습니까?
+realy_msg:정말로 구매 하시겠습니까?
+itemfull_msg:아이템창이 가득 찼습니다.
+ItemList:29200-29203
+CostFame:
+LimitItemType:
+LimitItemNo:
+special_rate:
+special_item:

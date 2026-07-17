@@ -1,0 +1,13 @@
+NPCCREATE
+#测试用
+{
+#floorid=1000
+borncorner=51,106,51,106
+time=0
+createnum=1
+dir=4
+ignoreinvincible=1
+graphicname=100401
+name=工程人员
+enemy=npc_newnpcman|file:demale/testnpc01.arg
+}

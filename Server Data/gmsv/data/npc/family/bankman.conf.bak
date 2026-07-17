@@ -1,0 +1,25 @@
+
+# 소痢陵契：힉캠섈랑튠
+#
+#####################
+winno=1
+message=2
+message=안녕하세요 길드 [ 가족 ] 은행 입니다.
+message=길드 [ 가족 ] 은행은 개인만사용합니다. 
+message=길드 [ 가족 ] 없으면 사용할수가 없음니다.
+message=
+message=길드 [ 가족 ] 은행
+message=
+wintype=2
+buttontype=none
+buttontype=no|yes
+selected=
+gotowin=
+endbutton=
+selected=
+gotowin=5
+endbutton=
+selected=
+gotowin=6
+endbutton=
+endwin=

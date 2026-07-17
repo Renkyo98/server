@@ -1,0 +1,28 @@
+#########################
+#五兄弟的地下城（吉鲁）#
+#敜洁１　担任者：西竹#
+#########################
+#########################
+
+NomalMainMsg:唱绰 顶狼 沥飞 府稠。
+
+EventNo:31
+TYPE:ACCEPT
+EVENT:ENDEV=28&NOWEV=31&ITEM=2517
+AcceptMsg:\n郴捞抚篮，＜府稠＞。顶阑 淬寸窍绊 勒瘤\n呈绰 郴霸 『瘤驱狼 搬沥』阑 林绊 郴啊 呈俊霸 格吧捞甫林搁 呈绰 唱俊霸 牢沥罐霸 登瘤. 郴 力救阑 罐酒靛府摆唱? 
+ThanksMsg:\m绵窍 茄促呈绰 唱狼霸 牢沥阑 罐疽促..唱狼 格芭捞客,府厚畴甫 林百促.
+ItemFullMsg:要持有我所给的首饰\n必须先预留一个道具栏空位。
+PetFullMsg:要得到我的分身，必须先将宠物栏空下来。
+DelItem:2517
+GetItem:2518
+GetPet:54
+EndSetFlg:31
+EventEnd
+
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:ENDEV=28&ENDEV=31&ITEM!=2517&ITEM=2518&PET>0-91,ENDEV=28&ENDEV=31&ITEM!=2517&PET>0-91
+NomalWindowMsg:\n呈绰 唱俊霸 牢沥阑 罐狙促..
+EventEnd
+

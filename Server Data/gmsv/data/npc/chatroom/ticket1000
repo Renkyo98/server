@@ -1,0 +1,31 @@
+NomalMainMsg:뻑短밟줄。렁찡혼떱세끝돨튿。
+
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV<11,DR<11,DR=77,DR=777
+AcceptMsg:투기장티켓파는상인。\n너는레벨이 10이하 니깐!。\n꽁자루 줄게\n\n，들어가서 너는 구경만 하렴~。
+ThanksMsg:투기장에 가서 너는 얌전히 놀아~
+ItemFullMsg:돛야綠찮轟랬슥마못콱。
+GetItem:2597
+DelItem:2521,2522,2523,2524,2598,2599,2600,2601,2602
+EventEnd
+
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:ITEM=2597
+NomalMsg:투기장 으로 들어가봐。
+EventEnd
+
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>10
+AcceptMsg:투기장티켓파는상인。\n너는 레벨이 높은니깐%8ds。\n많이 받아도 되지?\n실망하지마，니가레벨이 너무 높은게、죄야。
+ThanksMsg:투기장에 가서 너의 멋진 실력을 보여주렘~
+StoneLessMsg:(속으로하는말)머야! 거지엿잖아...거지들은.... 너무싫어 ...。
+ItemFullMsg:돛야綠찮轟랬슥마못콱。
+DelStone:LV*3
+GetItem:2597
+DelItem:2521,2522,2523,2524,2598,2599,2600,2601,2602
+EventEnd
+

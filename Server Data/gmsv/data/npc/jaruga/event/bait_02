@@ -1,0 +1,52 @@
+NomalMainMsg:이 동굴에는 여러 종류의 페트가 서식하고있지！
+
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>99&ITEM=2593&CLASS=3
+AcceptMsg:\n\n목장의 소개를 받고오셧군요？\n\n당신의 등급은（헌터회원）입니다.\n목장（헌터회원）로 이동시켜드리겟습니다.\n많은 페트를 포획하시길 바랍니다.\n이용요금：30000 스톤
+ThanksMsg:\n포획하신 챙겨가도 좋습니다.\n\n하지만 동굴에서 난리를 치지마십시요.\n가끔 엉뚱한 손님들이 이상한짓을해서\n저희들도 골치가 이만저만이 아닙니다.\n이것을 챙겨가시길 바랍니다.
+ItemFullMsg:\n아이템칸이 가득차셧습니다.
+DelStone:30000
+KeyWord:헌터직업
+GetItem:2523
+EventEnd
+
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>0&ENDEV=6&ITEM=2593
+AcceptMsg:\n\n목장의 소개를 받고오셧군요？\n\n당신의 등급은（VIP회원）입니다.\n목장（VIP동굴）로 이동시켜드리겟습니다.\n많은 페트를 포획하시길 바랍니다.\n이용요금：30000 스톤
+ThanksMsg:\n포획하신 챙겨가도 좋습니다.\n\n하지만 동굴에서 난리를 치지마십시요.\n가끔 엉뚱한 손님들이 이상한짓을해서\n저희들도 골치가 이만저만이 아닙니다.\n이것을 챙겨가시길 바랍니다.
+ItemFullMsg:\n아이템칸이 가득차셧습니다.
+DelStone:30000
+KeyWord:VIP
+GetItem:2594
+EventEnd
+
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>139&ITEM=2593&ITEM!=2595&ITEM=2414
+AcceptMsg:\n\n목장의 소개를 받고오셧군요？\n\n당신의 등급은（특별회원）입니다.\n목장（특별동굴）로 이동시켜드리겟습니다.\n많은 페트를 포획하시길 바랍니다.\n이용요금：15000 스톤
+ThanksMsg:\n포획하신 챙겨가도 좋습니다.\n\n하지만 동굴에서 난리를 치지마십시요.\n가끔 엉뚱한 손님들이 이상한짓을해서\n저희들도 골치가 이만저만이 아닙니다.\n이것을 챙겨가시길 바랍니다.
+ItemFullMsg:\n아이템칸이 가득차셧습니다.
+GetItem:2595
+DelStone:15000
+EventEnd
+
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>29&ITEM=2593&ITEM!=2596
+AcceptMsg:\n\n목장의 소개를 받고오셧군요？\n\n당신의 등급은（일반회원）입니다.\n목장（일반동굴）로 이동시켜드리겟습니다.\n많은 페트를 포획하시길 바랍니다.\n이용요금：10000 스톤
+ThanksMsg:\n포획하신 챙겨가도 좋습니다.\n\n하지만 동굴에서 난리를 치지마십시요.\n가끔 엉뚱한 손님들이 이상한짓을해서\n저희들도 골치가 이만저만이 아닙니다.\n이것을 챙겨가시길 바랍니다.
+ItemFullMsg:\n아이템칸이 가득차셧습니다.
+GetItem:2596
+DelStone:10000
+EventEnd
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:ITEM=2594,ITEM=2595,ITEM=2596
+NomalWindowMsg:\n\n\n당신은 이미（반지）를 받으셧습니다.\n어서빨리 동굴로 올라가 페트를 포획하세요\n많은 포획하시길 바랍니다.
+EventEnd
+
+
+

@@ -1,0 +1,9 @@
+entype:2
+askbattlemsg1:이곳을 넘어가려면 나를 쓰러뜨려라!
+startmsg:가자, 카쿠
+dieact:0
+end msg:
+enemyno:440,441
+deniedmsg:젠장, 이구로스만 타고있었어도
+time=60
+

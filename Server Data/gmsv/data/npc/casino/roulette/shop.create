@@ -1,0 +1,23 @@
+NPCCREATE
+
+{
+floorid=7003
+borncorner=23,13,23,13
+time=0
+createnum=1
+dir=6
+ignoreinvincible=1
+graphicname=16315
+name=베팅권 판매원
+enemy=npcgen_shop|file:casino/roulette/shop1
+}
+{
+floorid=7003
+borncenter=23,18
+time=0
+createnum=1
+graphicname=16099
+name=룰렛 포인트
+dir=6
+enemy=transman|file:casino/roulette/roulettepoint
+}

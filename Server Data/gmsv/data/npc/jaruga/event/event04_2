@@ -1,0 +1,10 @@
+NomalMainMsg:성인식을 하려고 온건가?
+
+EventNo:4
+TYPE:ACCEPT
+EVENT:NOWEV=4&ITEM!=2417
+AcceptMsg:의식의 구슬을 주마
+ThanksMsg:주마, 의식의구슬 15개를..
+ItemFullMsg:아이템이 꽉찻다, 비우고오렴!
+GetItem:2417*15
+EventEnd

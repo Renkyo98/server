@@ -1,0 +1,17 @@
+NomalMainMsg:우리목장에선 여러종류의 페트가 서식하지！
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:ITEM=2593
+NomalWindowMsg:\n\n\n이미 자네에게 소개장을 건네주었네.
+EventEnd
+
+
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>4&ITEM!=2593
+AcceptMsg:\n자네！\n페트를 포획하고 싶지않은가？\n\n우리 목장의 시스템을 이용하면\n아주 좋은 페트들을 포획할수 있다네！
+ThanksMsg:\n\n좋아！\n\n이 소개장을 일단 챙기게！\n그리고 목장뒤에있는 동굴로 가보게나.
+ItemFullMsg:아이템칸이 가득 차셧습니다.
+GetItem:2593
+EventEnd

@@ -1,0 +1,14 @@
+Type:0
+Answer:0
+Level:31
+Quiznum:21021002
+Border:1しししし
+GetItem:100,2759
+StartMsg:獣拙獣 馬澗源
+FailureMsg:しししし
+EntryItem:2753*1
+Party:しし
+NoEntryMsg:\n\nしししし
+
+
+

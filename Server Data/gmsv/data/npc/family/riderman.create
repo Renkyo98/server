@@ -1,0 +1,56 @@
+NPCCREATE
+# 玛丽娜丝的骑乘训练师
+{
+floorid=2030
+borncenter=55,16,1,1
+movecenter=55,16,55,16
+createnum=1
+time=0
+dir=4
+family=2
+graphicname=16002
+name=骑乘训练师
+enemy=riderman|conff:family/riderman.conf
+}
+
+# 加加的骑乘训练师
+{
+floorid=3030
+borncenter=50,21,1,1
+movecenter=50,21,50,21
+createnum=1
+time=0
+dir=4
+family=3
+graphicname=16002
+name=骑乘训练师
+enemy=riderman|conff:family/riderman.conf
+}
+
+# 卡鲁它那的骑乘训练师
+{
+floorid=4030
+borncenter=16,35,1,1
+movecenter=16,35,16,35
+createnum=1
+time=0
+dir=4
+family=4
+graphicname=16002
+name=骑乘训练师
+enemy=riderman|conff:family/riderman.conf
+}
+
+# 特级骑乘训练师
+#{
+#floorid=1006
+#borncenter=13,15,1,1
+#movecenter=13,15,13,15
+#createnum=1
+#time=0
+#dir=6
+#family=0
+#graphicname=16061
+#name=特级骑乘训练师
+#enemy=riderman|conff:family/riderman2.conf
+#}

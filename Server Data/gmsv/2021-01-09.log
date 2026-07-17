@@ -1,0 +1,36 @@
+
+=========以下是服务器出错原因=========
+标准信息: 11
+主 函 数: (null)
+在线人数: 0
+最高在线: 0
+SAAC接收: 
+SAAC发送: (null)
+cli 接收: 0
+cli 发送: 0
+错误数据: 
+错误账号: 
+最后执行: 0
+调试行数: 0
+COM 接口: -1
+编译时间：2021年01月08日　22:47:31
+以下是主要错误，必须向我们提交的错误
+./gmsv64(sigshutdown+0x277) [0x4444f7]/lib64/libc.so.6() [0x33f8232570]./gmsv64(ITEM_initItemIngCache+0x1a9) [0x5aec7c]./gmsv64(init+0x14fd) [0x43471d]./gmsv64(main+0x98) [0x432ff8]/lib64/libc.so.6(__libc_start_main+0x100) [0x33f821ed20]./gmsv64() [0x432639]=========以上是服务器出错原因=========
+
+=========以下是服务器出错原因=========
+标准信息: 11
+主 函 数: (null)
+在线人数: 0
+最高在线: 0
+SAAC接收: 
+SAAC发送: (null)
+cli 接收: 0
+cli 发送: 0
+错误数据: 
+错误账号: 
+最后执行: 0
+调试行数: 0
+COM 接口: -1
+编译时间：2021年01月08日　22:47:31
+以下是主要错误，必须向我们提交的错误
+./gmsv64(sigshutdown+0x277) [0x4444f7]/lib64/libc.so.6() [0x33f8232570]./gmsv64(ITEM_initItemIngCache+0x1a9) [0x5aec7c]./gmsv64(init+0x14fd) [0x43471d]./gmsv64(main+0x98) [0x432ff8]/lib64/libc.so.6(__libc_start_main+0x100) [0x33f821ed20]./gmsv64() [0x432639]=========以上是服务器出错原因=========

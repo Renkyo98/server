@@ -1,0 +1,12 @@
+entype:2
+askbattlemsg1:여기를 넘어오려면 나와 싸워서 이겨야 한다!
+startmsg:가자, 후마
+dieact:0
+#warpfl:100
+#warpx:472
+#warpy:293
+end msg:
+enemyno:253,254
+deniedmsg:젠장, 이구로스만 타고있었어도
+time=60
+

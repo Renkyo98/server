@@ -1,0 +1,14 @@
+NEWWARPMAN
+#### 성인식 ####
+
+NOFREE
+FREE:LV>0
+NomalMsg:너는 아직 성인식을 할수 없군.. 돌아가거라!
+PartyMsg:파티를 풀고 입장하세요.
+OVER
+
+TALKEVENT1
+WARP:10000,22,35
+FREE:LV>0&ITEM=20597
+FreeMsg:4대마을의 동의서군 그래 입장하거라 하지만 쉽지만은 안을거야
+OVER

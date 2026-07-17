@@ -1,0 +1,14 @@
+entype:2
+askbattlemsg1:
+askbattlemsg2:     환생의 힘을 얻고싶은가...
+askbattlemsg3:     나를 쓰러뜨리고 가야할것이다.
+askbattlemsg4:     
+start msg:
+dieact:1
+warpfl:32021
+warpx:29
+warpy:57
+end msg:
+enemyno:1404,1406,1407,1405,1408,1410,1409,1411,1412,1413
+deniedmsg: 
+onebattle:0

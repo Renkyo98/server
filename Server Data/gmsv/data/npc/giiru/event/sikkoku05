@@ -1,0 +1,29 @@
+###########################################################
+#Ä¥ÈæÀÇµ¿±¼  16Ãþº¸»ó¿£ÇÇ½Ã                             #
+# 				              Á¦ÀÛ£º³×¹ö#
+###########################################################
+###Ä¥ÈæÀÇµ¿±¼¿£ÇÇ½ÃÉèÁ¦5
+
+EventNo:53
+TYPE:ACCEPT
+EVENT:LV>0&ITEM=20637&ITEM=20638&ITEM=20639&ITEM=20640
+AcceptMsg:\n\n´ç½ÅÀº 4´ëÁõÇ¥°¡ ÀÖÀ¸½Ã±º¿ä\nÁÁ½À´Ï´Ù.
+ThanksMsg:\n\n´ç½ÅÀº »ç½Å¼öÀÇ ÈûÀ» ¾òÀº ÀÚ´Ï\nÀÌ¾ÆÀÌÅÛÀ» ¼ö¿©ÇÏ°Ú½À´Ï´Ù
+ItemFullMsg:\n\n\n       ¾ÆÀÌÅÛÃ¢À» ºñ¿öÁÖ¼¼¿ä.
+GetItem:20700
+DelItem:20637*1,20638*1,20639*1,20640*1
+Charm:1
+EndSetFlg:53
+EventEnd
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:\n\n »ç½Å¼öÀÇ ÈûÀ» ¹ÞÀº ±Ù¿øÀ» °°°íÀÖ´Â »ç¶÷À» Ã£°íÀÖ´Ù ´ç½ÅÀº ¾Æ´Ñ°Å °°±º
+EventEnd
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:ENDEV=53
+NomalWindowMsg:\n\n »ç½Å¼öÀÇ ÈûÀ» ¹ÞÀºÀÚ¿©...
+EventEnd

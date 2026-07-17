@@ -1,0 +1,17 @@
+
+{
+GAMBLE_TYPE:4
+gamble_start:\n어서오세요.은행에서 제공하는\n개인 금고 서비스입니다.\n최소 인출 금액은 100 스톤이며,\n입금은 5000만 스톤까지 가능합니다.\n수수료는 없습니다.
+gamble_msg01:        어떤 서비스를 이용하시겠습니까?
+gamble_msg02:               ＜ 금    고 ＞
+gamble_msg03:NULL
+gamble_msg04:NULL
+gamble_msg05:                 ＜ 취소 ＞
+full_msg1:소지 한도 금액을 초과 하였습니다.
+full_msg2:입금은 5000만 스톤까지만 가능합니다.
+money_msg:\n수수료가 입금되어 있는 금액보다 큽니다.\n수수료는 금고에서 처리되기때문에,\n금고에 최소 300 스톤을 남겨주시기 바랍니다.
+end_msg:\n이용해 주셔서 감사합니다.
+getmax_msg:\n최대 인출 금액은 1000만 스톤입니다.
+getmin_msg:\n최소 인출 금액은 100 스톤입니다.
+error_msg:취소 되었습니다.
+}

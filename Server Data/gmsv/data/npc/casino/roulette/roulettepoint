@@ -1,0 +1,11 @@
+NEWNPCENEMY
+
+START_MSG:【룰렛 포인트 상점】\n◆ 룰렛 포인트로만 구매 가능합니다.\n◆ 보상 아이템은 유저간 거래 가능합니다.
+MenuHead:【아이템 목록】
+
+{
+MenuStr:초기화 구슬(진화, 환생 페트) - 포인트 10
+FREE:LV>0
+AddItem:39980
+DelRouletteP:10
+}

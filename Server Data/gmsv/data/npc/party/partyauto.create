@@ -1,0 +1,12 @@
+NPCCREATE
+
+{
+floorid=777
+borncorner=4,9,4,9
+time=0
+createnum=1
+graphicname=36003
+name=¸ÅÄª
+dir=6
+enemy=partyauto|file:party/partyauto
+}

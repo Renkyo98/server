@@ -1,0 +1,29 @@
+NPCCREATE
+
+###########################################################
+#玛丽娜丝-萨姆吉尔之间　　　　　　给道具的事件（玛丽娜丝）#
+# 						担当：西竹#
+###########################################################
+{
+floorid=2000
+borncorner=55,92,55,92
+time=0
+createnum=1
+dir=4
+ignoreinvincible=1
+graphicname=16027
+name=篮版捞
+enemy=changeevent|file:sainasu/event/event02_1
+}
+{
+floorid=1000
+borncorner=57,124,57,124
+time=0
+createnum=1
+dir=6
+ignoreinvincible=1
+graphicname=16030
+name=弥版捞
+enemy=changeevent|file:sainasu/event/event02_2
+}
+

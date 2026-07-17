@@ -1,0 +1,19 @@
+
+=========以下是服务器出错原因=========
+标准信息: -1
+主 函 数: netloop_faster
+在线人数: 1
+最高在线: 1
+SAAC接收: ACShowFMList
+SAAC发送: ACShowFMList
+cli 接收: 1
+cli 发送: 42
+错误数据: 15:19:F
+错误账号: test123
+最后执行: 3
+调试行数: 0
+COM 接口: -1
+编译时间：2021年09月05日　15:56:49
+以下是主要错误，必须向我们提交的错误
+./gmsv64(sigshutdown+0x277) [0x444aa7]./gmsv64(netloop_faster+0x1949) [0x443139]./gmsv64(mainloop+0x321) [0x433071]./gmsv64(main+0xba) [0x4334da]/lib64/libc.so.6(__libc_start_main+0x100) [0x7fee5ab47d20]./gmsv64() [0x432ae9]=========以上是服务器出错原因=========
+运行时间: 服务器共运行了 28 分 7 秒。

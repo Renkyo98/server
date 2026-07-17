@@ -1,0 +1,38 @@
+NPCCREATE
+
+{
+floorid=7005
+borncenter=31,24
+time=0
+createnum=1
+dir=4
+ignoreinvincible=1
+graphicname=16315
+name=베팅권 판매원
+enemy=npcgen_shop|file:casino/petrace/shop1
+}
+
+{
+floorid=7005
+borncorner=31,27,31,27
+time=0
+createnum=1
+graphicname=16096
+name=상품 교환원
+dir=6
+ignoreinvincible=1
+enemy=GambleBank|file:casino/petrace/shop2.arg
+}
+
+#{
+#floorid=7005
+#borncenter=31,30
+#time=0
+#createnum=1
+#dir=6
+#ignoreinvincible=1
+#graphicname=16017
+#name=페트 반납
+#enemy=changeevent|file:casino/petrace/exchange
+#action=0
+#}
