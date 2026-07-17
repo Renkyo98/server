@@ -478,7 +478,7 @@ BOOL ITEM_initExistItemsArray( int num )
 		ITEM_item[i].use = FALSE;
 	}
 
-	print("第二次分配 %4.2f MB 空间...", sizeof( ITEM_exists ) * num /1024.0/1024.0);
+	print("2瞒 且寸 %4.2f MB 傍埃...", sizeof( ITEM_exists ) * num /1024.0/1024.0);
 	return TRUE;
 }
 
@@ -546,7 +546,7 @@ int _ITEM_initExistItemsOne( char *file, int line, ITEM_Item* itm )
 			return Sindex;
 		}
 	}
-	fprint( "物品已满\n" );
+	fprint( "酒捞袍 啊垫 曼\n" );
 	return -1;
 }
 
@@ -702,7 +702,7 @@ void* _ITEM_getFunctionPointer( int itemindex, int functype, char *file, int lin
 {
 	if( !ITEM_CHECKINDEX(itemindex) )return NULL;
 	if( functype < ITEM_FIRSTFUNCTION  || functype >= ITEM_LASTFUNCTION ){
-		print( "类型错误:%d, 文件:%s,%d\n", functype, file, line);
+		print( "鸥涝 坷幅:%d, 颇老:%s,%d\n", functype, file, line);
 		return NULL;
 	}
 	return ITEM_item[itemindex].itm.functable[functype-ITEM_FIRSTFUNCTION];
@@ -713,7 +713,7 @@ INLINE BOOL ITEM_setLUAFunction( int itemindex, int functype, const char *luafun
 {
   if( !ITEM_CHECKINDEX(itemindex) )return FALSE;
   if( functype < ITEM_FIRSTFUNCTION  || functype >= ITEM_LASTFUNCTION ){
-		print( "类型错误1:%d\n", functype);
+		print( "鸥涝 坷幅1:%d\n", functype);
 		return FALSE;
 	}
 	ITEM_LuaFunc *luaFunc = &ITEM_luaFunc;
@@ -759,7 +759,7 @@ INLINE lua_State *ITEM_getLUAFunction( int itemindex, int functype)
 {
     if( !ITEM_CHECKINDEX(itemindex) )return NULL;
     if( functype < ITEM_FIRSTFUNCTION  || functype >= ITEM_LASTFUNCTION ){
-			print( "类型错误2:%d\n", functype);
+			print( "鸥涝 坷幅2:%d\n", functype);
 			return NULL;
 		}
 
@@ -1121,7 +1121,7 @@ BOOL ITEM_readItemConfFile( char* filename )
 
 	f = fopen(filename,"r");
 	if( f == NULL ){
-		print( "不能打开文件\n");
+		print( "颇老阑 凯 荐 绝澜\n");
 		return FALSE;
 	}
 #define ITEM_ID_TOKEN_INDEX 17
@@ -1133,7 +1133,7 @@ BOOL ITEM_readItemConfFile( char* filename )
 		chomp( line );
 		ret = getStringFromIndexWithDelim( line, ",", ITEM_ID_TOKEN_INDEX, token, sizeof(token));//取出道具ID
 		if( ret == FALSE ){
-			fprint("文件秩序错误:%s 第:%d行\n",filename,linenum);
+			fprint("颇老 鉴辑 坷幅:%s %d锅掳 临\n",filename,linenum);
 			continue;
 		}
 		itemid = atoi( token);
@@ -1144,17 +1144,17 @@ BOOL ITEM_readItemConfFile( char* filename )
 	}
 
 	if( maxid <=0 ) {
-		print( "最大ID错误\n");
+		print( "弥措ID 坷幅\n");
 		fclose(f);
 		return FALSE;
 	}
 	
 	if( fseek( f, 0, SEEK_SET ) == -1 ){
-		fprint( "搜索错误\n" );
+		fprint( "八祸 坷幅\n" );
 		fclose(f);
 		return FALSE;
 	}
-	print( "物品最大ID %d...", maxid);
+	print( "酒捞袍 弥措ID %d...", maxid);
 	ITEM_tblen = itemnum + 1;
 	ITEM_idxlen = maxid + 1;
 	if( ITEM_tbl != NULL )
@@ -1165,17 +1165,17 @@ BOOL ITEM_readItemConfFile( char* filename )
 	ITEM_idx = allocateMemory( sizeof(ITEM_index) * ITEM_idxlen );
 
 	if( ITEM_tbl == NULL ){
-		fprint( "无法分配内存 %d\n" , sizeof(ITEM_table)*ITEM_tblen );
+		fprint( "皋葛府 且寸 阂啊 %d\n" , sizeof(ITEM_table)*ITEM_tblen );
 		fclose( f );
 		return FALSE;
 	}
 	if( ITEM_idx == NULL ){
-		fprint( "无法分配内存 %d\n" , sizeof(ITEM_index)*ITEM_idxlen );
+		fprint( "皋葛府 且寸 阂啊 %d\n" , sizeof(ITEM_index)*ITEM_idxlen );
 		fclose( f );
 		return FALSE;
 	}
-	print("ITEM_tbl分配 %4.2f MB 空间...", sizeof(ITEM_table) * ITEM_tblen /1024.0/1024.0);
-	print("ITEM_idx分配 %4.2f MB 空间...", sizeof(ITEM_index) * ITEM_idxlen /1024.0/1024.0);
+	print("ITEM_tbl 且寸 %4.2f MB 傍埃...", sizeof(ITEM_table) * ITEM_tblen /1024.0/1024.0);
+	print("ITEM_idx 且寸 %4.2f MB 傍埃...", sizeof(ITEM_index) * ITEM_idxlen /1024.0/1024.0);
 	
 	for( i = 0 ; i < ITEM_idxlen ; i ++ ) {
 		ITEM_idx[i].use = FALSE;
@@ -1265,10 +1265,10 @@ BOOL ITEM_readItemConfFile( char* filename )
 				if( itemid >= ITEM_idxlen ){
 					print( "ITEM_tbl full:%d err !!\n" , itemid );
 				}else if( ITEM_idx[itemid].use == TRUE ) {
-					fprint( "重复 Itemid %d.忽视\n" , itemid );
+					fprint( "吝汗 Itemid %d. 公矫窃\n" , itemid );
 				}else{
 					if( itm.string[ITEM_SECRETNAME].string[0] == '\0') {
-						fprint( "ERROR: ID %d 道具没有命名\n",itemid );
+						fprint( "ERROR: ID %d 酒捞袍 捞抚 绝澜\n",itemid );
 						memcpy( &itm.string[ITEM_SECRETNAME].string,&itm.string[ITEM_NAME].string,sizeof(itm.string[ITEM_NAME].string));
 					}
 					{
@@ -1472,7 +1472,7 @@ char*  ITEM_makeItemStatusString( int haveitemindex, int itemindex )
 	memset(token,0,sizeof(token));
 	if( !ITEM_CHECKINDEX(itemindex))return "\0";
 	if (ITEM_getInt(itemindex,ITEM_ItemLock) == 1){
-		sprintf( token , "[绑]%s",ITEM_getChar( itemindex, ITEM_EFFECTSTRING));
+		sprintf( token , "[蓖加]%s",ITEM_getChar( itemindex, ITEM_EFFECTSTRING));
 	}else{
 		sprintf( token , "%s",ITEM_getChar( itemindex, ITEM_EFFECTSTRING));
 	}
@@ -1555,7 +1555,7 @@ char*  ITEM_makeItemStatusString( int haveitemindex, int itemindex )
 	strcpy( INGNAME0, ITEM_getChar( itemindex, ITEM_INGNAME0) );
 	strcpy( INGNAME1, ITEM_getChar( itemindex, ITEM_INGNAME1) );
 	if( (INGNAME0[0] != '\0' && INGNAME1[0] != '\0') || (INGNAME0[0] == '\0') ) {
-		strcpy( INGNAME0, "杂" );
+		strcpy( INGNAME0, "扁鸥" );
 	}
 #endif
 
@@ -1567,7 +1567,7 @@ char*  ITEM_makeItemStatusString( int haveitemindex, int itemindex )
 		if(crushe < 1) crushe = 1;
 		char *arg = ITEM_getChar(itemindex, ITEM_NAME);
 		if(maxcrushe < 1){
-			sprintf(buff1, "康备荤侩");
+			sprintf(buff1, "扁鸥厘厚");
 		}else{
 			maxcrushe = maxcrushe/1000;
 			crushe = crushe/1000;
@@ -1624,7 +1624,7 @@ char*  ITEM_makeItemStatusString( int haveitemindex, int itemindex )
 		if(crushe < 1) crushe = 1;
 		char *arg = ITEM_getChar(itemindex, ITEM_NAME);
 		if(maxcrushe < 1){
-			sprintf(buff1, "康备荤侩");
+			sprintf(buff1, "扁鸥厘厚");
 		}else{
 			maxcrushe = maxcrushe/1000;
 			crushe = crushe/1000;
@@ -1877,14 +1877,14 @@ void ITEM_equipEffect( int index )
 				}else 
 #endif
 #ifdef _ITEM_PERCENTAGE
-					if( (ITEM_MODIFYATTACK==itemEffect[j].itemdataintindex && strstr( arg, "攻" ) != NULL )
-					  || ( ITEM_MODIFYDEFENCE==itemEffect[j].itemdataintindex && strstr( arg, "防" ) != NULL )
-						|| ( ITEM_MODIFYQUICK==itemEffect[j].itemdataintindex && strstr( arg, "敏" ) != NULL )
-						|| ( ITEM_MODIFYHP==itemEffect[j].itemdataintindex && strstr( arg, "郴" ) != NULL )
+					if( (ITEM_MODIFYATTACK==itemEffect[j].itemdataintindex && strstr( arg, "傍" ) != NULL )
+					  || ( ITEM_MODIFYDEFENCE==itemEffect[j].itemdataintindex && strstr( arg, "规" ) != NULL )
+						|| ( ITEM_MODIFYQUICK==itemEffect[j].itemdataintindex && strstr( arg, "刮" ) != NULL )
+						|| ( ITEM_MODIFYHP==itemEffect[j].itemdataintindex && strstr( arg, "眉" ) != NULL )
 					  || ( ITEM_MODIFYMP==itemEffect[j].itemdataintindex && strstr( arg, "扁" ) != NULL )
-						|| ( ITEM_MODIFYLUCK==itemEffect[j].itemdataintindex && strstr( arg, "运" ) != NULL )
-					  || ( ITEM_MODIFYCHARM==itemEffect[j].itemdataintindex && strstr( arg, "魅" ) != NULL )
-					  || ( ITEM_MODIFYAVOID==itemEffect[j].itemdataintindex && strstr( arg, "回" ) != NULL )){
+						|| ( ITEM_MODIFYLUCK==itemEffect[j].itemdataintindex && strstr( arg, "款" ) != NULL )
+					  || ( ITEM_MODIFYCHARM==itemEffect[j].itemdataintindex && strstr( arg, "概" ) != NULL )
+					  || ( ITEM_MODIFYAVOID==itemEffect[j].itemdataintindex && strstr( arg, "雀" ) != NULL )){
 					  	
 					  	itemEffect[j].accumulation += CHAR_getWorkInt(index,itemEffect[j].charmodifyparamindex) * ITEM_getInt( id, itemEffect[j].itemdataintindex ) / 100;
 					}else
@@ -1900,7 +1900,7 @@ void ITEM_equipEffect( int index )
 #ifdef _ANGEL_SUMMON
 			//if( !strcmp( ITEM_getChar( id, ITEM_USEFUNC), "ITEM_AngelToken") ) {
 			if( ITEM_getInt( id, ITEM_ID) == ANGELITEM ) {
-				//print(" 使者信物装备中 ");
+				//print(" 荤磊脚拱 厘馒 吝 ");
 				angelequip = TRUE;
 			}
 #endif
@@ -1938,13 +1938,13 @@ void ITEM_equipEffect( int index )
 	if( angelmode == TRUE && angelequip == FALSE ) {
 		CHAR_setWorkInt( index, CHAR_WORKANGELMODE, FALSE);
 		CHAR_sendAngelMark( CHAR_getWorkInt( index, CHAR_WORKOBJINDEX), 0);
-		print(" 卸下使者信物 ");
+		print(" 荤磊脚拱 秦力 ");
 	}
 	if( angelmode == FALSE && angelequip == TRUE ) {
 		CHAR_setWorkInt( index, CHAR_WORKANGELMODE, TRUE);
 		CHAR_sendAngelMark( CHAR_getWorkInt( index, CHAR_WORKOBJINDEX), 1);
-		CHAR_talkToCli( index, -1, "你受到了精灵保护，不会被敌人攻击。", CHAR_COLORYELLOW );
-		print(" 装备使者信物 ");
+		CHAR_talkToCli( index, -1, "沥飞狼 焊龋甫 罐酒 利俊霸 傍拜罐瘤 臼嚼聪促.", CHAR_COLORYELLOW );
+		print(" 荤磊脚拱 厘馒 ");
 	}
 #endif
 
@@ -2041,7 +2041,7 @@ void Other_DefcharWorkInt( int index)
 
 #ifdef _PETSKILL_SETDUCK
 	//profession fix
-	//使用回避招式时,会将防值减去30%然後设定成回避值,奇怪的设定,也造成原本设定的回避值跟没设一样,因此我(Change)先把整段拿掉
+	//使用雀避招式时,会将规值减去30%然後设定成雀避值,奇怪的设定,也造成原本设定的雀避值跟没设一样,因此我(Change)先把整段拿掉
 	/*if( CHAR_getWorkInt( index, CHAR_MYSKILLDUCK) > 0 ){
 		int mtgh = CHAR_getWorkInt( index, CHAR_WORKFIXTOUGH);
 		mtgh -= (mtgh*30)/100;
@@ -2148,7 +2148,7 @@ void Other_DefcharWorkInt( int index)
 	}
 #endif
 #ifdef _PRO3_ADDSKILL
-	if( GETLOWVALUE(CHAR_getWorkInt( index, CHAR_WORK_CRACKBONE ) ) != 0 ){//攻击力下降
+	if( GETLOWVALUE(CHAR_getWorkInt( index, CHAR_WORK_CRACKBONE ) ) != 0 ){//傍击力下降
 		int temp2=GETLOWVALUE(CHAR_getWorkInt( index, CHAR_WORK_CRACKBONE ) );
 		CHAR_setWorkInt( index, CHAR_WORKFIXSTR, CHAR_getWorkInt( index, CHAR_WORKFIXSTR)-temp2);
 	}
@@ -2178,7 +2178,7 @@ char* ITEM_getEffectString( int itemindex )
 
 #ifdef _LOCK_PET_ITEM
 	if (ITEM_getInt(itemindex,ITEM_ItemLock) == 1){
-		sprintf( token , "[绑]%s",ITEM_item[itemindex].itm.string[ITEM_EFFECTSTRING].string);
+		sprintf( token , "[蓖加]%s",ITEM_item[itemindex].itm.string[ITEM_EFFECTSTRING].string);
 	}else{
 		sprintf( token , "%s",ITEM_item[itemindex].itm.string[ITEM_EFFECTSTRING].string);
 	}
@@ -2304,7 +2304,7 @@ BOOL CHAR_CheckInItemForWares( int charaindex, int flg)
 			if( flg == 0 ){
 				return FALSE;
 			}
-			sprintf(token,"交出%s",ITEM_getChar( itemindex, ITEM_NAME));
+			sprintf(token,"%s 力免",ITEM_getChar( itemindex, ITEM_NAME));
 			CHAR_talkToCli( charaindex, -1, token, CHAR_COLORYELLOW);
 
 			CHAR_setItemIndex( charaindex, i ,-1);
@@ -2418,7 +2418,7 @@ char*  ITEM_petmakeItemStatusString( int petindex, int itemid )
 	char mybuff[2048];
 	memset(mybuff,0,sizeof(mybuff));
 	if (ITEM_getInt(itemindex,ITEM_ItemLock) == 1){
-		sprintf(mybuff,"[绑]%s",ITEM_getChar( itemindex, ITEM_EFFECTSTRING));
+		sprintf(mybuff,"[蓖加]%s",ITEM_getChar( itemindex, ITEM_EFFECTSTRING));
 	}else{
 		sprintf(mybuff,"%s",ITEM_getChar( itemindex, ITEM_EFFECTSTRING));
 	}
@@ -2443,7 +2443,7 @@ char*  ITEM_petmakeItemStatusString( int petindex, int itemid )
 	int maxcrushe = ITEM_getInt( itemindex, ITEM_MAXDAMAGECRUSHE);
 	char *arg = ITEM_getChar(itemindex, ITEM_NAME);
 	if(maxcrushe < 1){
-		sprintf(buff1, "康备荤侩");
+		sprintf(buff1, "扁鸥厘厚");
 	}else{
 		maxcrushe = maxcrushe/1000;
 		crushe = crushe/1000;

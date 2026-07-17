@@ -220,12 +220,12 @@ BOOL ENEMYTEMP_initEnemy( char* filename )
 	char tablename[256];
 	sprintf(tablename, "%s","Data_enemybase");
 	ENEMYTEMP_enemynum = sasql_getDateNum("Data_enemybase");
-	//print("\n有效数量:%d\n",sasql_getDateNum(tablename));
+	//print("\n蜡瓤 俺荐:%d\n",sasql_getDateNum(tablename));
 #else
 	FILE*	f;
 	f = fopen(filename,"r");
 	if( f == NULL ){
-		print( "文件打开失败\n");
+		print( "颇老 凯扁 角菩\n");
 		return FALSE;
 	}
 	
@@ -244,7 +244,7 @@ BOOL ENEMYTEMP_initEnemy( char* filename )
 #endif
 	ENEMYTEMP_enemy = allocateMemory( sizeof(struct tagENEMYTEMP_Table)* ENEMYTEMP_enemynum );
 	if( ENEMYTEMP_enemy == NULL ){
-		fprint( "无法分配内存 %d\n" ,sizeof(struct tagENEMYTEMP_Table)*ENEMYTEMP_enemynum);
+		fprint( "皋葛府 且寸 阂啊 %d\n" ,sizeof(struct tagENEMYTEMP_Table)*ENEMYTEMP_enemynum);
 #ifndef _NB_SQL_EnemyBase
 		fclose( f );
 #endif
@@ -268,7 +268,7 @@ BOOL ENEMYTEMP_initEnemy( char* filename )
 			for( i = 0; i < E_T_DATACHARNUM; i ++ ) {
 				ret = getStringFromIndexWithDelim( buf,",",i+1,token,sizeof(token));
 				if( ret==FALSE ){
-					fprint("文件语法错误:[第%d个数据第%d个字段]%s\n",j,i,buf);
+					fprint("颇老 巩过 坷幅:[%d锅掳 单捞磐 %d锅掳 鞘靛]%s\n",j,i,buf);
 					continue;
 				}
 				ENEMYTEMP_setChar( enemytemp_readlen, E_T_NAME + i, token);
@@ -278,7 +278,7 @@ BOOL ENEMYTEMP_initEnemy( char* filename )
 			for( i = ENEMYTEMP_STARTINTNUM; i < E_T_DATAINTNUM+ENEMYTEMP_STARTINTNUM; i ++ ) {
 				ret = getStringFromIndexWithDelim( buf,",",i,token,sizeof(token));
 				if( ret==FALSE ){
-					fprint("文件语法错误:[第%d个数据第%d个字段]%s\n",j,i,buf);
+					fprint("颇老 巩过 坷幅:[%d锅掳 单捞磐 %d锅掳 鞘靛]%s\n",j,i,buf);
 					continue;
 				}
 				if( strlen( token) != 0 ) {
@@ -314,7 +314,7 @@ BOOL ENEMYTEMP_initEnemy( char* filename )
 			for( i = 0; i < E_T_DATACHARNUM; i ++ ) {
 				ret = getStringFromIndexWithDelim( line,",",i+1,token,sizeof(token));
 				if( ret==FALSE ){
-					fprint("文件语法错误:%s 第%d行\n",filename,linenum);
+					fprint("颇老 巩过 坷幅:%s %d锅掳 临\n",filename,linenum);
 					continue;
 				}
 				ENEMYTEMP_setChar( enemytemp_readlen, E_T_NAME + i, token);
@@ -324,7 +324,7 @@ BOOL ENEMYTEMP_initEnemy( char* filename )
 			for( i = ENEMYTEMP_STARTINTNUM; i < E_T_DATAINTNUM+ENEMYTEMP_STARTINTNUM; i ++ ) {
 				ret = getStringFromIndexWithDelim( line,",",i,token,sizeof(token));
 				if( ret==FALSE ){
-					fprint("文件语法错误:%s 第%d行\n",filename,linenum);
+					fprint("颇老 巩过 坷幅:%s %d锅掳 临\n",filename,linenum);
 					break;
 				}
 				if( strlen( token) != 0 ) {
@@ -338,7 +338,7 @@ BOOL ENEMYTEMP_initEnemy( char* filename )
   fclose(f);//关闭文件
 #endif
   ENEMYTEMP_enemynum = enemytemp_readlen;
-  print( "有效宠物基本状态数是 %d...", ENEMYTEMP_enemynum );
+  print( "蜡瓤 脐 扁夯惑怕 俺荐 %d...", ENEMYTEMP_enemynum );
   return TRUE;
 }
 
@@ -386,7 +386,7 @@ BOOL ENEMY_initEnemy( char* filename ){
 	
 	ENEMY_enemy = allocateMemory( sizeof(struct tagENEMY_EnemyTable)* ENEMY_enemynum );
 	if( ENEMY_enemy == NULL ){
-		fprint( "无法分配内存 %d\n" ,sizeof(struct tagENEMY_EnemyTable)*ENEMY_enemynum);
+		fprint( "皋葛府 且寸 阂啊 %d\n" ,sizeof(struct tagENEMY_EnemyTable)*ENEMY_enemynum);
 		return FALSE;
 	}
 	//初始化
@@ -403,20 +403,20 @@ BOOL ENEMY_initEnemy( char* filename ){
 			int		ret;
 			ret = getStringFromIndexWithDelim( buf,",",1,token,sizeof(token));
 			if( ret==FALSE ){
-				fprint("数据语法错误:[第%d个数据第%d个字段]%s\n",j,1,buf);
+				fprint("单捞磐 巩过 坷幅:[%d锅掳 单捞磐 %d锅掳 鞘靛]%s\n",j,1,buf);
 				continue;
 			}
 			ENEMY_setChar( enemy_readlen, ENEMY_NAME, token);
 			ret = getStringFromIndexWithDelim( buf,",",2,token,sizeof(token));
 			if( ret==FALSE ){
-				fprint("数据语法错误:[第%d个数据第%d个字段]%s\n",j,2,buf);
+				fprint("单捞磐 巩过 坷幅:[%d锅掳 单捞磐 %d锅掳 鞘靛]%s\n",j,2,buf);
 				continue;
 			}
 			ENEMY_setChar( enemy_readlen, ENEMY_TACTICSOPTION, token);
 #ifdef _BATTLENPC_WARP_PLAYER
 			ret = getStringFromIndexWithDelim( buf, ",", 3, token, sizeof(token));
 			if(ret==FALSE){
-				fprint("数据语法错误:[第%d个数据第%d个字段]%s\n",j,3,buf);
+				fprint("单捞磐 巩过 坷幅:[%d锅掳 单捞磐 %d锅掳 鞘靛]%s\n",j,3,buf);
 				continue;
 			}
 			ENEMY_setChar( enemy_readlen, ENEMY_ACT_CONDITION, token);
@@ -430,7 +430,7 @@ BOOL ENEMY_initEnemy( char* filename ){
 			for( i = ENEMY_STARTINTNUM; i < ENEMY_DATAINTNUM+ENEMY_STARTINTNUM; i ++ ) {
 				ret = getStringFromIndexWithDelim( buf,",",i,token,sizeof(token));
 				if( ret==FALSE ){
-					fprint("数据语法错误:[第%d个数据第%d个字段]%s\n",j,i,buf);
+					fprint("单捞磐 巩过 坷幅:[%d锅掳 单捞磐 %d锅掳 鞘靛]%s\n",j,i,buf);
 					break;
 				}
 				ENEMY_setInt( enemy_readlen, i - ENEMY_STARTINTNUM, atoi( token));
@@ -446,7 +446,7 @@ BOOL ENEMY_initEnemy( char* filename ){
 				}
 			}
 			if( i == ENEMYTEMP_enemynum) {
-				fprint("数据语法错误:编号%d的宠物找不到对用的enemybase编号\n",enemyid);
+				fprint("单捞磐 巩过 坷幅: 锅龋%d 脐狼 措览 enemybase 锅龋甫 茫阑 荐 绝澜\n",enemyid);
 				continue;
 			}
 			ENEMY_enemy[enemy_readlen].enemytemparray = i;
@@ -467,7 +467,7 @@ BOOL ENEMY_initEnemy( char* filename ){
 	int     linenum=0;
 	f = fopen(filename,"r");
 	if( f == NULL ){
-		print( "文件打开失败\n");
+		print( "颇老 凯扁 角菩\n");
 		return FALSE;
 	}
 	ENEMY_enemynum=0;
@@ -479,14 +479,14 @@ BOOL ENEMY_initEnemy( char* filename ){
 		ENEMY_enemynum++;
 	}
 	if( fseek( f, 0, SEEK_SET ) == -1 ){
-		fprint( "寻找失败\n" );
+		fprint( "八祸 角菩\n" );
 		fclose(f);
 		return FALSE;
 	}
 
 	ENEMY_enemy = allocateMemory( sizeof(struct tagENEMY_EnemyTable)* ENEMY_enemynum );
 	if( ENEMY_enemy == NULL ){
-		fprint( "无法分配内存 %d\n" ,sizeof(struct tagENEMY_EnemyTable)*ENEMY_enemynum);
+		fprint( "皋葛府 且寸 阂啊 %d\n" ,sizeof(struct tagENEMY_EnemyTable)*ENEMY_enemynum);
 		fclose( f );
 		return FALSE;
 	}
@@ -520,20 +520,20 @@ BOOL ENEMY_initEnemy( char* filename ){
 
         ret = getStringFromIndexWithDelim( line,",",1,token,sizeof(token));
         if( ret==FALSE ){
-            fprint("文件语法错误:%s 第%d行\n",filename,linenum);
+            fprint("颇老 巩过 坷幅:%s %d锅掳 临\n",filename,linenum);
             continue;
         }
         ENEMY_setChar( enemy_readlen, ENEMY_NAME, token);
         ret = getStringFromIndexWithDelim( line,",",2,token,sizeof(token));
         if( ret==FALSE ){
-            fprint("文件语法错误:%s 第%d行\n",filename,linenum);
+            fprint("颇老 巩过 坷幅:%s %d锅掳 临\n",filename,linenum);
             continue;
         }
         ENEMY_setChar( enemy_readlen, ENEMY_TACTICSOPTION, token);
 #ifdef _BATTLENPC_WARP_PLAYER
 	    ret = getStringFromIndexWithDelim( line, ",", 3, token, sizeof(token));
         if(ret==FALSE){
-            fprint("文件语法错误:%s 第%d行\n",filename,linenum);
+            fprint("颇老 巩过 坷幅:%s %d锅掳 临\n",filename,linenum);
             continue;
         }
         ENEMY_setChar( enemy_readlen, ENEMY_ACT_CONDITION, token);
@@ -547,7 +547,7 @@ BOOL ENEMY_initEnemy( char* filename ){
 		for( i = ENEMY_STARTINTNUM; i < ENEMY_DATAINTNUM+ENEMY_STARTINTNUM; i ++ ) {
 			ret = getStringFromIndexWithDelim( line,",",i,token,sizeof(token));
 			if( ret==FALSE ){
-				fprint("文件语法错误:%s 第%d行\n",filename,linenum);
+				fprint("颇老 巩过 坷幅:%s %d锅掳 临\n",filename,linenum);
 				break;
 			}
 			ENEMY_setInt( enemy_readlen, i - ENEMY_STARTINTNUM, atoi( token));
@@ -559,7 +559,7 @@ BOOL ENEMY_initEnemy( char* filename ){
 				}
 			}
 			if( i == ENEMYTEMP_enemynum) {
-				fprint("文件语法错误:%s 第%d行\n",filename,linenum);
+				fprint("颇老 巩过 坷幅:%s %d锅掳 临\n",filename,linenum);
 				continue;
 			}
 			ENEMY_enemy[enemy_readlen].enemytemparray = i;
@@ -577,7 +577,7 @@ BOOL ENEMY_initEnemy( char* filename ){
 	fclose(f);
 #endif
 	ENEMY_enemynum = enemy_readlen;
-	print( "有效宠物数是 %d..", ENEMY_enemynum );
+	print( "蜡瓤 脐 俺荐 %d..", ENEMY_enemynum );
 	return TRUE;
 }
 /*------------------------------------------------------------------------
@@ -657,7 +657,7 @@ BOOL GROUP_initGroup( char* filename )
 	int		i,j;
 	f = fopen(filename,"r");
 	if( f == NULL ){
-		print( "文件打开失败\n");
+		print( "颇老 凯扁 角菩\n");
 		return FALSE;
 	}
 	GROUP_groupnum=0;
@@ -669,13 +669,13 @@ BOOL GROUP_initGroup( char* filename )
 		GROUP_groupnum++;
 	}
 	if( fseek( f, 0, SEEK_SET ) == -1 ){
-		fprint( "寻找失败\n" );
+		fprint( "八祸 角菩\n" );
 		fclose(f);
 		return FALSE;
 	}
 	GROUP_group = allocateMemory( sizeof(struct tagGROUP_Table)* GROUP_groupnum );
 	if( GROUP_group == NULL ){
-		fprint( "无法分配内存 %d\n" ,sizeof(struct tagGROUP_Table)*GROUP_groupnum);
+		fprint( "皋葛府 且寸 阂啊 %d\n" ,sizeof(struct tagGROUP_Table)*GROUP_groupnum);
 		fclose( f );
 		return FALSE;
 	}
@@ -718,7 +718,7 @@ BOOL GROUP_initGroup( char* filename )
 			}
 			ret = getStringFromIndexWithDelim( line,",",1,token,sizeof(token));
 			if( ret==FALSE ){
-				fprint("文件语法错误:%s 第%d行\n",filename,linenum);
+				fprint("颇老 巩过 坷幅:%s %d锅掳 临\n",filename,linenum);
 				continue;
 			}
 			GROUP_setChar( group_readlen, GROUP_NAME, token);
@@ -726,7 +726,7 @@ BOOL GROUP_initGroup( char* filename )
 			for( i = GROUP_STARTINTNUM; i < GROUP_DATAINTNUM+GROUP_STARTINTNUM; i ++ ) {
 				ret = getStringFromIndexWithDelim( line,",",i,token,sizeof(token));
 				if( ret==FALSE ){
-					fprint("文件语法错误:%s 第%d行\n",filename,linenum);
+					fprint("颇老 巩过 坷幅:%s %d锅掳 临\n",filename,linenum);
 					break;
 				}
 				if( strlen( token) != 0 ) {   	
@@ -762,11 +762,11 @@ BOOL GROUP_initGroup( char* filename )
 					}
 				}
 				if( enemycnt == 0 ) {
-					fprint("团队设定中敌人尚未设定 文件:%s 第%d行 enemyid:%d\n",filename,linenum,enemyid);
+					fprint("评 汲沥俊辑 阁胶磐啊 酒流 汲沥登瘤 臼澜 颇老:%s %d锅掳 临 enemyid:%d\n",filename,linenum,enemyid);
 					continue;;
 				}
 				if( checkRedundancy( &GROUP_group[group_readlen].intdata[ENEMY_ID1],CREATEPROB1 - ENEMY_ID1)){
-					fprint("团队设定中敌人重复设定 文件:%s 第%d行 enemyid:%d\n",filename,linenum,enemyid);
+					fprint("评 汲沥俊辑 阁胶磐 吝汗 汲沥 颇老:%s %d锅掳 临 enemyid:%d\n",filename,linenum,enemyid);
 					continue;;
 				}
 			}
@@ -775,7 +775,7 @@ BOOL GROUP_initGroup( char* filename )
 	}
 	fclose(f);
 	GROUP_groupnum = group_readlen;
-	print( "有效遇敌组群数是 %d...", GROUP_groupnum );
+	print( "蜡瓤 炼快 弊缝 俺荐 %d...", GROUP_groupnum );
 	return TRUE;
 }
 /*------------------------------------------------------------------------
@@ -1766,7 +1766,7 @@ int ENEMY_createPetFromEnemyIndex( int charaindex, int array)
 	  CHAR_setChar( newindex, CHAR_OWNERCHARANAME,
 		CHAR_getChar( charaindex, CHAR_NAME));
 		/*
-    print("宠物初始：%d %d %d %d %d\n"
+    print("脐 檬扁蔼：%d %d %d %d %d\n"
     ,CHAR_getInt( newindex, CHAR_LV )
     ,CHAR_getWorkInt( newindex, CHAR_WORKMAXHP )
     ,CHAR_getWorkInt( newindex, CHAR_WORKATTACKPOWER )
@@ -2250,12 +2250,12 @@ BOOL PETFUSION_getIndexForChar( int toindex, int *MainIndex, int *Subindex1, int
 		if( !CHAR_CHECKINDEX( petindex) ) continue;
 #ifdef _PET_2TRANS
 		if( CHAR_getInt( petindex, CHAR_TRANSMIGRATION ) > 1){
-			CHAR_talkToCli( toindex, -1, "二转宠物不能融合。", CHAR_COLORYELLOW);
+			CHAR_talkToCli( toindex, -1, "2傈积 脐篮 钦己且 荐 绝嚼聪促.", CHAR_COLORYELLOW);
 			return FALSE;
 		}
 #endif
 		if( rideindex == petindex) {
-			CHAR_talkToCli( toindex, -1, "骑乘中的宠不能融合。", CHAR_COLORYELLOW);
+			CHAR_talkToCli( toindex, -1, "啪铰 吝牢 脐篮 钦己且 荐 绝嚼聪促.", CHAR_COLORYELLOW);
 			return FALSE;
 		}
 		if( i == 0 ) {
@@ -2604,7 +2604,7 @@ int PET_CheckIncubate( int charaindex)
 			//扣属性
 			levelup = (vital<<24) + (str<<16) + (tgh<<8) + (dex<<0);
 			CHAR_setInt( petindex, CHAR_ALLOCPOINT, levelup);
-			sprintf( buf, "蛋〈%s〉的品质变差了。", CHAR_getUseName( petindex ));
+			sprintf( buf, "舅〈%s〉狼 前龙捞 唱狐脸嚼聪促.", CHAR_getUseName( petindex ));
 			CHAR_talkToCli( charaindex, -1, buf, CHAR_COLORYELLOW);
 			/*
 			LogPetFeed(
@@ -2613,7 +2613,7 @@ int PET_CheckIncubate( int charaindex)
 				CHAR_getChar( petindex, CHAR_NAME),
 				petindex,
 				CHAR_getInt( petindex, CHAR_LV),
-				"品质变差", // Key
+				"前龙 历窍", // Key
 				CHAR_getInt( charaindex, CHAR_FLOOR),
 				CHAR_getInt( charaindex, CHAR_X),
 				CHAR_getInt( charaindex, CHAR_Y),
@@ -2622,7 +2622,7 @@ int PET_CheckIncubate( int charaindex)
 		}else if( (int)checkeage > (time_l+anhour)  ){
 
 			char buf[256];
-			sprintf( buf, "蛋〈%s〉呈现可喂食状态。", CHAR_getUseName( petindex ));
+			sprintf( buf, "舅〈%s〉捞(啊) 冈捞 鞭咯 啊瓷 惑怕啊 登菌嚼聪促.", CHAR_getUseName( petindex ));
 			CHAR_talkToCli( charaindex, -1, buf, CHAR_COLORYELLOW);
 		}
 	}
@@ -2672,7 +2672,7 @@ int PET_CheckIncubate( int charaindex)
 			//扣属性
 			levelup = (vital<<24) + (str<<16) + (tgh<<8) + (dex<<0);
 			CHAR_setInt( charaindex, CHAR_ALLOCPOINT, levelup);
-			sprintf( buf, "蛋〈%s〉的品质变差了。", CHAR_getUseName( charaindex ));
+			sprintf( buf, "舅〈%s〉狼 前龙捞 唱狐脸嚼聪促.", CHAR_getUseName( charaindex ));
 			CHAR_talkToCli( masterindex, -1, buf, CHAR_COLORYELLOW);
 			/*
 			LogPetFeed(
@@ -2681,7 +2681,7 @@ int PET_CheckIncubate( int charaindex)
 				CHAR_getChar( charaindex, CHAR_NAME),
 				charaindex,
 				CHAR_getInt( charaindex, CHAR_LV),
-				"品质变差", // Key
+				"前龙 历窍", // Key
 				CHAR_getInt( masterindex, CHAR_FLOOR),
 				CHAR_getInt( masterindex, CHAR_X),
 				CHAR_getInt( masterindex, CHAR_Y),
@@ -2689,7 +2689,7 @@ int PET_CheckIncubate( int charaindex)
 			*/
 		}else if( (int)checkeage > (time_l+anhour) ){
 			char buf[256];
-			sprintf( buf, "蛋〈%s〉呈现可喂食状态。", CHAR_getUseName( charaindex ));
+			sprintf( buf, "舅〈%s〉捞(啊) 冈捞 鞭咯 啊瓷 惑怕啊 登菌嚼聪促.", CHAR_getUseName( charaindex ));
 			CHAR_talkToCli( masterindex, -1, buf, CHAR_COLORYELLOW);
 		}
 		return 1;
@@ -2888,7 +2888,7 @@ BOOL PETFUSION_AddEgg( int toindex, int petID, int PetCode)
 			break;
 	}
 	if( i == CHAR_MAXPETHAVE )      {
-		snprintf( msgbuf,sizeof( msgbuf), "宠物已满！！");
+		snprintf( msgbuf,sizeof( msgbuf), "脐 焊蜡 茄档 檬苞！！");
 		CHAR_talkToCli( toindex, -1, msgbuf,  CHAR_COLORYELLOW);
 		return -1;
 	}
@@ -2918,7 +2918,7 @@ BOOL PETFUSION_AddEgg( int toindex, int petID, int PetCode)
 		return -1;
 	}
 	CHAR_setInt( petindex2, CHAR_FUSIONINDEX, PetCode);
-	snprintf( msgbuf,sizeof( msgbuf), "拿到%s。", CHAR_getChar(petindex2,CHAR_NAME));
+	snprintf( msgbuf,sizeof( msgbuf), "%s 阑(甫) 裙垫沁嚼聪促.", CHAR_getChar(petindex2,CHAR_NAME));
 	CHAR_talkToCli( toindex, -1, msgbuf,  CHAR_COLORYELLOW);
 	for(j = 0; j < CHAR_MAXPETHAVE; j++){
 		petindex = CHAR_getCharPet(toindex, j);
@@ -2935,7 +2935,7 @@ BOOL PETFUSION_AddEgg( int toindex, int petID, int PetCode)
 		CHAR_getChar( toindex, CHAR_CDKEY ),
 		CHAR_getChar( petindex2, CHAR_NAME),
 		CHAR_getInt( petindex2, CHAR_LV),
-		"融合获得蛋",
+		"钦己栏肺 舅 裙垫",
 		CHAR_getInt( toindex,CHAR_FLOOR),
 		CHAR_getInt( toindex,CHAR_X ),
 		CHAR_getInt( toindex,CHAR_Y ),
