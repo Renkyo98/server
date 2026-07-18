@@ -1246,7 +1246,6 @@ BOOL ITEM_readItemConfFile( char* filename )
 								int (*intfunction)(char*,int*, int );
 								intfunction = ITEM_itemconfentries[i].func;
 								itm.data[ITEM_itemconfentries[i].index] = intfunction(line,&intdata[ITEM_itemconfentries[i].index],readpos);
-								if( intfunction == ITEM_getRandomValue) readpos ++;
 							}
 							break;
 						case ITEM_CHARFUNC:
@@ -1260,6 +1259,7 @@ BOOL ITEM_readItemConfFile( char* filename )
 							break;
 					}
 				}
+				if( ITEM_itemconfentries[i].type == ITEM_INTFUNC && ITEM_itemconfentries[i].func == ITEM_getRandomValue) readpos ++;
 			}
 			if( !dataerror) {
 				if( itemid >= ITEM_idxlen ){
