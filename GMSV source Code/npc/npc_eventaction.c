@@ -2811,7 +2811,7 @@ BOOL NPC_ActionCleanProfession( int toindex, char *buf)
 				CHAR_setInt( toindex , PROFESSION_SKILL_POINT, 0);
 				CHAR_setInt( toindex , ATTACHPILE, 0);
 			}else{
-				print("尚未设定参数!! (%s %d)\n", __FILE__, __LINE__);
+				print("概俺函荐啊 汲沥登瘤 臼澜!! (%s %d)\n", __FILE__, __LINE__);
 			}
 		}
 	}
@@ -3576,7 +3576,7 @@ BOOL NPC_ActionManCountCheck( int toindex, int nums, int flg)
 				    tempcount++;
 	}
 
-	print("\n检查男生人数:%d",tempcount);
+	print("\n巢己 牢盔荐 犬牢:%d",tempcount);
 	if(NPC_ActionBigSmallLastCheck( nums, tempcount, flg) == TRUE)
 		return TRUE;
 
@@ -3596,7 +3596,7 @@ BOOL NPC_ActionWomanCountCheck( int toindex, int nums, int flg)
 		        if( IsFemale( CHAR_getWorkInt(toindex,CHAR_WORKPARTYINDEX1+i) ) == 1 )
 				    tempcount++;
 	}
-    print("\n检查女生人数:%d",tempcount);
+    print("\n咯己 牢盔荐 犬牢:%d",tempcount);
 	if(NPC_ActionBigSmallLastCheck( nums, tempcount, flg) == TRUE)
 		return TRUE;
 

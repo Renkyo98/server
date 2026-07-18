@@ -780,7 +780,7 @@ BOOL    NPC_readTemplateFile( char* filename )
         switch( line[0] ){
         case '{':
             if( start == ON ){
-                fprint( "Find {. 已经开始声明. %s:%d\n",filename, linenum);
+                fprint( "{ 惯斑. 捞固 急攫 矫累凳. %s:%d\n",filename, linenum);
                 goto FCLOSERETURNFALSE;
 
             }else

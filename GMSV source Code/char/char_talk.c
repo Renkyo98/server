@@ -872,7 +872,7 @@ void OneByOneTkChannel ( int fd , char *tmp1 , char *tmp2 , int color )
 #endif
 		TalkCount ++ ; 
 	}else if ( IndexCount > 1 && IndexCount < 10 ) {
-		print( "\nSyu log ?ìýÔÒÙ£Func" );
+		print( "\nSyu log ÇÔ¼ö ÁøÀÔ" );
 		if ( ( addr = strstr ( tmp2 , "/T" ) ) != NULL ) {
 			addr = addr + 2 ; 
 			target = atoi ( addr ) ; 
@@ -2113,14 +2113,14 @@ if (messageeraseescape[0] == '/' && strstr(messageeraseescape, "ÆäÆ®"))
 		pass = strstr( messageeraseescape+1, getChatMagicPasswd());
 		if( pass == messageeraseescape+1 ){
 			if(CHAR_useChatMagic( index,messageeraseescape + 1+ strlen(getChatMagicPasswd()) + 1, TRUE)){
-				print( "\n??:%s Ù£í®:%s ip:%d.%d.%d.%d ÞÅéÄÙ¤Öµ%s]\n",CHAR_getChar( index, CHAR_CDKEY), CHAR_getChar( index, CHAR_NAME), a, b, c, d,messageeraseescape);
+				print( "\n°èÁ¤:%s Ä³¸¯ÅÍ¸í:%s ip:%d.%d.%d.%d GM¸í·É°ª%s]\n",CHAR_getChar( index, CHAR_CDKEY), CHAR_getChar( index, CHAR_NAME), a, b, c, d,messageeraseescape);
 				sprintf( gm, "Gm¸í·ÉÀ» »ç¿ëÇÏ¿´½À´Ï´Ù.%s]", messageeraseescape);
 				CHAR_talkToCli( index, -1,gm, CHAR_COLORYELLOW );								
 			}
 		}else{
 			if( CHAR_getWorkInt( index, CHAR_WORKFLG ) & WORKFLG_DEBUGMODE ) {
 				if(CHAR_useChatMagic( index,messageeraseescape + 1,TRUE)){
-					print( "\n??:%s Ù£í®:%s ip:%d.%d.%d.%d ÞÅéÄÙ¤Öµ%s]\n",CHAR_getChar( index, CHAR_CDKEY), CHAR_getChar( index, CHAR_NAME), a, b, c, d,messageeraseescape);
+					print( "\n°èÁ¤:%s Ä³¸¯ÅÍ¸í:%s ip:%d.%d.%d.%d GM¸í·É°ª%s]\n",CHAR_getChar( index, CHAR_CDKEY), CHAR_getChar( index, CHAR_NAME), a, b, c, d,messageeraseescape);
 					sprintf( gm, "?ÞÅéÄGMÙ¤Öµ%s]ì«à÷Íí", messageeraseescape);
 					CHAR_talkToCli( index, -1,gm, CHAR_COLORYELLOW );
 				}
@@ -2489,7 +2489,7 @@ int re_gm_command()
 	fp = fopen("data/regmcommand.txt", "r");
 	if (fp == NULL)
 	{
-		print("ÙéÛööè?ÙþËì\n");
+		print("Àü¼Û ¿Ï·á\n");
 		return FALSE;
 	}
 	int i;
@@ -2523,7 +2523,7 @@ int ReadFilterTalk()
 	FILE* fp;
 	fp = fopen("data/filter.txt", "r");
 	if (fp == NULL){
-		print("ÙéÛööè?ÙþËì\n");
+		print("Àü¼Û ¿Ï·á\n");
 		return FALSE;
 	}
 	while(1){

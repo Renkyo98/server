@@ -58,7 +58,7 @@ BOOL NPC_BankmanInit( int meindex )
 	NPC_Util_GetArgStr( meindex, argstr, sizeof( argstr));
 
 	if( NPC_Util_GetStrFromStrWithDelim( argstr, "conff", buf, sizeof( buf))== NULL ){
-		print( "familyman:没有指定设定的档案 。\n");
+		print( "familyman: 瘤沥等 汲沥 颇老捞 绝嚼聪促.\n");
 		return FALSE;
 	}
 	/* 赓渝凛卞涩烂犯□正毛民尼永弁仄化支月 */
@@ -356,7 +356,7 @@ static BOOL NPC_Bankman_readData( int meindex, int windowno, BOOL chkflg)
 			}
 			/* 它奴件玉它No 互瑁引匀化中卅中凛及垫反  骰允月 */
 			if( winno == -1 ) {
-				print( "familyman:winno 尚未定义，资料却已设定。\n");
+				print( "familyman: winno啊 沥狼登瘤 臼疽绰单 磊丰绰 捞固 汲沥凳.\n");
 				print( "filename:[%s] line[%d]\n", filename, linenum);
 				readflg = FALSE;
 				errflg = FALSE;
@@ -492,7 +492,7 @@ static BOOL NPC_Bankman_readData( int meindex, int windowno, BOOL chkflg)
 						break;
 					}
 					else {
-						print( "familyman:设定是不可能的参数\n");
+						print( "familyman: 汲沥 阂啊瓷茄 概俺函荐\n");
 						print( "filename:[%s] line[%d]\n", filename, linenum);
 					}
 				}

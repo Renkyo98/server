@@ -69,7 +69,7 @@ BOOL NPC_BodyLanInit( int meindex )
 
 	// 扑□弗件旦毛茧允
 	if( NPC_Util_GetStrFromStrWithDelim( szArg, "Act", szP, sizeof( szP ) ) == NULL ){
-		print( "npc_bodylan:动作文字列尚未设定(%s)\n",	szArg );
+		print( "npc_bodylan: 悼累 巩磊凯捞 汲沥登瘤 臼澜(%s)\n",	szArg );
 		return FALSE;
 	}
 
@@ -80,7 +80,7 @@ BOOL NPC_BodyLanInit( int meindex )
 			// 穴奶瓜旦互  凶日仇仇引匹
 			if( needSeq < 0 ){
 				if( i <= 0 ){
-					print( "npc_bodylan:动作列尚未设定(%s)\n", szArg );
+					print( "npc_bodylan: 悼累凯捞 汲沥登瘤 臼澜(%s)\n", szArg );
 				}
 				//     醒毛本永玄
 				CHAR_setWorkInt( meindex, BODYLAN_E_COMMANDNUM, i );
@@ -90,7 +90,7 @@ BOOL NPC_BodyLanInit( int meindex )
 			}
 		}else{
 			if( i <= 0 ){
-				print( "npc_bodylan:动作列尚未设定(%s)\n", szArg );
+				print( "npc_bodylan: 悼累凯捞 汲沥登瘤 臼澜(%s)\n", szArg );
 			}
 			//     醒毛本永玄
 			CHAR_setWorkInt( meindex, BODYLAN_E_COMMANDNUM, i );
@@ -239,7 +239,7 @@ void NPC_BodyLanWatch(
 
 	// 扑□弗件旦毛茧允
 	if( NPC_Util_GetStrFromStrWithDelim( szArg, "Act", szP, sizeof( szP ) ) == NULL ){
-		print( "npc_bodylan:动作文字列尚未设定(%s)\n",	szArg );
+		print( "npc_bodylan: 悼累 巩磊凯捞 汲沥登瘤 臼澜(%s)\n",	szArg );
 		return;
 	}
 

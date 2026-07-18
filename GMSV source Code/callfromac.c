@@ -110,7 +110,7 @@ void saacproto_ACServerLogin_recv (int fd, char* result,char* data)
 		int i;
 		for(i=1; i<11; i++){
 			if(getAllowFMPK(i)>=0){
-				print("%s,", getAllowFMPK(i) ? "是": "否");
+				print("%s,", getAllowFMPK(i) ? "抗": "酒聪坷");
 			}
 		}
 	}
@@ -121,14 +121,14 @@ void saacproto_ACServerLogin_recv (int fd, char* result,char* data)
 #endif
 #ifdef _NB_MAGICNOEXP
 	if (getMagicNoExp1()==1){
-		print( "是否禁止魔法熟练的升降：禁止\n");
+		print( "付过 槛访档 刘皑 陛瘤 咯何: 陛瘤\n");
 	}else{
-		print( "是否禁止魔法熟练的升降：不禁止\n");
+		print( "付过 槛访档 刘皑 陛瘤 咯何: 陛瘤救窃\n");
 	}
 	if (getMagicNoExp2()==1){
-		print( "是否禁止魔法抗性的升降：禁止\n");
+		print( "付过 历亲 刘皑 陛瘤 咯何: 陛瘤\n");
 	}else{
-		print( "是否禁止魔法抗性的升降：不禁止\n");
+		print( "付过 历亲 刘皑 陛瘤 咯何: 陛瘤救窃\n");
 	}
 #endif
 
@@ -161,7 +161,7 @@ void saacproto_ACServerLogin_recv (int fd, char* result,char* data)
 	print( "\n※%-66s※" , SERVER_VERSION2 );
 	print( "\n※%-66s※" , SERVER_VERSION3 );
 #endif
-	print( "\n※\033[31m%-66s\033[35m※","本端只限技术交流，请勿用于商业用途，触及一切法律责任，均与作者无关");
+	print( "\n※\033[31m%-66s\033[35m※","夯 辑滚绰 扁贱 背幅 格利栏肺父 荤侩登哥, 惑诀利 侩档肺 荤侩窍瘤 付绞矫坷. 葛电 过利 氓烙篮 荤侩磊俊霸 乐栏哥 力累磊客 公包钦聪促");
 	print( "\n※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※\033[0m\n");
 
 }
@@ -1337,7 +1337,7 @@ void saacproto_ACMissionTable_recv( int fd, int num, int type, char *data, char*
 		}
 
 		if( angelindex == -1 ) {
-			print("使者已下线\n");
+			print("荤磊啊 坷橇扼牢 惑怕涝聪促\n");
 			return;
 		}
 			
@@ -1922,17 +1922,17 @@ void saacproto_gm_shutdown_recv(int itype,char* msg){
 		}
 	}else if(itype == 4){
 		if(!readconfigfile(getConfigfilename())){
-			print("重新读取CF设置失败。\n");
+			print("CF 汲沥 犁佬扁 角菩.\n");
 		}else{
-			print("重新读取CF设置成功。\n");
+			print("CF 汲沥 犁佬扁 己傍.\n");
 		}
 	}else if(itype == 5){
 		ReLoadAllbluesLUA(msg);
 	}else if(itype == 6){
 		if (LoadGMSet(getGMSetfile())){
-			print("再次读取ＧＭ基本设定ＯＫ！\n");
+			print("GM 扁夯 汲沥 犁佬扁 肯丰!\n");
 		}else{ 
-			print("再次读取ＧＭ基本设定失败！\n");
+			print("GM 扁夯 汲沥 犁佬扁 角菩!\n");
 		}
 	}
 }

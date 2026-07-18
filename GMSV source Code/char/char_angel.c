@@ -479,7 +479,7 @@ void Use_AngelToken( int charaindex, int toindex, int haveitemindex )
 	char msg[1024];
 	char tokenbuf[64];
 
-	print(" 使用使者信物 ");
+	print(" 荤磊脚拱 荤侩 ");
 	
 	if( !CHAR_CHECKINDEX( charaindex) )	return;
 	itemindex = CHAR_getItemIndex( charaindex, haveitemindex);

@@ -165,7 +165,7 @@ void lssproto_ClientLogin_recv( int fd,char* cdkey, char* passwd, char* mac1,cha
 #ifdef _STOPLOGININFORMATION
 	    //print( "\nÔô???=%s \n",cdkey);
 #else
-	    print( "\nÔô???=%s ÚË?=%s IP=%s MAC1=%s MAC2=%s MAC3=%s SERVID=%d\n",cdkey,passwd,ip,mac1,mac2 ,mac3 ,servid);
+	    print( "\n°èÁ¤=%s ºñ¹Ğ¹øÈ£=%s IP=%s MAC1=%s MAC2=%s MAC3=%s SERVID=%d\n",cdkey,passwd,ip,mac1,mac2 ,mac3 ,servid);
 #endif
 
     if(sasql_chehk_lock(cdkey)){
@@ -312,7 +312,7 @@ void lssproto_CharLogin_recv( int fd,char* charname )
 
 #ifdef _STOPLOGININFORMATION
 #else
-	print( "\n??Ôô?: ìÑÚªÙ£?=%s\n", charname);
+	print( "\n·Î±×ÀÎ Ä³¸¯ÅÍ: Ä³¸¯ÅÍ¸í=%s\n", charname);
 #endif
 
     
@@ -1743,7 +1743,7 @@ void lssproto_DU_recv( int fd , int x,int y )
                                 CHAR_WORKPARTYMODE )
 							!= CHAR_PARTY_NONE ? "??": "??");
 				if( strlength + strlen( buf) > arraysizeof( msgbuf)){
-					print( "%s:%d???ãÓbufferÜôğë¡£\n",
+					print( "%s:%d ¹öÆÛ ¹üÀ§ ÃÊ°ú.\n",
 							__FILE__,__LINE__);
 					break;
 				}
@@ -2141,7 +2141,7 @@ void lssproto_WN_recv( int fd,int x,int y,int seqno,int objindex,int select, cha
 			int mindex;
 			char nameinfo[64];
 			mindex = checkIfAngel( fd_charaindex);
-			print(" ====ÜôïÈáôá¯?ìò?==== ");
+			print(" ====ÀÓ¹« ¿Ï·á==== ");
 			getMissionNameInfo( fd_charaindex, nameinfo);
 			saacproto_ACMissionTable_send( acfd, mindex, 3, nameinfo, "");
 

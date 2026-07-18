@@ -55,7 +55,7 @@ BOOL NPC_WindowmanInit( int meindex )
 	if( NPC_Util_GetStrFromStrWithDelim( argstr, "conff", buf, sizeof( buf))
 		== NULL ) 
 	{
-		print( "windowman:没有指定设定的档案 。\n");
+		print( "windowman: 瘤沥等 汲沥 颇老捞 绝嚼聪促.\n");
 		return FALSE;
 	}
 	/* 赓渝凛卞涩烂犯□正毛民尼永弁仄化支月 */
@@ -314,7 +314,7 @@ BOOL NPC_Windowman_readData( int meindex, int windowno, BOOL chkflg)
 				continue;
 			}
 			if( winno == -1 ) {
-				print( "windowman:winno 尚未定义，资料却已设定。\n");
+				print( "windowman: winno啊 沥狼登瘤 臼疽绰单 磊丰绰 捞固 汲沥凳.\n");
 				print( "filename:[%s] line[%d]\n", filename, linenum);
 				readflg = FALSE;
 				errflg = FALSE;
@@ -447,7 +447,7 @@ BOOL NPC_Windowman_readData( int meindex, int windowno, BOOL chkflg)
 						break;
 					}
 					else {
-						print( "windowman:设定是不可能的参数\n");
+						print( "windowman: 汲沥 阂啊瓷茄 概俺函荐\n");
 						print( "filename:[%s] line[%d]\n", filename, linenum);
 					}
 				}

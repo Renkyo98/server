@@ -4378,7 +4378,7 @@ void ITEM_LoverWarp( int charaindex, int toindex, int haveitemindex)
           CHAR_talkToCli( i, -1, token, CHAR_COLORYELLOW );
           sprintf( token, "已传送到爱人%s身边！", CHAR_getChar( i, CHAR_NAME));
           CHAR_talkToCli( charaindex, -1, token, CHAR_COLORYELLOW );
-          print("\n玩家%s 传送到玩家%s身边", CHAR_getChar( charaindex, CHAR_NAME),CHAR_getChar(i, CHAR_NAME));
+          print("\n敲饭捞绢%s 丛捞 敲饭捞绢%s 丛 扮栏肺 捞悼", CHAR_getChar( charaindex, CHAR_NAME),CHAR_getChar(i, CHAR_NAME));
           return;
         }
     }else

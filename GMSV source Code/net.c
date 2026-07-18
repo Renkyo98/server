@@ -335,29 +335,29 @@ void SetTcpBuf(int sockfd)
 
 	//?öÇïÈâ¥??
 	if (setsockopt(sockfd, SOL_SOCKET, SO_RCVBUF, (char*)&nRecvBuf, sizeof(int)) < 0)
-		print("\n?öÇSO_RCVBUFã÷?!!!!\n");
+		print("\nSO_RCVBUF ¼³Á¤ ½ÇÆÐ!!!!\n");
 
 	//?öÇ?áê??
 	if (setsockopt(sockfd, SOL_SOCKET, SO_SNDBUF, (char*)&nSendBuf, sizeof(int)) < 0)
-		print("\n?öÇSO_SNDBUFã÷?!!!!\n");
+		print("\nSO_SNDBUF ¼³Á¤ ½ÇÆÐ!!!!\n");
 	/*
 	  if(setsockopt(sockfd, SOL_SOCKET, SO_SNDTIMEO, (char*)&nNetTimeout, sizeof(int)) < 0)
-		 print( "\n?öÇSO_SNDTIMEOã÷?!!!!\n" );
+		 print( "\nSO_SNDTIMEO ¼³Á¤ ½ÇÆÐ!!!!\n" );
 
 	  if(setsockopt(sockfd, SOL_SOCKET, SO_RCVTIMEO, (char*)&nNetTimeout, sizeof(int)) < 0)
-		 print( "\n?öÇSO_RCVTIMEOã÷?!!!!\n" );
+		 print( "\nSO_RCVTIMEO ¼³Á¤ ½ÇÆÐ!!!!\n" );
 
 	  if(setsockopt(sockfd,SOL_SOCKET,SO_DONTLINGER,(const char*)&bDontLinger,sizeof(BOOL)) < 0)
-		 print( "\n?öÇSO_DONTLINGERã÷?!!!!\n" );
+		 print( "\nSO_DONTLINGER ¼³Á¤ ½ÇÆÐ!!!!\n" );
 
 	  if(setsockopt(sockfd,SOL_SOCKET ,SO_REUSEADDR,(const char*)&bReuseaddr,sizeof(BOOL)) < 0)
-		 print( "\n?öÇSO_REUSEADDRã÷?!!!!\n" );
+		 print( "\nSO_REUSEADDR ¼³Á¤ ½ÇÆÐ!!!!\n" );
 	*/
 	if (setsockopt(sockfd, SOL_SOCKET, SO_LINGER, (char*)&rLinger, sizeof(rLinger)) < 0)
-		print("\n?öÇSO_LINGERã÷?!!!!\n");
+		print("\nSO_LINGER ¼³Á¤ ½ÇÆÐ!!!!\n");
 	/*  //?öÇïÈâ¥??ù»ùÚ
 	  if (setsockopt( sockfd, SOL_SOCKET, SO_RCVLOWAT, (char*)&nRecvlowatBuf, sizeof(int) < 0)
-		 print( "\n?öÇïÈâ¥SO_RCVLOWATã÷?!!!!\n" );
+		 print( "\nSO_RCVLOWAT ¼³Á¤ ½ÇÆÐ!!!!\n" );
 	*/
 
 	//	if(ioctl(sockfd, FIONBIO, &param))
@@ -829,7 +829,7 @@ ANYTHREAD BOOL _CONNECT_endOne(char* file, int fromline, int sockfd, int line)
 			if (!CHAR_logout(Connect[sockfd].charaindex, TRUE)) {
 				//print( "err %s:%d from %s:%d \n", __FILE__, __LINE__, file, fromline);
 			}
-			print("÷Üõó??=%s \n", Connect[sockfd].cdkey);
+			print("Á¢¼ÓÁ¾·á CDKEY=%s \n", Connect[sockfd].cdkey);
 		}
 		CONNECT_LOCK_ARG2(sockfd, line);
 	}
@@ -889,7 +889,7 @@ SINGLETHREAD BOOL initConnect(int size)
 		memset(Connect[i].wb, 0, WBSIZE);
 	}
 
-	print("?? %d ïÈ?...ÝÂÛÕ %.2f MB Íö?...", size, (sizeof(CONNECT) * size + RBSIZE * size + WBSIZE * size) / 1024.0 / 1024.0);
+	print("¿¬°á %d°³... ¸Þ¸ð¸® %.2f MB ÇÒ´ç...", size, (sizeof(CONNECT) * size + RBSIZE * size + WBSIZE * size) / 1024.0 / 1024.0);
 	SERVSTATE_initserverState();
 	MAX_item_use = getItemnum() * 0.98;
 	return TRUE;
@@ -1968,7 +1968,7 @@ void closeAllConnectionandSaveData(void)
 	else {
 		SERVSTATE_SetAcceptMore(0);
 	}
-	print("\n?áêìÑÚª?Ëß?ÙÍ:%d\n", num);
+	print("\nÁ¢¼Ó°¡´É¼ö °»½Å:%d\n", num);
 }
 
 //üÞÏêÞÀËì
@@ -2154,7 +2154,7 @@ void CONNECT_SysEvent_Loop( void)
 				CHAR_complianceParameter( charaindex );
 				CHAR_sendCToArroundCharacter( CHAR_getWorkInt( charaindex , CHAR_WORKOBJINDEX ) );
 				CHAR_send_P_StatusString( charaindex , CHAR_P_STRING_BASEBASEIMAGENUMBER );
-				CHAR_talkToCli( charaindex, -1, "±äÉíÊ§Ð§ÁË¡£", CHAR_COLORWHITE );
+				CHAR_talkToCli( charaindex, -1, "º¯½ÅÀÌ ÇØÁ¦µÇ¾ú½À´Ï´Ù.", CHAR_COLORWHITE );
 			}
 #endif
 	}
@@ -2371,13 +2371,13 @@ SINGLETHREAD BOOL netloop_faster(void)
 			}
 			if (cono_check & CONO_CHECK_ITEM) {
 				if (total_item_use >= MAX_item_use) {
-					print("Ê¦ÞÅéÄÚªù¡?ì«?!!");
+					print("¾ÆÀÌÅÛ »ç¿ë °³¼ö ÃÊ°ú!!");
 					cono = 0;
 				}
 			}
 			if (cono_check & CONO_CHECK_PET) {
 				if (petcnt >= CHAR_getPetMaxNum()) {
-					print("Ê¦ÞÅéÄ?Úª?ì«?!!");
+					print("Æê °³¼ö ÃÊ°ú!!");
 					cono = 0;
 				}
 			}
@@ -2393,7 +2393,7 @@ SINGLETHREAD BOOL netloop_faster(void)
 				;
 			}
 			else if ((cono == 0) || (acceptmore <= 0) || isThereThisIP(sinip)) {
-				char mess[64] = "EÞÃÜ×ÐïØÏ?ñé£¬?õªý¦î¢?¡£";
+				char mess[64] = "¼­¹ö Á¢¼ÓÀÎ¿øÀÌ ÃÊ°úµÇ¾ú½À´Ï´Ù. Àá½Ã ÈÄ ´Ù½Ã Á¢¼ÓÇØÁÖ¼¼¿ä.";
 				if (!from_acsv)
 					write(sockfd, mess, strlen(mess) + 1);
 				print("accept but drop[cono:%d,acceptmore:%d]\n", cono, acceptmore);
@@ -2490,7 +2490,7 @@ SINGLETHREAD BOOL netloop_faster(void)
 					if (Connect[i].use == FALSE) continue;
 					if (i == acfd) continue;
 					if (Connect[i].charaindex != -1) continue;
-					char mess[64] = "EÞÃÜ×ÐïÛåØÏ£¬?õªý¦î¢?¡£[2]";
+					char mess[64] = "¼­¹ö Á¢¼ÓÀÎ¿øÀÌ ÃÊ°úµÇ¾ú½À´Ï´Ù. Àá½Ã ÈÄ ´Ù½Ã Á¢¼ÓÇØÁÖ¼¼¿ä.[2]";
 					if (!from_acsv) write(i, mess, strlen(mess) + 1);
 					CONNECT_endOne_debug(i);
 				}
@@ -2520,7 +2520,7 @@ SINGLETHREAD BOOL netloop_faster(void)
 				if (!b_first_shutdown) {
 					b_first_shutdown = TRUE;
 					i_shutdown_time = SERVSTATE_getLimittime();
-					print("\n ??Ü×?Ðï??=%d", i_shutdown_time);
+					print("\n ¼­¹ö Á¾·á±îÁö=%d", i_shutdown_time);
 				}
 				break;
 			default:
@@ -2573,7 +2573,7 @@ SINGLETHREAD BOOL netloop_faster(void)
 						gettimeofday(&speedet, NULL);
 						float speedtime = time_diff_us(speedet, speedst) / 1000000.0;
 #ifdef _ASSESS_SYSDOWNUPNEWS
-						sprintf(buff1, "ß¾?:[%2.3f K]øÁÐ³[%2.3f K]ù»?:[%2.3f K]øÁÐ³[%2.3f K]á¼?%2.3fõ©\n"
+						sprintf(buff1, "¼Û½Å:[%2.3f K] ÃÊ´ç[%2.3f K] ¼ö½Å:[%2.3f K] ÃÊ´ç[%2.3f K] ÃÑ%2.3fÃÊ\n"
 							, sendspeed / 1024.0, sendspeed / speedtime / 1024.0
 							, recvspeed / 1024.0, recvspeed / speedtime / 1024.0
 							, speedtime);
@@ -2732,12 +2732,12 @@ SINGLETHREAD BOOL netloop_faster(void)
 			memset(buf, 0, sizeof(buf));
 			ret = read(fdremember, buf, sizeof(buf));
 			if (ret > 0 && sizeof(buf) <= ret) {
-				print("?ö¢(%s)???Óø:%d - %d !!\n", (fdremember == acfd) ? "SAAC" : "Ðì?", ret, sizeof(buf));
+				print("¼ö½Å(%s) ¹öÆÛ ÃÊ°ú:%d - %d !!\n", (fdremember == acfd) ? "SAAC" : "±âÅ¸", ret, sizeof(buf));
 			}
 			if ((ret == -1 && errno != EINTR) || ret == 0) {
 				if (fdremember == acfd) {
-					print("?ö¢Ú÷üÞ:%d %s\n", ret, strerror(errno));
-					print("gmsv?acsvã÷ËÛ?ïÈ! ?ßÈ?ò­...\n");
+					print("¼ö½Å ¿À·ù:%d %s\n", ret, strerror(errno));
+					print("gmsv-acsv ¿¬°á ²÷±è! Àç¿¬°á ½ÃµµÁß...\n");
 					sigshutdown(-1);
 					exit(1);
 				}
@@ -2747,7 +2747,7 @@ SINGLETHREAD BOOL netloop_faster(void)
 							continue;
 						}
 						else {
-							print("?ö¢Ú÷üÞ: %d %s \n", errno, strerror(errno));
+							print("¼ö½Å ¿À·ù: %d %s \n", errno, strerror(errno));
 						}
 					}
 					//print( "\nRCL " );
@@ -2785,10 +2785,10 @@ SINGLETHREAD BOOL netloop_faster(void)
 			if (!((rbmess[0] == '\r' && rbmess[1] == '\n') || rbmess[0] == '\n')) {
 				if (fdremember == acfd) {
 #ifdef _DEBUG
-					printf("?ö¢SAAC?Ëß:%s\n", rbmess);
+					printf("SAAC ¼ö½Å:%s\n", rbmess);
 #endif
 					if (saacproto_ClientDispatchMessage(fdremember, rbmess) < 0) {
-						print("\nSAACÜ×?Ðï?Ëßõó?!!!\n");
+						print("\nSAAC ÀÀ´ä Ã³¸® ½ÇÆÐ!!!\n");
 					}
 				}
 				else {
@@ -3321,7 +3321,7 @@ void saveforsaac() {
 		if (ret > 0 && FD_ISSET(acfd, &wfds)) {
 			//Nuke start 0907: Protect gmsv
 #ifdef _DEBUG
-			printf("?áêSAAC?é»:%s\n", Connect[acfd].wb);
+			printf("SAAC ¼Û½Å:%s\n", Connect[acfd].wb);
 #endif
 			ret = write(acfd, Connect[acfd].wb, (Connect[acfd].wbuse < acwritesize) ? Connect[acfd].wbuse : acwritesize);//áóïá ?ìýìîõó  
 
@@ -3335,7 +3335,7 @@ void saveforsaac() {
 			}
 		}
 		else if (ret < 0 && errno != EINTR) {
-			print("\n?ìý?ïÈ??:%d %s\n", errno, strerror(errno));
+			print("\n¼Û½Å ¿À·ù:%d %s\n", errno, strerror(errno));
 			CONNECT_endOne_debug(acfd);
 		}
 	}

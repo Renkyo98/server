@@ -1661,7 +1661,7 @@ int NPC_PetTransManCheck( int meindex, int toindex, int select)
 		print("\n error PetTrans : (PETID = 718) > 1 !!");
 		return 0;
 	  }else if( petNum != 1 )	{
-		  print("\n 宠转发生错误 !!");
+		  print("\n 脐傈券 吝 坷幅 惯积 !!");
 		  return 0;
 	  }
 	}
@@ -1719,7 +1719,7 @@ BOOL NPC_PetTransManStatus( int meindex, int toindex, int petNo)
 		}
 	}
 	if(i == CHAR_MAXPETHAVE)	{
-		print("\n 宠物转生发生错误 !!");
+		print("\n 脐傈积 吝 坷幅 惯积 !!");
 		return FALSE;
 	}
 

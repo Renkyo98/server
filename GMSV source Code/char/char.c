@@ -1137,7 +1137,7 @@ void CHAR_login( int clifd, char* data, int saveindex )
 //    max=(trn==0)?(lv-1)*3+20+10: // 0转447
 //      (lv-1)*3+table[trn-1]/12.0+quest/4.0+(level-trn*85)/4.0+10+1+10+trn*10;
 /*
-		print("升级点数:%d\n",(lv-1)*getSkup());
+		print("饭骇诀 器牢飘:%d\n",(lv-1)*getSkup());
 		print("继承点术:%f\n",(table[trn-1]/12.0));
 		print("历史任务:%f\n",quest/4.0);
 		print("历史等级:%f\n",(level-trn*85)/4.0);
@@ -1145,7 +1145,7 @@ void CHAR_login( int clifd, char* data, int saveindex )
 		print("转前祝福:%d\n",getTransPoint(trn));
 		print("误差1点:%d\n",1);
 		print("转後祝福:%d\n",getTransPoint(trn));
-		print("转生红利:%d\n",trn*10);
+		print("傈积 焊呈胶:%d\n",trn*10);
 */
 #ifdef _REVLEVEL
 	if (strcmp(getRevLevel(),"是")==0){
@@ -7448,7 +7448,7 @@ BOOL CHAR_initEffectSetting( char* filename )
 	}
 	fclose(f);
 	CHAR_effectnum = effectreadlen;
-	print( "有效设置总数 %d...", CHAR_effectnum );
+	print( "蜡瓤 汲沥 醚荐 %d...", CHAR_effectnum );
 #ifdef DEBUG
 	{
 		int i;
@@ -9957,7 +9957,7 @@ BOOL JobDailyRuleCheck(int talker, char* buf)
 	getStringFromIndexWithDelim( buf, "=", 2, buf1, sizeof( buf1));
 	eventNo = atoi(buf1);
 	if(eventNo >= 1024){
-		print("任务日志的任务旗标设定有误%d\n",eventNo);
+		print("烙公老瘤狼 烙公 敲贰弊 汲沥 坷幅%d\n",eventNo);
 		return FALSE;
 	}
 	getStringFromIndexWithDelim( buf, "=", 1, buf2, sizeof( buf2));

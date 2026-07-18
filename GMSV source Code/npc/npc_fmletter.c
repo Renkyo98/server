@@ -76,7 +76,7 @@ BOOL NPC_FmLetterInit( int meindex )
 	if( NPC_Util_GetStrFromStrWithDelim( argstr, "conff", buf, sizeof( buf))
 		== NULL )
 	{
-		print( "fmletter:没有指定设定的档案 。\n");
+		print( "fmletter: 瘤沥等 汲沥 颇老捞 绝嚼聪促.\n");
 		return FALSE;
 	}
 	/* 赓渝凛卞涩烂犯□正毛民尼永弁仄化支月 */
@@ -435,7 +435,7 @@ static BOOL NPC_FmLetter_readData( int meindex, int windowno, BOOL chkflg)
 			
 			/* 它奴件玉它No 互瑁引匀化中卅中凛及垫反  骰允月 */
 			if( winno == -1 ) {
-				print( "fmletter:winno 尚未定义，资料却已设定。\n");
+				print( "fmletter: winno啊 沥狼登瘤 臼疽绰单 磊丰绰 捞固 汲沥凳.\n");
 				print( "filename:[%s] line[%d]\n", filename, linenum);
 				readflg = FALSE;
 				errflg = FALSE;

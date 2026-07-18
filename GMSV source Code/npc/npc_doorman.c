@@ -73,7 +73,7 @@ BOOL NPC_DoormanInit( int meindex )
 	NPC_Util_GetArgStr( meindex, arg, sizeof( arg));
 
     if(!getStringFromIndexWithDelim( arg, "|", 3, dname, sizeof(dname ))){
-        print("RINGO: 设定看门者时需要门的名字唷！:%s:\n",
+        print("RINGO: 巩瘤扁 汲沥矫 巩 捞抚捞 鞘夸钦聪促!:%s:\n",
               arg );
         return FALSE;
     }

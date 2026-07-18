@@ -42,7 +42,7 @@ BOOL NPC_SavePointInit( int meindex )
 	}
 
 	if(NPC_Util_GetStrFromStrWithDelim(argstr,"ID",buf2,sizeof( buf2) )==NULL){
-		print("SavePoint:ID…–Œ¥…Ë∂® ");
+		print("SavePoint: ID∞° º≥¡§µ«¡ˆ æ ¿Ω ");
 		return FALSE;
 	}
 		

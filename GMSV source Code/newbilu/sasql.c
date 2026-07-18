@@ -98,7 +98,7 @@ static int readSqlConfig( char *path ){
 			print("ý¨÷»ÍíÒö: %s\n", sqlconfig.openbackground == 1? "YES":"NO");
 		} else if( strcmp( command , "AutoReg" ) == 0 ){
 			sqlconfig.AutoReg = atoi( param );
-			print("?Û¯í»?ñ¼?: %s\n", sqlconfig.AutoReg == 1? "YES":"NO");
+			print("ÀÚµ¿°¡ÀÔ: %s\n", sqlconfig.AutoReg == 1? "YES":"NO");
     }
 	}
 	fclose(fp);

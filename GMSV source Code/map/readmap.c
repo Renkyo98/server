@@ -310,7 +310,7 @@ BOOL MAP_readBattleMapConfFile( char* filename )
 
 		for( i = iFirst; i <= iLast; i ++ ){
 			if( MAP_getImageInt( i, MAP_SETED_BATTLEMAP ) > 0 ){
-				print( "!!!!!错误 相同金钱重复设定了两次(%s)( line %d )(%d)(%d & %d)\n",
+				print( "!!!!!坷幅 悼老茄 陛咀捞 滴 锅 吝汗 汲沥凳(%s)( line %d )(%d)(%d & %d)\n",
 					filename, linenum, i,
 					MAP_getImageInt( i, MAP_BATTLEMAP ),
 					BattleMapNo[0] );
@@ -332,7 +332,7 @@ BOOL MAP_readBattleMapConfFile( char* filename )
 	for( j = 0; j < arraysizeof( MAP_imgfilt ); j ++ ){
 		if( MAP_imgfilt[j] == -1 )continue;
 		if( MAP_getImageInt( j, MAP_SETED_BATTLEMAP ) == 0 ){
-			print( "!!!!!错误 金钱(%d)尚未设定 (%s)\n", j, filename );
+			print( "!!!!!坷幅 陛咀(%d)捞 汲沥登瘤 臼澜 (%s)\n", j, filename );
 		}
 	}
     return TRUE;

@@ -5423,7 +5423,7 @@ static BOOL ComboCheck2(
 	// ∑ﬂ€–ª•Ô·≤¡’∫¡√  ÿ∆ªØ÷––◊»’¡√  
 		if( CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEFLG) & CHAR_BATTLEFLG_AIBAD )
 		{
-//			print( "”…Ï∂÷“≥œ∂»≤ª◊„ π”√±ÿ…±ºº ß∞‹( %s )\n",CHAR_getUseName( charaindex ) );
+//			print( "”…Ï∂÷“≥œ∂»≤ª◊„ π”√« ªÏ±‚ Ω«∆–( %s )\n",CHAR_getUseName( charaindex ) );
 			return FALSE;
 		}
 	}
@@ -5448,7 +5448,7 @@ static BOOL ComboCheck2(
 	}
 /*
 	if( iRet == FALSE ){
-		print( "±ÿ…±ºº ß∞‹( %s )\n",
+		print( "« ªÏ±‚ Ω«∆–( %s )\n",
 			CHAR_getUseName( pEntryList[nownum].charaindex ) );
 	}
 */

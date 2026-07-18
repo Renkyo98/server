@@ -78,7 +78,7 @@ BOOL NPC_RidermanInit( int meindex )
 	
 	if( NPC_Util_GetStrFromStrWithDelim( argstr, "conff", buf, sizeof( buf))== NULL ) 
 	{
-		print( "riderman:没有指定设定的档案 。\n");
+		print( "riderman: 瘤沥等 汲沥 颇老捞 绝嚼聪促.\n");
 		return FALSE;
 	}
 	/* 赓渝凛卞涩烂犯□正毛民尼永弁仄化支月 */
@@ -653,7 +653,7 @@ static BOOL NPC_Riderman_readData( int meindex, int windowno, BOOL chkflg)
 			}
 			
 			if( winno == -1 ) {
-				print( "riderman:winno 尚未定义，资料却已设定。\n");
+				print( "riderman: winno啊 沥狼登瘤 臼疽绰单 磊丰绰 捞固 汲沥凳.\n");
 				print( "filename:[%s] line[%d]\n", filename, linenum);
 				readflg = FALSE;
 				errflg = FALSE;
@@ -806,7 +806,7 @@ static BOOL NPC_Riderman_readData( int meindex, int windowno, BOOL chkflg)
 						break;
 					}
 					else {
-						print( "riderman:设定是不可能的参数\n");
+						print( "riderman: 汲沥 阂啊瓷茄 概俺函荐\n");
 						print( "filename:[%s] line[%d]\n", filename, linenum);
 					}
 				}

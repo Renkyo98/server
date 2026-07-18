@@ -282,7 +282,7 @@ int ITEM_initItemIngCache( void )
 			if( k == 0 ){
 				if( ITEM_tbl[ITEM_idx[i].index].itm.data[ITEM_CANMERGEFROM] == TRUE || //new
 					ITEM_tbl[ITEM_idx[i].index].itm.data[ITEM_CANMERGETO] == TRUE){//new
-					print( "ID%d (%s)尚未设定成分\n",
+					print( "ID%d (%s) 己盒捞 汲沥登瘤 臼澜\n",
 						   ITEM_tbl[ITEM_idx[i].index].itm.data[ITEM_ID], //new
 						   ITEM_tbl[ITEM_idx[i].index].itm.string[ITEM_NAME].string ); //new
 				}
@@ -328,7 +328,7 @@ int ITEM_initItemAtom( char *fn )
 	print( "初始化物品成份: 总数 %d \n", count );
 
 	if( count == 0 ){
-		print( "初始化物品成份: 无法正确设置物品成份. 异常中断.\n" );
+		print( "酒捞袍 己盒 檬扁拳: 酒捞袍 己盒阑 棵官福霸 汲沥且 荐 绝澜. 厚沥惑 吝窜.\n" );
 		return FALSE;
 	}
 	
