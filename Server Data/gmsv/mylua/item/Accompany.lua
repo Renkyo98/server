@@ -95,7 +95,7 @@ end
 
 function mydata()
 	offlinetime = 36000;
-endz
+end
 
 function main()
 	mydata()

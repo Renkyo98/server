@@ -1,32 +1,32 @@
-记录道具记录={};
+ItemRecordTable={};
 
 
 function WindowTalked ( meindex, charaindex, seqno, select, data)
 	if seqno == 1 then
-		local 宠物位置 = other.atoi(data);
-		if 宠物位置 >=1 and 宠物位置<=4 then
-			local 宠物索引 = char.getCharPet(charaindex, 宠物位置-1);
-			if char.check(宠物索引) == 1 then
-				记录道具记录[charaindex][3] = 宠物索引;
-				local 对话内容 = "是否让 "..char.getChar(宠物索引,"名字") .." 学习该特效！"
-				lssproto.windows(charaindex, "对话框", "确定|取消", 2,  char.getWorkInt( npcindex, "对象"),对话内容 )
+		local petSlot = other.atoi(data);
+		if petSlot >=1 and petSlot<=4 then
+			local petIndex = char.getCharPet(charaindex, petSlot-1);
+			if char.check(petIndex) == 1 then
+				ItemRecordTable[charaindex][3] = petIndex;
+				local dialogText = "是否让 "..char.getChar(petIndex,"名字") .." 学习该特效！"
+				lssproto.windows(charaindex, "对话框", "确定|取消", 2,  char.getWorkInt( npcindex, "对象"),dialogText )
 			end
 		end
 	elseif seqno == 2 then
 		if select == 1 then
-			local 攻击特效ID = other.atoi(item.getChar(记录道具记录[charaindex][1], "字段"))
-			char.setInt(记录道具记录[charaindex][3],"攻击特效",攻击特效ID);
-			char.DelItem(charaindex, 记录道具记录[charaindex][2]);
-			char.TalkToCli(charaindex, -1, "您的宠物"..char.getChar(记录道具记录[charaindex][3],"名字").."习得攻击特效,快去体验吧！", "红色")
-			记录道具记录[charaindex]=nil;
+			local attackEffectId = other.atoi(item.getChar(ItemRecordTable[charaindex][1], "字段"))
+			char.setInt(ItemRecordTable[charaindex][3],"攻击特效",attackEffectId);
+			char.DelItem(charaindex, ItemRecordTable[charaindex][2]);
+			char.TalkToCli(charaindex, -1, "您的宠物"..char.getChar(ItemRecordTable[charaindex][3],"名字").."习得攻击特效,快去体验吧！", "红色")
+			ItemRecordTable[charaindex]=nil;
 		end
 	end
 end
 
 function attackeffect(itemindex, charaindex, toindex, haveitemindex)
-	记录道具记录[charaindex]={};
-	记录道具记录[charaindex][1]=itemindex;
-	记录道具记录[charaindex][2]=haveitemindex;
+	ItemRecordTable[charaindex]={};
+	ItemRecordTable[charaindex][1]=itemindex;
+	ItemRecordTable[charaindex][2]=haveitemindex;
 	lssproto.windows(charaindex, "宠物框", "确定", 1,  char.getWorkInt( npcindex, "对象"), "")
 end
 
